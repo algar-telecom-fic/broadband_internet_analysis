@@ -1,0 +1,3 @@
+current_file = "current.csv"
+previous_file = "previous.csv"
+date_difference = "133"

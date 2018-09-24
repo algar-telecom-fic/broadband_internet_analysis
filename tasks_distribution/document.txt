@@ -1,0 +1,78 @@
+Antes de executar, é necessário:
+	. uma pasta input, contendo os arquivos de entrada:
+		. um arquivo do tipo xlsx:
+			. a primeira subplanilha deve estar no formato do exemplo:
+				. a primeira linha com as legendas, nesta ordem (o nome não faz diferença):
+					. grupo
+					. projeto
+					. linha
+					. tarefa
+					. data inicio
+					. data fim
+					. duração
+					. profissional
+				. caso deseje ignorar alguma linha/atividade, a coluna grupo deve ser preenchida por '*'
+				. caso deseje que o código encontre o melhor funcionário para executar uma atividade da planilha, a coluna profissional deve ser preenchida por '*'
+				. a coluna grupo deve conter as equipes responsáveis pela atividade separadas por vírgula
+				. a coluna profissionais deve conter os respectivos profissionais já responsáveis pela atividade separados por vírgula
+				. só serão consideradas nos cálculos as atividades que possuem profissionais/equipes presentes na subplanilha de profissionais (acentos e letras maíusculas fazem diferença)
+			. a segunda subplanilha deve estar no formato do exemplo:
+				. a primeira linha com as legendas, nesta ordem (o nome não faz diferença):
+					. nome
+					. equipe/squad
+				. relembrando, os nome e equipes devem estar exatamente iguais em ambas subplanilhas, caso contrário, serão desconsiderados nos cálculos
+	. uma pasta output, na qual vai conter os arquivos de saída
+	
+O código foi feito em python. É necessário ter instalado para compilar o código:
+	. plotly, biblioteca utilizada para os gráficos (sudo pip3 install plotly)
+	. openpyxl, para gerenciamento de planilhas (sudo pip3 install openpyxl)
+	. python 3.6, obviamente para compilar o código (sudo apt-get install python3)
+
+Estruturas de dados utilizadas:
+	. tasks: lista com as tarefas das quais demandam que o código escolha o melhor profissional adequado a ela
+	. input_path: caminho para pasta com arquivo(s) de entrada
+	. output_path: caminho para pasta com arquivo(s) de saída
+	. people: lista de profissionais, onde cada profissional contém:
+		. tasks: índice da tarefa designada ao profissional (linha da planilha)
+		. segtree: árvore de segmentos (com lazy propagation) armazenando as atividades designadas ao profissional:
+			. consulta quantidade de atividades em um range de dias [x, y] em log2(N)
+			. atualiza quantidade de atividades em um range de dias [x, y] em log2(N)
+	. squads: lista de equipes, onde cada equipe contém:
+		. lista de profissionais compondo a equipe
+	. excel_file: arquivo xlsx (arquivo excel contendo as planilhas)
+	. first_date: uma data correspondendo a primeira segunda feira menor ou igual a primeira data das tarefas presentes na planilha
+	. last_date: uma data correspondendo a primeira sexta feira maior ou igual a ultima data das tarefas presentes na planilha
+	. limit: quantidade de dias entre a first_date e last_date, será utilizada para armazenar a quantidade de tarefas desempenhadas em cada dia
+	
+Lógica do código:
+	. inicia-se pela main:
+		. get_sheet_info:
+			. função utilizada para descobrir informações úteis sobre a subplanilha:
+				. excel_file
+				. first_date
+				. last_date
+				. limit
+		. build_people:
+			. função utilizada para descobrir informações sobre profissionais:
+				. identifica as equipes com seus respectivos profissionais
+				. cria uma lista vazia de tarefas para cada profissional
+		. read_sheet:
+			. função utilizada para analisar todas as linhas da planilha (atividades):
+				. caso a coluna profissional já esteja preenchida, a atividade é direcionada para ele
+				. caso a coluna profissional esteja preenchida por '*', a atividade é inserida em uma lista a ser resolvida posteriormente
+		. solve:
+			. função utilizada para escolher o profissional ideal para cada atividade não definida:
+				. a lista é ordenada pela data inicial, ou seja, a primeira atividade a ser processada é a com menor data inicial e a última atividade a ser processada é a com maior data inicial
+				. para cada atividade é escolhido um profissional por equipe, por exemplo:
+					. equipes necessárias para a atividade: (A, B):
+						. é escolhido apenas um profissional da equipe A e outro da equipe B
+					. é escolhido o profissional com menor total de tarefas realizadas no intervalo [x, y], onde x é a data de início da atividade e y é a data final da atividade
+						. o total de tarefas é composto pela quantidade de tarefas diferentes realizadas em cada dia no intervalo [x, y]
+							. por exemplo, seja x = 0, y = 2, tarefas no dia 0 = 1, tarefas no dia 1 = 3, tarefas no dia 2 = 0
+								. total = 1 + 3 + 0 = 4
+			. ao final da função, a planilha estará com a coluna profissional preenchida
+			. um arquivo xlsx será salvo na pasta de output
+		. build_graph:
+			. função utilizada para plotar os gráficos e salvar na pasta de saída:
+				. a função percorre todos os profissionais e suas respectivas tarefas, assim adicionando elas a um gráfico:
+					. cada atividade será inserida em todas as semanas presentes, ou seja, desde a primeira segunda menor ou igual a data de início até a primeira sexta maior ou igual a data final
