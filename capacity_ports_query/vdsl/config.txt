@@ -1,0 +1,3 @@
+current_file = "/home/gardusi/Downloads/current.csv"
+previous_file = "/home/gardusi/Downloads/previous.csv"
+date_difference = "133"
