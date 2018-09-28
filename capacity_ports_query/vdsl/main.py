@@ -1,20 +1,22 @@
-def add_port(filename, regional, locale, station, port):
+def add_port(filename, regional, locale, station, cabinet, port):
 	global database
 	if regional not in database[filename]:
 		database[filename][regional] = {}
 	if locale not in database[filename][regional]:
 		database[filename][regional][locale] = {}
 	if station not in database[filename][regional][locale]:
-		database[filename][regional][locale][station] = {
+		database[filename][regional][locale][station] = {}
+	if cabinet not in database[filename][regional][locale][station]:
+		database[filename][regional][locale][station][cabinet] = {
 			'total': 0,
 			'available': 0,
 			'occupied': 0,
 		}
-	database[filename][regional][locale][station]['total'] += 1
+	database[filename][regional][locale][station][cabinet]['total'] += 1
 	if port > 0:
-		database[filename][regional][locale][station]['available'] += 1
+		database[filename][regional][locale][station][cabinet]['available'] += 1
 	elif port < 0:
-		database[filename][regional][locale][station]['occupied'] += 1
+		database[filename][regional][locale][station][cabinet]['occupied'] += 1
 
 def build_database(current_file):
 	global database
@@ -22,16 +24,18 @@ def build_database(current_file):
 	for regional in database[current_file]:
 			for locale in database[current_file][regional]:
 				for station in database[current_file][regional][locale]:
-					v.append(
-						data(
-							regional,
-							locale,
-							station,
-							database[current_file][regional][locale][station]['total'],
-							database[current_file][regional][locale][station]['available'],
-							database[current_file][regional][locale][station]['occupied'],
+					for cabinet in database[current_file][regional][locale][station]:
+						v.append(
+							data(
+								regional,
+								locale,
+								station,
+								cabinet,
+								database[current_file][regional][locale][station][cabinet]['total'],
+								database[current_file][regional][locale][station][cabinet]['available'],
+								database[current_file][regional][locale][station][cabinet]['occupied'],
+							)
 						)
-					)
 	v.sort()
 	database[current_file] = v
 
@@ -51,7 +55,7 @@ def build_excel_file(current_file, previous_file, date_difference):
 	sheet.cell(row = current_row, column = 1).value = 'Regional'
 	sheet.cell(row = current_row, column = 2).value = 'Localidade'
 	sheet.cell(row = current_row, column = 3).value = 'Estação mãe'
-	sheet.cell(row = current_row, column = 4).value = 'Estação'
+	sheet.cell(row = current_row, column = 4).value = 'Armário'
 	sheet.cell(row = current_row, column = 5).value = 'Total de portas'
 	sheet.cell(row = current_row, column = 6).value = 'Portas disponíveis'
 	sheet.cell(row = current_row, column = 7).value = 'Portas ocupadas'
@@ -64,13 +68,13 @@ def build_excel_file(current_file, previous_file, date_difference):
 		current_row += 1
 		sheet.cell(row = current_row, column = 1).value = i.regional
 		sheet.cell(row = current_row, column = 2).value = i.locale
-		sheet.cell(row = current_row, column = 3).value = ' '.join(i.station.split(' ')[:-1])
-		sheet.cell(row = current_row, column = 4).value = i.station
+		sheet.cell(row = current_row, column = 3).value = i.station
+		sheet.cell(row = current_row, column = 4).value = i.cabinet
 		sheet.cell(row = current_row, column = 5).value = i.total
 		sheet.cell(row = current_row, column = 6).value = i.available
 		sheet.cell(row = current_row, column = 7).value = i.occupied
 		try:
-			before = database[previous_file][i.regional][i.locale][i.station]['occupied']
+			before = database[previous_file][i.regional][i.locale][i.station][i.cabinet]['occupied']
 			median = (i.occupied - before) / (date_difference / 30)
 			sheet.cell(row = current_row, column = 8).value = round(median, 1)
 			if i.available == 0:
@@ -140,10 +144,11 @@ def build_styles():
 	excel_file.add_named_style(normal_style)
 
 class data:
-	def __init__(self, regional, locale, station, total, available, occupied):
+	def __init__(self, regional, locale, station, cabinet, total, available, occupied):
 		self.regional = regional
 		self.locale = locale
 		self.station = station
+		self.cabinet = cabinet
 		self.total = total
 		self.available = available
 		self.occupied = occupied
@@ -154,7 +159,16 @@ class data:
 			return self.regional < other.regional
 		if self.locale != other.locale:
 			return self.locale < other.locale
-		return self.station < other.station
+		if self.station != other.station:
+			return self.station < other.station
+		return self.cabinet < other.cabinet
+		
+def get_cabinet(v):
+	if len(v[ord('U') - ord('A')]) == 0:
+		return v[ord('H') - ord('A')] + ' ARD RR'
+	if v[ord('U') - ord('A')].find('ARD ') == -1:
+		return v[ord('U') - ord('A')] + ' ARD ' + v[ord('V') - ord('A')]
+	return v[ord('U') - ord('A')]
 
 def main():
 	current_file, previous_file, date_difference = read_config_file('config.txt')
@@ -203,8 +217,9 @@ def read_file(filename):
 					regional = str(v[5]).strip()
 					locale = str(v[6]).strip()
 					station = str(v[7]).strip()
+					cabinet = get_cabinet(v)
 					port = +1 if status in available else (-1 if status in occupied else 0)
-					add_port(filename, regional, locale, station, port)
+					add_port(filename, regional, locale, station, cabinet, port)
 	except Exception as e:
 		print(e)
 		print('Failed to read file: ' + filename)
