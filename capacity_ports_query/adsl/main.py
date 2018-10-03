@@ -20,18 +20,18 @@ def build_database(current_file):
 	global database
 	v = []
 	for regional in database[current_file]:
-			for locale in database[current_file][regional]:
-				for station in database[current_file][regional][locale]:
-					v.append(
-						data(
-							regional,
-							locale,
-							station,
-							database[current_file][regional][locale][station]['total'],
-							database[current_file][regional][locale][station]['available'],
-							database[current_file][regional][locale][station]['occupied'],
-						)
+		for locale in database[current_file][regional]:
+			for station in database[current_file][regional][locale]:
+				v.append(
+					data(
+						regional,
+						locale,
+						station,
+						database[current_file][regional][locale][station]['total'],
+						database[current_file][regional][locale][station]['available'],
+						database[current_file][regional][locale][station]['occupied'],
 					)
+				)
 	v.sort()
 	database[current_file] = v
 
