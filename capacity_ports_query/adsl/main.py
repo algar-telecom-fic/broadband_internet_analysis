@@ -90,7 +90,7 @@ def build_excel_file(current_file, previous_file, date_difference):
 		except Exception as e:
 			print(e)
 			sheet.cell(row = current_row, column = 8).value = 'Sem histórico'
-			sheet.cell(row = current_row, column = 9).value = 'Sem histórico'
+			sheet.cell(row = current_row, column = 9).value = 'Esgotado' if i.available == 0 else 'Sem histórico'
 		for j in range(1, columns + 1):
 			sheet.cell(row = current_row, column = j).style = 'normal_style'
 			greatest_column[j] = max(greatest_column[j], len(str(sheet.cell(row = current_row, column = j).value)))
