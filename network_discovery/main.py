@@ -22,12 +22,12 @@ lsp_commands = {
 	os_names[1]: 'show interfaces description | include tt',
 	os_names[2]: 'show int description | include Tu'
 }
-prefixes = ['189.39.3.', '200.225.196.', '200.225.199.', '200.225.200.', '200.225.254.']
 possible_errors = [
+	'Authentication failed',
 	'Error reading SSH protocol banner',
 	'Unable to connect to port 22',
 	'Incompatible version',
-	'timed out'
+	'timed out',
 ]
 
 def build_credentials():
@@ -53,6 +53,13 @@ def build_database():
 	output.sort()
 
 def build_pinged_ips():
+	prefixes = [
+		'189.39.3.',
+		'200.225.196.',
+		'200.225.199.',
+		'200.225.200.',
+		'200.225.254.',
+	]
 	threads = []
 	for i in range(256):
 		suffix = str(i)
@@ -119,10 +126,7 @@ def get_os(host):
 def main():
 	build_pinged_ips()
 	build_credentials()
-
-	#  solve('')
 	build_database()
-
 	for i in output:
 		print(i)
 
@@ -136,27 +140,23 @@ def run_command(host, command):
 	with paramiko.SSHClient() as ssh:
 		ssh.load_system_host_keys()
 		ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-		password_counter = 0
-		while password_counter < 10:
-			try:
-				ssh.connect(host, username = credentials[0], password = credentials[1], timeout = timeout, banner_timeout = timeout, auth_timeout = timeout)
-				stdin, stdout, stderr = ssh.exec_command(command, timeout = timeout)
-				with lock:
-					ans[host]['output'] = []
-					for line in stdout.readlines():
-						line = line.strip()
-						if len(line) > 0:
-							ans[host]['output'].append(line)
-					return
-			except Exception as error:
-				with lock:
-					error_str = str(error)
-					print('******************** Exception on ' + host + ': ' + error_str, file = sys.stderr)
-					for i in possible_errors:
-						if error_str.find(i) != -1:
-							return
-					if error_str.find('Authentication failed') != -1:
-						password_counter += 1
+		try:
+			ssh.connect(host, username = credentials[0], password = credentials[1], timeout = timeout, banner_timeout = timeout, auth_timeout = timeout)
+			stdin, stdout, stderr = ssh.exec_command(command, timeout = timeout)
+			with lock:
+				ans[host]['output'] = []
+				for line in stdout.readlines():
+					line = line.strip()
+					if len(line) > 0:
+						ans[host]['output'].append(line)
+				return
+		except Exception as error:
+			with lock:
+				error_str = str(error)
+				print('******************** Exception on ' + host + ': ' + error_str, file = sys.stderr)
+				for i in possible_errors:
+					if error_str.find(i) != -1:
+						return
 
 def solve(host):
 	with lock:

@@ -1,0 +1,7 @@
+. need cipher, their offer: aes128-cbc,aes192-cbc,aes256-cbc,3des-cbc:
+	. 200.225.196.197
+	. 200.225.196.222
+
+. Error reading SSH protocol banner[Errno 104] Connection reset by peer:
+-> reboot?
+-> ssh 200.225.196.238 my machine
