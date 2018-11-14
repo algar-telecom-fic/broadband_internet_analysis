@@ -1,0 +1,3 @@
+current_file = "/home/gardusi/Dropbox/algar_telecom/capacity_ports_query/hfc/current.csv"
+previous_file = "/home/gardusi/Dropbox/algar_telecom/capacity_ports_query/hfc/previous.csv"
+date_difference = "112"
