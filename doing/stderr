@@ -1,0 +1,423 @@
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.138
+[Errno None] Unable to connect to port 22 on 200.225.196.138
+
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.134
+[Errno None] Unable to connect to port 22 on 200.225.196.134
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+    self._check_banner()
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.49
+[Errno None] Unable to connect to port 22 on 200.225.196.49
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.77
+[Errno None] Unable to connect to port 22 on 200.225.196.77
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.224
+[Errno None] Unable to connect to port 22 on 200.225.196.224
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.181
+[Errno None] Unable to connect to port 22 on 200.225.196.181
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.160
+[Errno None] Unable to connect to port 22 on 200.225.196.160
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.200
+[Errno None] Unable to connect to port 22 on 200.225.196.200
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.237
+[Errno None] Unable to connect to port 22 on 200.225.196.237
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.241
+[Errno None] Unable to connect to port 22 on 200.225.196.241
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.221
+[Errno None] Unable to connect to port 22 on 200.225.196.221
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.197
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.182
+[Errno None] Unable to connect to port 22 on 200.225.196.182
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.21
+[Errno None] Unable to connect to port 22 on 200.225.196.21
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.222
+[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.238
+[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.186
+[Errno None] Unable to connect to port 22 on 200.225.196.186
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.9
+[Errno None] Unable to connect to port 22 on 200.225.199.9
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.253
+[Errno None] Unable to connect to port 22 on 200.225.196.253
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.14
+[Errno None] Unable to connect to port 22 on 200.225.199.14
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.13
+[Errno None] Unable to connect to port 22 on 200.225.199.13
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.161
+[Errno None] Unable to connect to port 22 on 200.225.199.161
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.21
+[Errno None] Unable to connect to port 22 on 200.225.199.21
+Traceback (most recent call last):
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.5
+[Errno None] Unable to connect to port 22 on 200.225.199.5
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.165
+
+    self._check_banner()
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+    buf = self.packetizer.readline(timeout)
+    "Error reading SSH protocol banner" + str(e)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+    buf += self._read_timeout(timeout)
+
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.173
+[Errno None] Unable to connect to port 22 on 200.225.199.173
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.238
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.177
+[Errno None] Unable to connect to port 22 on 200.225.199.177
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.222
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.229
+[Errno None] Unable to connect to port 22 on 200.225.199.229
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.238
+[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.205
+[Errno None] Unable to connect to port 22 on 200.225.199.205
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.245
+[Errno None] Unable to connect to port 22 on 200.225.199.245
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.225
+[Errno None] Unable to connect to port 22 on 200.225.199.225
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.254
+[Errno None] Unable to connect to port 22 on 200.225.199.254
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.222
+[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.6
+[Errno None] Unable to connect to port 22 on 200.225.200.6
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.238
+[Errno 104] Connection reset by peer
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+Exception: Incompatible version (1.5 instead of 2.0)
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.62
+[Errno None] Unable to connect to port 22 on 200.225.200.62
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+    self._check_banner()
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.85
+[Errno None] Unable to connect to port 22 on 200.225.200.85
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2167, in _check_banner
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.94
+[Errno None] Unable to connect to port 22 on 200.225.200.94
+    self._check_banner()
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+    raise SSHException(msg.format(version))
+paramiko.ssh_exception.SSHException: Incompatible version (1.5 instead of 2.0)
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+
+Traceback (most recent call last):
+    "Error reading SSH protocol banner" + str(e)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+    buf = self.packetizer.readline(timeout)
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.82
+Incompatible version (1.5 instead of 2.0)
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+    buf += self._read_timeout(timeout)
+    x = self.__socket.recv(128)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+ConnectionResetError: [Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.238
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+    x = self.__socket.recv(128)
+
+ConnectionResetError: [Errno 104] Connection reset by peer
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+    self._check_banner()
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.74
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.254.22
+[Errno None] Unable to connect to port 22 on 200.225.254.22
+
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2138, in _check_banner
+    buf = self.packetizer.readline(timeout)
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.222
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 367, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/packet.py", line 561, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 1966, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/dist-packages/paramiko/transport.py", line 2143, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.238
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.74
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.254.124
+[Errno None] Unable to connect to port 22 on 200.225.254.124
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.123
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.229
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.237
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.252
+('Bad authentication type', ['publickey']) (allowed_types=['publickey'])
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.73
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.254
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.93
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.69
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.9
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.254.184
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.254.185
+Authentication failed.
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.53
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.196.10
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.77
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.73
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.206
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.199.253
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.1
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.200.129
+timed out
+filename: main.py, function: run_remote_command, line: 125
+hostname: 200.225.254.253
+timed out
+Error in: 200.225.196.10
+Error in: 200.225.196.21
+Error in: 200.225.196.49
+Error in: 200.225.196.53
+Error in: 200.225.196.77
+Error in: 200.225.196.123
+Error in: 200.225.196.134
+Error in: 200.225.196.138
+Error in: 200.225.196.160
+Error in: 200.225.196.181
+Error in: 200.225.196.182
+Error in: 200.225.196.186
+Error in: 200.225.196.200
+Error in: 200.225.196.221
+Error in: 200.225.196.224
+Error in: 200.225.196.229
+Error in: 200.225.196.237
+Error in: 200.225.196.241
+Error in: 200.225.196.253
+Error in: 200.225.199.5
+Error in: 200.225.199.9
+Error in: 200.225.199.13
+Error in: 200.225.199.14
+Error in: 200.225.199.21
+Error in: 200.225.199.73
+Error in: 200.225.199.77
+Error in: 200.225.199.161
+Error in: 200.225.199.165
+Error in: 200.225.199.173
+Error in: 200.225.199.177
+Error in: 200.225.199.205
+Error in: 200.225.199.206
+Error in: 200.225.199.225
+Error in: 200.225.199.229
+Error in: 200.225.199.237
+Error in: 200.225.199.245
+Error in: 200.225.199.252
+Error in: 200.225.199.253
+Error in: 200.225.199.254
+Error in: 200.225.200.1
+Error in: 200.225.200.6
+Error in: 200.225.200.9
+Error in: 200.225.200.62
+Error in: 200.225.200.69
+Error in: 200.225.200.73
+Error in: 200.225.200.82
+Error in: 200.225.200.85
+Error in: 200.225.200.93
+Error in: 200.225.200.94
+Error in: 200.225.200.129
+Error in: 200.225.200.254
+Error in: 200.225.254.22
+Error in: 200.225.254.124
+Error in: 200.225.254.184
+Error in: 200.225.254.185
+Error in: 200.225.254.253
