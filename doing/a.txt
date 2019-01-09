@@ -1,0 +1,3 @@
+arrumar huawei
+pegar o show chassis hardware, filtrando pelos tabs
+organizar tabela

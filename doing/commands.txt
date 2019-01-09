@@ -1,3 +1,0 @@
-pegar todos os router pela loopback com hostname
-fazer um show chassis hardware
-e é isso aí gurizada
