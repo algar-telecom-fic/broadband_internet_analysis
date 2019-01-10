@@ -63,7 +63,12 @@ class servers_structure:
             )
 
     def __get_single_ping(self, ip):
-        result = local_access_run(['/bin/ping', '-c', '1', '-W', '32', ip])
+        result = local_access_run([
+            '/bin/ping',
+            '-c', '1',
+            '-W', '32',
+            ip
+        ])
         try:
             result.check_returncode()
             return True
@@ -92,7 +97,7 @@ class servers_structure:
     def get_all_os(self):
         jobs = []
         for ip, v in self.info.items():
-            if v['ping'] == True:
+            if 'ping' in v and v['ping'] == True:
                 jobs.append([self.__get_single_os, ip])
         results = multi_threaded_execution(jobs)
         for result, job in zip(results, jobs):
@@ -122,7 +127,7 @@ class servers_structure:
     def get_all_loopback(self):
         jobs = []
         for ip, v in self.info.items():
-            if v['os'] != -1:
+            if 'os' in v and v['os'] != -1:
                 jobs.append([self.__get_single_loopback, ip, v['os']])
         results = multi_threaded_execution(jobs)
         for result, job in zip(results, jobs):
@@ -198,6 +203,7 @@ def main():
     equipments.get_all_ping()
     equipments.get_all_os()
     equipments.get_all_loopback()
+    import pprint
     pprint(equipments.info)
     # servers_list.get_all_hardware()
     # servers_list.print_hardware()
