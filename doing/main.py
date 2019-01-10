@@ -107,7 +107,7 @@ class servers_structure:
         result = remote_access_run(ip, self.commands_loopback[os], self.credentials)
         if result != None:
             for s in result:
-                if hash == 0:
+                if os == 0:
                     pos = s.find('address')
                     if pos != -1:
                         for i in range(pos + 8, len(s)):
@@ -166,7 +166,7 @@ class servers_structure:
         for host, hash in self.hosts:
             jobs.append([self.__get_single_hostname, host, hash])
         idx = -1
-        results = multi_threaded_execution(jobs, 256)
+        results = multi_threaded_execution(jobs)
         for result in results:
             idx += 1
             print(
@@ -174,22 +174,11 @@ class servers_structure:
                 file = sys.stderr
             )
             self.hardware.append(results[idx])
-        print()
 
-    # def print(self):
-    #     for ip, v in self.info.items():
-    #         print('ip: ' + str(ip)
-    #     idx = -1
-    #     for host in self.hosts:
-    #         idx += 1
-    #         if idx > 0:
-    #             print()
-    #         print(host[0] + ': ')
-    #         if self.hardware[idx] == None:
-    #             print(str(self.hardware[idx]))
-    #         else:
-    #             for j in self.hardware[idx]:
-    #                 print(j, end = '')
+    def print(self):
+        for ip, v in self.info.items():
+            print('ip: ' + ip)
+            print('\t' + str(v))
 
 def local_access_run(command):
     return subprocess.run(
@@ -203,11 +192,10 @@ def main():
     equipments.get_all_ping()
     equipments.get_all_os()
     equipments.get_all_loopback()
-    import pprint
-    pprint(equipments.info)
+    equipments.get_all_hostname()
+    equipments.print()
     # servers_list.get_all_hardware()
     # servers_list.print_hardware()
-    # servers_list.get_all_hostname()
 
 def multi_threaded_execution(jobs, workers = 256):
     ans = []
