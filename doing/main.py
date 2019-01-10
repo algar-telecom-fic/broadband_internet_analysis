@@ -46,10 +46,14 @@ class servers_structure:
             'IOS Software': 2,
             'HUAWEI': 3,
         }
+        self.info = {}
+        for prefix in self.ip_prefixes:
+            for suffix in range(256):
+                self.info[prefix + str(suffix)] = {}
         try:
             with open(filename, 'r') as file:
-                self.credentials = []
                 v = file.readlines()
+                self.credentials = []
                 for i in range(2):
                     self.credentials.append(v[i].split('\'')[1].strip())
         except FileNotFoundError:
@@ -58,38 +62,26 @@ class servers_structure:
                 file = sys.stderr
             )
 
-    def __ping_single_ip(self, host):
-        result = local_access_run(['/bin/ping', '-c', '1', '-W', '32', host])
+    def __get_single_ping(self, ip):
+        result = local_access_run(['/bin/ping', '-c', '1', '-W', '32', ip])
         try:
             result.check_returncode()
             return True
         except subprocess.CalledProcessError:
             return False
 
-    def ping_all_prefix_ips(self):
-        self.hosts = []
-        for prefix in self.ip_prefixes:
-            for suffix in range(256):
-                self.hosts.append(prefix + str(suffix))
-        job_list = []
-        for host in self.hosts:
-            job_list.append([self.__ping_single_ip, host])
-        ans = []
-        idx = -1
-        results = multi_threaded_execution(256, job_list)
-        for result in results:
-            idx += 1
-            print(
-                'host: ' + self.hosts[idx] + ', ping: ' + str(result),
-                file = sys.stderr
-            )
+    def get_all_ping(self):
+        jobs = []
+        for ip in self.info:
+            jobs.append([self.__ping_single, ip])
+        results = multi_threaded_execution(jobs)
+        for result, job in zip(results, jobs):
             if result == True:
-                ans.append(self.hosts[idx])
-        self.hosts = ans
+                self.info[job[1]]['ping'] = True
 
-    def __get_os_single_ip(self, host):
+    def __get_single_os(self, ip):
         for command in self.commands_os:
-            output = remote_access_run(host, command, self.credentials)
+            output = remote_access_run(ip, command, self.credentials)
             if output == None:
                 continue
             for os, hash in self.operational_systems.items():
@@ -98,23 +90,15 @@ class servers_structure:
                         return hash
         return None
 
-    def get_os_all_ips(self):
-        job_list = []
-        for host in self.hosts:
-            job_list.append([self.__get_os_single_ip, host])
-        ans = []
-        idx = -1
-        results = multi_threaded_execution(256, job_list)
-        for result in results:
-            idx += 1
-            print(
-                'host: ' + self.hosts[idx] + ', os: ' + str(result != None),
-                file = sys.stderr
-            )
-            if results[idx] == None:
-                continue
-            ans.append((self.hosts[idx], results[idx]))
-        self.hosts = ans
+    def get_all_os(self):
+        jobs = []
+        for ip, v in self.info.items():
+            if 'ping' in v:
+                jobs.append([self.__get_single_os, ip])
+        results = multi_threaded_execution(jobs)
+        for result, job in zip(results, jobs):
+            if result != None:
+                self.info[job[1]]['os'] = result
 
     def __get_single_loopback(self, host, hash):
         result = remote_access_run(host, self.commands_loopback[hash], self.credentials)
@@ -139,18 +123,15 @@ class servers_structure:
         return None
 
     def get_all_loopback(self):
-        job_list = []
+        jobs = []
         for host, hash in self.hosts:
-            job_list.append([self.__get_single_loopback, host, hash])
+            jobs.append([self.__get_single_loopback, host, hash])
         ans = []
         idx = -1
-        results = multi_threaded_execution(256, job_list)
+        results = multi_threaded_execution(jobs, 256)
         for result in results:
             idx += 1
-            print(
-                'host: ' + self.hosts[idx][0] + ', loopback: ' + str(result == self.hosts[idx][0]),
-                file = sys.stderr
-            )
+            print('host: ' + self.hosts[idx][0] + ', loopback: ' + str(result == self.hosts[idx][0]), file = sys.stderr)
             if results[idx] == self.hosts[idx][0]:
                 ans.append(self.hosts[idx])
         self.hosts = ans
@@ -161,12 +142,12 @@ class servers_structure:
         return None
 
     def get_all_hardware(self):
-        job_list = []
+        jobs = []
         for host, hash in self.hosts:
-            job_list.append([self.__get_single_hardware, host, hash])
+            jobs.append([self.__get_single_hardware, host, hash])
         self.hardware = []
         idx = -1
-        results = multi_threaded_execution(256, job_list)
+        results = multi_threaded_execution(jobs, 256)
         for result in results:
             idx += 1
             print(
@@ -175,42 +156,59 @@ class servers_structure:
             )
             self.hardware.append(results[idx])
 
+    def get_single_hostname(self):
+        result = local_access_run(['snmpget', '-v', '2c', '-c', 'V01prO2005', '189.39.3.1', 'sysName.0'])
+        return result.stdout.decode('utf-8').strip()
+
+    def get_all_hostname(self):
+        jobs = []
+        for host, hash in self.hosts:
+            jobs.append([self.__get_single_hostname, host, hash])
+        idx = -1
+        results = multi_threaded_execution(jobs, 256)
+        for result in results:
+            idx += 1
+            print(
+                'host: ' + self.hosts[idx][0] + ', hardware: ' + str(result != None),
+                file = sys.stderr
+            )
+            self.hardware.append(results[idx])
+        print()
+
+    def print_hardware(self):
+        idx = -1
+        for host in self.hosts:
+            idx += 1
+            if idx > 0:
+                print()
+            print(host[0] + ': ')
+            if self.hardware[idx] == None:
+                print(str(self.hardware[idx]))
+            else:
+                for j in self.hardware[idx]:
+                    print(j, end = '')
+
+def local_access_run(command):
+    return subprocess.run(
+        args = command,
+        stdout = subprocess.PIPE,
+        stderr = subprocess.STDOUT,
+    )
+
 def main():
     servers_list = servers_structure(input())
-
     servers_list.ping_all_prefix_ips()
-
-    print('ping_all_prefix_ips:')
-    for i in servers_list.hosts:
-        print(i)
-    print()
-
-    servers_list.get_os_all_ips()
-
-    print('get_os_all_ips:')
-    for i in servers_list.hosts:
-        print(i)
-
-
+    servers_list.get_all_os()
     servers_list.get_all_loopback()
-
-    for i in servers_list.hosts:
-        print(i)
-    print()
-
     servers_list.get_all_hardware()
+    servers_list.print_hardware()
+    servers_list.get_all_hostname()
 
-    idx = -1
-    for i in range(len(servers_list.hosts)):
-        idx += 1
-        print(servers_list.hosts[idx][0] + ': ' + str(servers_list.hardware[idx]))
-    print()
-
-def multi_threaded_execution(workers, job_list):
+def multi_threaded_execution(jobs, workers):
     ans = []
     threads = []
     with ThreadPoolExecutor(max_workers = workers) as executor:
-        for parameters in job_list:
+        for parameters in jobs:
             threads.append(
                 executor.submit(
                     parameters[0],
@@ -220,13 +218,6 @@ def multi_threaded_execution(workers, job_list):
     for thread in threads:
         ans.append(thread.result())
     return ans
-
-def local_access_run(command):
-    return subprocess.run(
-        args = command,
-        stdout = subprocess.PIPE,
-        stderr = subprocess.STDOUT,
-    )
 
 def remote_access_run(hostname, command, credentials):
     allowed_errors = [
@@ -255,7 +246,7 @@ def remote_access_run(hostname, command, credentials):
                 )
                 ans = []
                 for line in stdout.readlines():
-                    ans.append(line.strip())
+                    ans.append(line)
                 return ans
             except Exception as exception:
                 allowed = False
