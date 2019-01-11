@@ -191,7 +191,7 @@ def main():
   equipments.get_all_hostname()
   # equipments.get_all_hardware()
   equipments.print()
-  dabase_insertion(equipments.info)
+  database_insertion(equipments.info)
   
 def database_insertion(info):
   with pymongo.MongoClient() as client:
