@@ -92,7 +92,14 @@ class servers_structure:
       'display version',
       'show version',
     ]
+    self.convert_os = [
+      'juniper',
+      'cisco-xr',
+      'cisco-xe',
+      'huawei',
+    ]
     self.credentials = []
+    self.info = {}
     self.ip_prefixes = [
       '189.39.3.',
       '200.225.196.',
@@ -106,7 +113,6 @@ class servers_structure:
       'IOS Software': 2,
       'HUAWEI': 3,
     }
-    self.info = {}
     for prefix in self.ip_prefixes:
       for suffix in range(256):
         self.info[prefix + str(suffix)] = {
@@ -172,6 +178,7 @@ class servers_structure:
     results = multi_threaded_execution(jobs)
     for result, job in zip(results, jobs):
       self.info[job[1]]['os'] = result
+      self.info[job[1]]['manufacturer'] = self.convert_os[result] if result >= 0 else None
 
   def get_all_ping(self):
     jobs = []
@@ -211,7 +218,7 @@ def database_insertion(info):
       if v['valid'] == True:
         document = {
           'ip': ip,
-          'manufacturer': '',
+          'manufacturer': v['manufacturer'],
           'model': v['model'],
           'nickname': v['nickname'],
           'area': v['area'],
