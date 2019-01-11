@@ -1,8 +1,9 @@
-import paramiko
-import threading
-import subprocess
-from os import sys
 from concurrent.futures import ThreadPoolExecutor
+from os import sys
+import paramiko
+import pymongo
+import subprocess
+import threading
 
 lock = threading.Lock()
 
@@ -190,6 +191,17 @@ def main():
   equipments.get_all_hostname()
   # equipments.get_all_hardware()
   equipments.print()
+  dabase_insertion(equipments.info)
+  
+def database_insertion(info):
+  with pymongo.MongoClient() as client:
+    database = client.banquim_de_breja
+    collection = database.breja
+    for ip, v in info.items():
+      if 'hostname' in v:
+        aux = v
+        aux['ip'] = ip
+        collection.insert_one(aux)
 
 def multi_threaded_execution(jobs, workers = 256):
   ans = []
