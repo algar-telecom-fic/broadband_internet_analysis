@@ -140,9 +140,9 @@ class servers_structure:
     for ip, v in self.info.items():
       if 'loopback' in v and v['loopback'] == True:
         jobs.append([self.__get_single_hostname, ip])
-        results = multi_threaded_execution(jobs)
-        for result, job in zip(results, jobs):
-          self.info[job[1]]['hostname'] = result
+    results = multi_threaded_execution(jobs)
+    for result, job in zip(results, jobs):
+      self.info[job[1]]['hostname'] = result
 
   def get_all_loopback(self):
     jobs = []
