@@ -1,0 +1,2560 @@
+ip: 189.39.3.0
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.0.'}
+ip: 189.39.3.1
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-021-piacmx960-01-re0'}
+ip: 189.39.3.2
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.2.'}
+ip: 189.39.3.3
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-022-piabmx480-01'}
+ip: 189.39.3.4
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bre-511-mx480-01-re0'}
+ip: 189.39.3.5
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-019-piafmx960-01'}
+ip: 189.39.3.6
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-gna-001-mx480-a'}
+ip: 189.39.3.7
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-516-tivitmx480-01-re0'}
+ip: 189.39.3.8
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.8.'}
+ip: 189.39.3.9
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-031-tatuapemx80-01'}
+ip: 189.39.3.10
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-019-piafmx480-01-re0'}
+ip: 189.39.3.11
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.11.'}
+ip: 189.39.3.12
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-028-piagmx480-01'}
+ip: 189.39.3.13
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.13.'}
+ip: 189.39.3.14
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.14.'}
+ip: 189.39.3.15
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.15.'}
+ip: 189.39.3.16
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.16.'}
+ip: 189.39.3.17
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.17.'}
+ip: 189.39.3.18
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.18.'}
+ip: 189.39.3.19
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.19.'}
+ip: 189.39.3.20
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.20.'}
+ip: 189.39.3.21
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.21.'}
+ip: 189.39.3.22
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.22.'}
+ip: 189.39.3.23
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.23.'}
+ip: 189.39.3.24
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.24.'}
+ip: 189.39.3.25
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.25.'}
+ip: 189.39.3.26
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.26.'}
+ip: 189.39.3.27
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.27.'}
+ip: 189.39.3.28
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.28.'}
+ip: 189.39.3.29
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.29.'}
+ip: 189.39.3.30
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.30.'}
+ip: 189.39.3.31
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.31.'}
+ip: 189.39.3.32
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.32.'}
+ip: 189.39.3.33
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.33.'}
+ip: 189.39.3.34
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.34.'}
+ip: 189.39.3.35
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.35.'}
+ip: 189.39.3.36
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.36.'}
+ip: 189.39.3.37
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.37.'}
+ip: 189.39.3.38
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.38.'}
+ip: 189.39.3.39
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.39.'}
+ip: 189.39.3.40
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.40.'}
+ip: 189.39.3.41
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.41.'}
+ip: 189.39.3.42
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.42.'}
+ip: 189.39.3.43
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.43.'}
+ip: 189.39.3.44
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.44.'}
+ip: 189.39.3.45
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.45.'}
+ip: 189.39.3.46
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.46.'}
+ip: 189.39.3.47
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.47.'}
+ip: 189.39.3.48
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.48.'}
+ip: 189.39.3.49
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.49.'}
+ip: 189.39.3.50
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.50.'}
+ip: 189.39.3.51
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.51.'}
+ip: 189.39.3.52
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.52.'}
+ip: 189.39.3.53
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.53.'}
+ip: 189.39.3.54
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.54.'}
+ip: 189.39.3.55
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.55.'}
+ip: 189.39.3.56
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.56.'}
+ip: 189.39.3.57
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.57.'}
+ip: 189.39.3.58
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.58.'}
+ip: 189.39.3.59
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.59.'}
+ip: 189.39.3.60
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.60.'}
+ip: 189.39.3.61
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.61.'}
+ip: 189.39.3.62
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.62.'}
+ip: 189.39.3.63
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.63.'}
+ip: 189.39.3.64
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.64.'}
+ip: 189.39.3.65
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.65.'}
+ip: 189.39.3.66
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.66.'}
+ip: 189.39.3.67
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.67.'}
+ip: 189.39.3.68
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.68.'}
+ip: 189.39.3.69
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.69.'}
+ip: 189.39.3.70
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.70.'}
+ip: 189.39.3.71
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.71.'}
+ip: 189.39.3.72
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.72.'}
+ip: 189.39.3.73
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.73.'}
+ip: 189.39.3.74
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.74.'}
+ip: 189.39.3.75
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.75.'}
+ip: 189.39.3.76
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.76.'}
+ip: 189.39.3.77
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.77.'}
+ip: 189.39.3.78
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.78.'}
+ip: 189.39.3.79
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.79.'}
+ip: 189.39.3.80
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.80.'}
+ip: 189.39.3.81
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.81.'}
+ip: 189.39.3.82
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.82.'}
+ip: 189.39.3.83
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.83.'}
+ip: 189.39.3.84
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.84.'}
+ip: 189.39.3.85
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.85.'}
+ip: 189.39.3.86
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.86.'}
+ip: 189.39.3.87
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.87.'}
+ip: 189.39.3.88
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.88.'}
+ip: 189.39.3.89
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.89.'}
+ip: 189.39.3.90
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.90.'}
+ip: 189.39.3.91
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.91.'}
+ip: 189.39.3.92
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.92.'}
+ip: 189.39.3.93
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.93.'}
+ip: 189.39.3.94
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.94.'}
+ip: 189.39.3.95
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.95.'}
+ip: 189.39.3.96
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.96.'}
+ip: 189.39.3.97
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.97.'}
+ip: 189.39.3.98
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.98.'}
+ip: 189.39.3.99
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.99.'}
+ip: 189.39.3.100
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.100.'}
+ip: 189.39.3.101
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.101.'}
+ip: 189.39.3.102
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.102.'}
+ip: 189.39.3.103
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.103.'}
+ip: 189.39.3.104
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.104.'}
+ip: 189.39.3.105
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.105.'}
+ip: 189.39.3.106
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.106.'}
+ip: 189.39.3.107
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.107.'}
+ip: 189.39.3.108
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.108.'}
+ip: 189.39.3.109
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.109.'}
+ip: 189.39.3.110
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.110.'}
+ip: 189.39.3.111
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.111.'}
+ip: 189.39.3.112
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.112.'}
+ip: 189.39.3.113
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.113.'}
+ip: 189.39.3.114
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.114.'}
+ip: 189.39.3.115
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.115.'}
+ip: 189.39.3.116
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.116.'}
+ip: 189.39.3.117
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.117.'}
+ip: 189.39.3.118
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.118.'}
+ip: 189.39.3.119
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.119.'}
+ip: 189.39.3.120
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.120.'}
+ip: 189.39.3.121
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.121.'}
+ip: 189.39.3.122
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.122.'}
+ip: 189.39.3.123
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.123.'}
+ip: 189.39.3.124
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.124.'}
+ip: 189.39.3.125
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.125.'}
+ip: 189.39.3.126
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.126.'}
+ip: 189.39.3.127
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.127.'}
+ip: 189.39.3.128
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.128.'}
+ip: 189.39.3.129
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.129.'}
+ip: 189.39.3.130
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.130.'}
+ip: 189.39.3.131
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.131.'}
+ip: 189.39.3.132
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.132.'}
+ip: 189.39.3.133
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.133.'}
+ip: 189.39.3.134
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.134.'}
+ip: 189.39.3.135
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.135.'}
+ip: 189.39.3.136
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.136.'}
+ip: 189.39.3.137
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.137.'}
+ip: 189.39.3.138
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.138.'}
+ip: 189.39.3.139
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.139.'}
+ip: 189.39.3.140
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.140.'}
+ip: 189.39.3.141
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.141.'}
+ip: 189.39.3.142
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.142.'}
+ip: 189.39.3.143
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.143.'}
+ip: 189.39.3.144
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.144.'}
+ip: 189.39.3.145
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.145.'}
+ip: 189.39.3.146
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.146.'}
+ip: 189.39.3.147
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.147.'}
+ip: 189.39.3.148
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.148.'}
+ip: 189.39.3.149
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.149.'}
+ip: 189.39.3.150
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.150.'}
+ip: 189.39.3.151
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.151.'}
+ip: 189.39.3.152
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.152.'}
+ip: 189.39.3.153
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.153.'}
+ip: 189.39.3.154
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.154.'}
+ip: 189.39.3.155
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.155.'}
+ip: 189.39.3.156
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.156.'}
+ip: 189.39.3.157
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.157.'}
+ip: 189.39.3.158
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.158.'}
+ip: 189.39.3.159
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.159.'}
+ip: 189.39.3.160
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.160.'}
+ip: 189.39.3.161
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.161.'}
+ip: 189.39.3.162
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.162.'}
+ip: 189.39.3.163
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.163.'}
+ip: 189.39.3.164
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.164.'}
+ip: 189.39.3.165
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.165.'}
+ip: 189.39.3.166
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.166.'}
+ip: 189.39.3.167
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.167.'}
+ip: 189.39.3.168
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.168.'}
+ip: 189.39.3.169
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.169.'}
+ip: 189.39.3.170
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.170.'}
+ip: 189.39.3.171
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.171.'}
+ip: 189.39.3.172
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.172.'}
+ip: 189.39.3.173
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.173.'}
+ip: 189.39.3.174
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.174.'}
+ip: 189.39.3.175
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.175.'}
+ip: 189.39.3.176
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.176.'}
+ip: 189.39.3.177
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.177.'}
+ip: 189.39.3.178
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.178.'}
+ip: 189.39.3.179
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.179.'}
+ip: 189.39.3.180
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.180.'}
+ip: 189.39.3.181
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.181.'}
+ip: 189.39.3.182
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.182.'}
+ip: 189.39.3.183
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.183.'}
+ip: 189.39.3.184
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.184.'}
+ip: 189.39.3.185
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.185.'}
+ip: 189.39.3.186
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.186.'}
+ip: 189.39.3.187
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.187.'}
+ip: 189.39.3.188
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.188.'}
+ip: 189.39.3.189
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.189.'}
+ip: 189.39.3.190
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.190.'}
+ip: 189.39.3.191
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.191.'}
+ip: 189.39.3.192
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.192.'}
+ip: 189.39.3.193
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.193.'}
+ip: 189.39.3.194
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.194.'}
+ip: 189.39.3.195
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.195.'}
+ip: 189.39.3.196
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.196.'}
+ip: 189.39.3.197
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.197.'}
+ip: 189.39.3.198
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.198.'}
+ip: 189.39.3.199
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.199.'}
+ip: 189.39.3.200
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.200.'}
+ip: 189.39.3.201
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.201.'}
+ip: 189.39.3.202
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.202.'}
+ip: 189.39.3.203
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.203.'}
+ip: 189.39.3.204
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.204.'}
+ip: 189.39.3.205
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.205.'}
+ip: 189.39.3.206
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.206.'}
+ip: 189.39.3.207
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.207.'}
+ip: 189.39.3.208
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.208.'}
+ip: 189.39.3.209
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.209.'}
+ip: 189.39.3.210
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.210.'}
+ip: 189.39.3.211
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.211.'}
+ip: 189.39.3.212
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.212.'}
+ip: 189.39.3.213
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.213.'}
+ip: 189.39.3.214
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.214.'}
+ip: 189.39.3.215
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.215.'}
+ip: 189.39.3.216
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.216.'}
+ip: 189.39.3.217
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.217.'}
+ip: 189.39.3.218
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.218.'}
+ip: 189.39.3.219
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.219.'}
+ip: 189.39.3.220
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.220.'}
+ip: 189.39.3.221
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.221.'}
+ip: 189.39.3.222
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.222.'}
+ip: 189.39.3.223
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.223.'}
+ip: 189.39.3.224
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.224.'}
+ip: 189.39.3.225
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.225.'}
+ip: 189.39.3.226
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.226.'}
+ip: 189.39.3.227
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.227.'}
+ip: 189.39.3.228
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.228.'}
+ip: 189.39.3.229
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.229.'}
+ip: 189.39.3.230
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.230.'}
+ip: 189.39.3.231
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.231.'}
+ip: 189.39.3.232
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.232.'}
+ip: 189.39.3.233
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.233.'}
+ip: 189.39.3.234
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.234.'}
+ip: 189.39.3.235
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.235.'}
+ip: 189.39.3.236
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.236.'}
+ip: 189.39.3.237
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.237.'}
+ip: 189.39.3.238
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.238.'}
+ip: 189.39.3.239
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.239.'}
+ip: 189.39.3.240
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.240.'}
+ip: 189.39.3.241
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.241.'}
+ip: 189.39.3.242
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.242.'}
+ip: 189.39.3.243
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.243.'}
+ip: 189.39.3.244
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.244.'}
+ip: 189.39.3.245
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.245.'}
+ip: 189.39.3.246
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.246.'}
+ip: 189.39.3.247
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.247.'}
+ip: 189.39.3.248
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.248.'}
+ip: 189.39.3.249
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.249.'}
+ip: 189.39.3.250
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.250.'}
+ip: 189.39.3.251
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.251.'}
+ip: 189.39.3.252
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.252.'}
+ip: 189.39.3.253
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.253.'}
+ip: 189.39.3.254
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.254.'}
+ip: 189.39.3.255
+	{'ping': False, 'hostname': 'Timeout: No Response from 189.39.3.255.'}
+ip: 200.225.196.0
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.0.'}
+ip: 200.225.196.1
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-ula-001-brasmx480-re0'}
+ip: 200.225.196.2
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bsa-501-mx480-re0'}
+ip: 200.225.196.3
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-prs-001-m10i-re0'}
+ip: 200.225.196.4
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-511-asr9006-01.ctbc.com.br'}
+ip: 200.225.196.5
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-iub-001-m10i-01'}
+ip: 200.225.196.6
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-gir-001-mx80'}
+ip: 200.225.196.7
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-iua-001-m10i-01'}
+ip: 200.225.196.8
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-sts-002-mx80'}
+ip: 200.225.196.9
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-btu-001-mx80'}
+ip: 200.225.196.10
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.10.'}
+ip: 200.225.196.11
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.11.'}
+ip: 200.225.196.12
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bca-511-mx480a-re0'}
+ip: 200.225.196.13
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.196.13.'}
+ip: 200.225.196.14
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fac-004-mx104'}
+ip: 200.225.196.15
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: d-me-rt-pms-001-centro-01.ctb.com.br'}
+ip: 200.225.196.16
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.16.'}
+ip: 200.225.196.17
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-m120-02'}
+ip: 200.225.196.18
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: d-me-rt-iua-001-centro-01.ctbc.com.br'}
+ip: 200.225.196.19
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-511-mx480-01-re0'}
+ip: 200.225.196.20
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.20.'}
+ip: 200.225.196.21
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.21.'}
+ip: 200.225.196.22
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-jai-004-mx204-01'}
+ip: 200.225.196.23
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.23.'}
+ip: 200.225.196.24
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.24.'}
+ip: 200.225.196.25
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.25.'}
+ip: 200.225.196.26
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.26.'}
+ip: 200.225.196.27
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.27.'}
+ip: 200.225.196.28
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.28.'}
+ip: 200.225.196.29
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rpo-001-mx480-01-re0'}
+ip: 200.225.196.30
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bhe-515-m120i-01-re0'}
+ip: 200.225.196.31
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.31.'}
+ip: 200.225.196.32
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.32.'}
+ip: 200.225.196.33
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.33.'}
+ip: 200.225.196.34
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.34.'}
+ip: 200.225.196.35
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.35.'}
+ip: 200.225.196.36
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.36.'}
+ip: 200.225.196.37
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.37.'}
+ip: 200.225.196.38
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.38.'}
+ip: 200.225.196.39
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.39.'}
+ip: 200.225.196.40
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.40.'}
+ip: 200.225.196.41
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.41.'}
+ip: 200.225.196.42
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.42.'}
+ip: 200.225.196.43
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.43.'}
+ip: 200.225.196.44
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.44.'}
+ip: 200.225.196.45
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.45.'}
+ip: 200.225.196.46
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.46.'}
+ip: 200.225.196.47
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.47.'}
+ip: 200.225.196.48
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fac-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.49
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.49.'}
+ip: 200.225.196.50
+	{'ping': True, 'os': 1, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fac-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.51
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fac-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.52
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.52.'}
+ip: 200.225.196.53
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.53.'}
+ip: 200.225.196.54
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cta-511-mx480a-re0'}
+ip: 200.225.196.55
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.55.'}
+ip: 200.225.196.56
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.56.'}
+ip: 200.225.196.57
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.57.'}
+ip: 200.225.196.58
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-mx80a6andar-01'}
+ip: 200.225.196.59
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.59.'}
+ip: 200.225.196.60
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.60.'}
+ip: 200.225.196.61
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.61.'}
+ip: 200.225.196.62
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.62.'}
+ip: 200.225.196.63
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.63.'}
+ip: 200.225.196.64
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.64.'}
+ip: 200.225.196.65
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-mx80b6andar-02'}
+ip: 200.225.196.66
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-301-mx80image-01'}
+ip: 200.225.196.67
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-158-mx80pqdeantenas-01'}
+ip: 200.225.196.68
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.68.'}
+ip: 200.225.196.69
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.69.'}
+ip: 200.225.196.70
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-mih-503-asr9001a.ctbc.com.br'}
+ip: 200.225.196.71
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.71.'}
+ip: 200.225.196.72
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cta-012-asr9001a.ctbc.com.br'}
+ip: 200.225.196.73
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.73.'}
+ip: 200.225.196.74
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.74.'}
+ip: 200.225.196.75
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.75.'}
+ip: 200.225.196.76
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.76.'}
+ip: 200.225.196.77
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.77.'}
+ip: 200.225.196.78
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'Timeout: No Response from 200.225.196.78.'}
+ip: 200.225.196.79
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.79.'}
+ip: 200.225.196.80
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.80.'}
+ip: 200.225.196.81
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.81.'}
+ip: 200.225.196.82
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.82.'}
+ip: 200.225.196.83
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.83.'}
+ip: 200.225.196.84
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.84.'}
+ip: 200.225.196.85
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.85.'}
+ip: 200.225.196.86
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.86.'}
+ip: 200.225.196.87
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.87.'}
+ip: 200.225.196.88
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-ula-003-brasmx480-re0'}
+ip: 200.225.196.89
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bhe-515-mx960'}
+ip: 200.225.196.90
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.90.'}
+ip: 200.225.196.91
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.91.'}
+ip: 200.225.196.92
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.92.'}
+ip: 200.225.196.93
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-aas-001-mx80'}
+ip: 200.225.196.94
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.94.'}
+ip: 200.225.196.95
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.95.'}
+ip: 200.225.196.96
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-dvl-028-mx80-01'}
+ip: 200.225.196.97
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.97.'}
+ip: 200.225.196.98
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-srr-004-mx480a-re0'}
+ip: 200.225.196.99
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-sjc-001-mx80-01'}
+ip: 200.225.196.100
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.100.'}
+ip: 200.225.196.101
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.101.'}
+ip: 200.225.196.102
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-511-cenesp-mx480-01-re0'}
+ip: 200.225.196.103
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-511-m120-re0'}
+ip: 200.225.196.104
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rpo-008-m10i'}
+ip: 200.225.196.105
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.105.'}
+ip: 200.225.196.106
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-512-m10i'}
+ip: 200.225.196.107
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-009-asr9001-01.GERENCIA'}
+ip: 200.225.196.108
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.108.'}
+ip: 200.225.196.109
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.109.'}
+ip: 200.225.196.110
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.110.'}
+ip: 200.225.196.111
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.111.'}
+ip: 200.225.196.112
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.112.'}
+ip: 200.225.196.113
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.113.'}
+ip: 200.225.196.114
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.114.'}
+ip: 200.225.196.115
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.115.'}
+ip: 200.225.196.116
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.116.'}
+ip: 200.225.196.117
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.117.'}
+ip: 200.225.196.118
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.118.'}
+ip: 200.225.196.119
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.119.'}
+ip: 200.225.196.120
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.120.'}
+ip: 200.225.196.121
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.121.'}
+ip: 200.225.196.122
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.122.'}
+ip: 200.225.196.123
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.123.'}
+ip: 200.225.196.124
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.124.'}
+ip: 200.225.196.125
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-iua-001-asr9001a.ctbc.com.br'}
+ip: 200.225.196.126
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.126.'}
+ip: 200.225.196.127
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.127.'}
+ip: 200.225.196.128
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.128.'}
+ip: 200.225.196.129
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.129.'}
+ip: 200.225.196.130
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.130.'}
+ip: 200.225.196.131
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.131.'}
+ip: 200.225.196.132
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.132.'}
+ip: 200.225.196.133
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.133.'}
+ip: 200.225.196.134
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.134.'}
+ip: 200.225.196.135
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.135.'}
+ip: 200.225.196.136
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ctd-mx104a-01'}
+ip: 200.225.196.137
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-mom-001-mx80a'}
+ip: 200.225.196.138
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.138.'}
+ip: 200.225.196.139
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-scl-001-mx80a'}
+ip: 200.225.196.140
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-arq-005-mx80a'}
+ip: 200.225.196.141
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.141.'}
+ip: 200.225.196.142
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.142.'}
+ip: 200.225.196.143
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.143.'}
+ip: 200.225.196.144
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.144.'}
+ip: 200.225.196.145
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.145.'}
+ip: 200.225.196.146
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.146.'}
+ip: 200.225.196.147
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.147.'}
+ip: 200.225.196.148
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.148.'}
+ip: 200.225.196.149
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.149.'}
+ip: 200.225.196.150
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-fac-001-mx480a-re0'}
+ip: 200.225.196.151
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.151.'}
+ip: 200.225.196.152
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.152.'}
+ip: 200.225.196.153
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.153.'}
+ip: 200.225.196.154
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.154.'}
+ip: 200.225.196.155
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.155.'}
+ip: 200.225.196.156
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.156.'}
+ip: 200.225.196.157
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.157.'}
+ip: 200.225.196.158
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.158.'}
+ip: 200.225.196.159
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-pms-001-asr1002.ctbc'}
+ip: 200.225.196.160
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.160.'}
+ip: 200.225.196.161
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.161.'}
+ip: 200.225.196.162
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bsa-001-mx80'}
+ip: 200.225.196.163
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ura-001-asr1004.ctbc.com.br'}
+ip: 200.225.196.164
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-511-m7i'}
+ip: 200.225.196.165
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.165.'}
+ip: 200.225.196.166
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.166.'}
+ip: 200.225.196.167
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.167.'}
+ip: 200.225.196.168
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.196.168.'}
+ip: 200.225.196.169
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ptc-001-mx104'}
+ip: 200.225.196.170
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.196.170.'}
+ip: 200.225.196.171
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.171.'}
+ip: 200.225.196.172
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-pms-001-mx104-re0'}
+ip: 200.225.196.173
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.173.'}
+ip: 200.225.196.174
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-002-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.175
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-003-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.176
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.176.'}
+ip: 200.225.196.177
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: d-me-rt-iub-001-centro-02.ctbc.com.br'}
+ip: 200.225.196.178
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ura-001-asr9010-01'}
+ip: 200.225.196.179
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ura-002-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.180
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.180.'}
+ip: 200.225.196.181
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.181.'}
+ip: 200.225.196.182
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.182.'}
+ip: 200.225.196.183
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.183.'}
+ip: 200.225.196.184
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.184.'}
+ip: 200.225.196.185
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.185.'}
+ip: 200.225.196.186
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.186.'}
+ip: 200.225.196.187
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fac-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.196.188
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.188.'}
+ip: 200.225.196.189
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.189.'}
+ip: 200.225.196.190
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.196.191
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.192
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.192.'}
+ip: 200.225.196.193
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.193.'}
+ip: 200.225.196.194
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.194.'}
+ip: 200.225.196.195
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.195.'}
+ip: 200.225.196.196
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.196.'}
+ip: 200.225.196.197
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fac-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.198
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: d-me-rt-prs-001-centro-01.algartelecom.com.br'}
+ip: 200.225.196.199
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.199.'}
+ip: 200.225.196.200
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.200.'}
+ip: 200.225.196.201
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-fac-001-brasmx480-re0'}
+ip: 200.225.196.202
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.202.'}
+ip: 200.225.196.203
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-fac-001-brasmx480b-re0'}
+ip: 200.225.196.204
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-pms-001-brasmx480b-re0'}
+ip: 200.225.196.205
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.205.'}
+ip: 200.225.196.206
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.206.'}
+ip: 200.225.196.207
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.207.'}
+ip: 200.225.196.208
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.208.'}
+ip: 200.225.196.209
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.209.'}
+ip: 200.225.196.210
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.210.'}
+ip: 200.225.196.211
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.196.212
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.212.'}
+ip: 200.225.196.213
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-jai-004-mx204-01'}
+ip: 200.225.196.214
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.196.214.'}
+ip: 200.225.196.215
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bru-001-mx104-01-re0'}
+ip: 200.225.196.216
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-jau-002-mx80'}
+ip: 200.225.196.217
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bhe-515-mx480-re0'}
+ip: 200.225.196.218
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.218.'}
+ip: 200.225.196.219
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-512-mx480a-re0'}
+ip: 200.225.196.220
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.196.221
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.221.'}
+ip: 200.225.196.222
+	{'ping': True, 'os': 1, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.196.223
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.196.224
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.224.'}
+ip: 200.225.196.225
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.225.'}
+ip: 200.225.196.226
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.196.226.'}
+ip: 200.225.196.227
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.227.'}
+ip: 200.225.196.228
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.228.'}
+ip: 200.225.196.229
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.229.'}
+ip: 200.225.196.230
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-gna-001-mx480-a'}
+ip: 200.225.196.231
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.231.'}
+ip: 200.225.196.232
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.232.'}
+ip: 200.225.196.233
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-mia-001-mx960a'}
+ip: 200.225.196.234
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.234.'}
+ip: 200.225.196.235
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.235.'}
+ip: 200.225.196.236
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.237
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.237.'}
+ip: 200.225.196.238
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.239
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.196.240
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.196.241
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.241.'}
+ip: 200.225.196.242
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.196.243
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.196.244
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-002-mx80-01'}
+ip: 200.225.196.245
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.245.'}
+ip: 200.225.196.246
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-rjo-511-mx480b-re0'}
+ip: 200.225.196.247
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-ura-001-brasmx960-re0'}
+ip: 200.225.196.248
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.196.248.'}
+ip: 200.225.196.249
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.249.'}
+ip: 200.225.196.250
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bre-511-mx480b-re0'}
+ip: 200.225.196.251
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-ula-001-qfx5200-microborda'}
+ip: 200.225.196.252
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-511-mx480e-re0'}
+ip: 200.225.196.253
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.196.253.'}
+ip: 200.225.196.254
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.196.254.'}
+ip: 200.225.196.255
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-019-mx480c-re0'}
+ip: 200.225.199.0
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.0.'}
+ip: 200.225.199.1
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.1.'}
+ip: 200.225.199.2
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.2.'}
+ip: 200.225.199.3
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.3.'}
+ip: 200.225.199.4
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.4.'}
+ip: 200.225.199.5
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.5.'}
+ip: 200.225.199.6
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-511-mx480-01-re0'}
+ip: 200.225.199.7
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.7.'}
+ip: 200.225.199.8
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.8.'}
+ip: 200.225.199.9
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.9.'}
+ip: 200.225.199.10
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bsa-001-mx80'}
+ip: 200.225.199.11
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.11.'}
+ip: 200.225.199.12
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.12.'}
+ip: 200.225.199.13
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.13.'}
+ip: 200.225.199.14
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.14.'}
+ip: 200.225.199.15
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.15.'}
+ip: 200.225.199.16
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.16.'}
+ip: 200.225.199.17
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.199.17.'}
+ip: 200.225.199.18
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-511-m7i'}
+ip: 200.225.199.19
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.19.'}
+ip: 200.225.199.20
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.20.'}
+ip: 200.225.199.21
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.21.'}
+ip: 200.225.199.22
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-512-mx480a-re0'}
+ip: 200.225.199.23
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.23.'}
+ip: 200.225.199.24
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.24.'}
+ip: 200.225.199.25
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.25.'}
+ip: 200.225.199.26
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.26.'}
+ip: 200.225.199.27
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.27.'}
+ip: 200.225.199.28
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.28.'}
+ip: 200.225.199.29
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.29.'}
+ip: 200.225.199.30
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bre-511-mx480-01-re0'}
+ip: 200.225.199.31
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.31.'}
+ip: 200.225.199.32
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.32.'}
+ip: 200.225.199.33
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.33.'}
+ip: 200.225.199.34
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.34.'}
+ip: 200.225.199.35
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.35.'}
+ip: 200.225.199.36
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.36.'}
+ip: 200.225.199.37
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.37.'}
+ip: 200.225.199.38
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.38.'}
+ip: 200.225.199.39
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.39.'}
+ip: 200.225.199.40
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.40.'}
+ip: 200.225.199.41
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.41.'}
+ip: 200.225.199.42
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.42.'}
+ip: 200.225.199.43
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.43.'}
+ip: 200.225.199.44
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.44.'}
+ip: 200.225.199.45
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.45.'}
+ip: 200.225.199.46
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.46.'}
+ip: 200.225.199.47
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.47.'}
+ip: 200.225.199.48
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.48.'}
+ip: 200.225.199.49
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.49.'}
+ip: 200.225.199.50
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.50.'}
+ip: 200.225.199.51
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.51.'}
+ip: 200.225.199.52
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.52.'}
+ip: 200.225.199.53
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.53.'}
+ip: 200.225.199.54
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.54.'}
+ip: 200.225.199.55
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.55.'}
+ip: 200.225.199.56
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.56.'}
+ip: 200.225.199.57
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.57.'}
+ip: 200.225.199.58
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.58.'}
+ip: 200.225.199.59
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.59.'}
+ip: 200.225.199.60
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.60.'}
+ip: 200.225.199.61
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.61.'}
+ip: 200.225.199.62
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.62.'}
+ip: 200.225.199.63
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.63.'}
+ip: 200.225.199.64
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.64.'}
+ip: 200.225.199.65
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.65.'}
+ip: 200.225.199.66
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.66.'}
+ip: 200.225.199.67
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.67.'}
+ip: 200.225.199.68
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.68.'}
+ip: 200.225.199.69
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.69.'}
+ip: 200.225.199.70
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.70.'}
+ip: 200.225.199.71
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.71.'}
+ip: 200.225.199.72
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.199.73
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.73.'}
+ip: 200.225.199.74
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.199.75
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.199.76
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.199.77
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.77.'}
+ip: 200.225.199.78
+	{'ping': True, 'os': 1, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.199.79
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-01.ctbc.com.br'}
+ip: 200.225.199.80
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.80.'}
+ip: 200.225.199.81
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.81.'}
+ip: 200.225.199.82
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.82.'}
+ip: 200.225.199.83
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.83.'}
+ip: 200.225.199.84
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.84.'}
+ip: 200.225.199.85
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.85.'}
+ip: 200.225.199.86
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.86.'}
+ip: 200.225.199.87
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.87.'}
+ip: 200.225.199.88
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.88.'}
+ip: 200.225.199.89
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.89.'}
+ip: 200.225.199.90
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.90.'}
+ip: 200.225.199.91
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.91.'}
+ip: 200.225.199.92
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.92.'}
+ip: 200.225.199.93
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.93.'}
+ip: 200.225.199.94
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.94.'}
+ip: 200.225.199.95
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.95.'}
+ip: 200.225.199.96
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.96.'}
+ip: 200.225.199.97
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.97.'}
+ip: 200.225.199.98
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.98.'}
+ip: 200.225.199.99
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.99.'}
+ip: 200.225.199.100
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.100.'}
+ip: 200.225.199.101
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.101.'}
+ip: 200.225.199.102
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.102.'}
+ip: 200.225.199.103
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.103.'}
+ip: 200.225.199.104
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.104.'}
+ip: 200.225.199.105
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.105.'}
+ip: 200.225.199.106
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.106.'}
+ip: 200.225.199.107
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.107.'}
+ip: 200.225.199.108
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.108.'}
+ip: 200.225.199.109
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'Timeout: No Response from 200.225.199.109.'}
+ip: 200.225.199.110
+	{'ping': True, 'os': 2, 'loopback': False, 'hostname': 'Timeout: No Response from 200.225.199.110.'}
+ip: 200.225.199.111
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.111.'}
+ip: 200.225.199.112
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.112.'}
+ip: 200.225.199.113
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.113.'}
+ip: 200.225.199.114
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.114.'}
+ip: 200.225.199.115
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.115.'}
+ip: 200.225.199.116
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.116.'}
+ip: 200.225.199.117
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.117.'}
+ip: 200.225.199.118
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.118.'}
+ip: 200.225.199.119
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.119.'}
+ip: 200.225.199.120
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.120.'}
+ip: 200.225.199.121
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.121.'}
+ip: 200.225.199.122
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.122.'}
+ip: 200.225.199.123
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.123.'}
+ip: 200.225.199.124
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.124.'}
+ip: 200.225.199.125
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.125.'}
+ip: 200.225.199.126
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.126.'}
+ip: 200.225.199.127
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.127.'}
+ip: 200.225.199.128
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.128.'}
+ip: 200.225.199.129
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-lgs-002-mx480a-re0'}
+ip: 200.225.199.130
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-pae-002-mx480a'}
+ip: 200.225.199.131
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.131.'}
+ip: 200.225.199.132
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.132.'}
+ip: 200.225.199.133
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.133.'}
+ip: 200.225.199.134
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.134.'}
+ip: 200.225.199.135
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.135.'}
+ip: 200.225.199.136
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.136.'}
+ip: 200.225.199.137
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.137.'}
+ip: 200.225.199.138
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.138.'}
+ip: 200.225.199.139
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.139.'}
+ip: 200.225.199.140
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.140.'}
+ip: 200.225.199.141
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.141.'}
+ip: 200.225.199.142
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.142.'}
+ip: 200.225.199.143
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.143.'}
+ip: 200.225.199.144
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.144.'}
+ip: 200.225.199.145
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.145.'}
+ip: 200.225.199.146
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.146.'}
+ip: 200.225.199.147
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.147.'}
+ip: 200.225.199.148
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.148.'}
+ip: 200.225.199.149
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.149.'}
+ip: 200.225.199.150
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.150.'}
+ip: 200.225.199.151
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.151.'}
+ip: 200.225.199.152
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.152.'}
+ip: 200.225.199.153
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.153.'}
+ip: 200.225.199.154
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.154.'}
+ip: 200.225.199.155
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.155.'}
+ip: 200.225.199.156
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.156.'}
+ip: 200.225.199.157
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.157.'}
+ip: 200.225.199.158
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.158.'}
+ip: 200.225.199.159
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.159.'}
+ip: 200.225.199.160
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ura-001-asr9010-01'}
+ip: 200.225.199.161
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.161.'}
+ip: 200.225.199.162
+	{'ping': True, 'os': 1, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ura-001-asr9010-01'}
+ip: 200.225.199.163
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ura-001-asr9010-01'}
+ip: 200.225.199.164
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.199.165
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.199.166
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'Timeout: No Response from 200.225.199.166.'}
+ip: 200.225.199.167
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-asr9010-02.ctbc.com.br'}
+ip: 200.225.199.168
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.168.'}
+ip: 200.225.199.169
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-prs-001-asr9001a.ctbc.com.br'}
+ip: 200.225.199.170
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-prs-001-asr9001b.ctbc.com.br'}
+ip: 200.225.199.171
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fac-001-m120'}
+ip: 200.225.199.172
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-511-asr9006-01.ctbc.com.br'}
+ip: 200.225.199.173
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.173.'}
+ip: 200.225.199.174
+	{'ping': True, 'os': 1, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-511-asr9006-01.ctbc.com.br'}
+ip: 200.225.199.175
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-511-asr9006-01.ctbc.com.br'}
+ip: 200.225.199.176
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.176.'}
+ip: 200.225.199.177
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.177.'}
+ip: 200.225.199.178
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.178.'}
+ip: 200.225.199.179
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.179.'}
+ip: 200.225.199.180
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.180.'}
+ip: 200.225.199.181
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.181.'}
+ip: 200.225.199.182
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.182.'}
+ip: 200.225.199.183
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.183.'}
+ip: 200.225.199.184
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.184.'}
+ip: 200.225.199.185
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.185.'}
+ip: 200.225.199.186
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.186.'}
+ip: 200.225.199.187
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.187.'}
+ip: 200.225.199.188
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.188.'}
+ip: 200.225.199.189
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.189.'}
+ip: 200.225.199.190
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.190.'}
+ip: 200.225.199.191
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-ula-001-brasmx480b-re0'}
+ip: 200.225.199.192
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.192.'}
+ip: 200.225.199.193
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.193.'}
+ip: 200.225.199.194
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.194.'}
+ip: 200.225.199.195
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.195.'}
+ip: 200.225.199.196
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.196.'}
+ip: 200.225.199.197
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.197.'}
+ip: 200.225.199.198
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.198.'}
+ip: 200.225.199.199
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.199.'}
+ip: 200.225.199.200
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.200.'}
+ip: 200.225.199.201
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.201.'}
+ip: 200.225.199.202
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.202.'}
+ip: 200.225.199.203
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.203.'}
+ip: 200.225.199.204
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.204.'}
+ip: 200.225.199.205
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.205.'}
+ip: 200.225.199.206
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.206.'}
+ip: 200.225.199.207
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.207.'}
+ip: 200.225.199.208
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.208.'}
+ip: 200.225.199.209
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.209.'}
+ip: 200.225.199.210
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.210.'}
+ip: 200.225.199.211
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bre-003-asr9001a.ctbc.com.br'}
+ip: 200.225.199.212
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.212.'}
+ip: 200.225.199.213
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.213.'}
+ip: 200.225.199.214
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.214.'}
+ip: 200.225.199.215
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-vrd-001-mx80'}
+ip: 200.225.199.216
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-pms-001-brasmx480-re0'}
+ip: 200.225.199.217
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-pms-001-brasmx480-re0'}
+ip: 200.225.199.218
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.218.'}
+ip: 200.225.199.219
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.219.'}
+ip: 200.225.199.220
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.220.'}
+ip: 200.225.199.221
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.221.'}
+ip: 200.225.199.222
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.222.'}
+ip: 200.225.199.223
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.223.'}
+ip: 200.225.199.224
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.224.'}
+ip: 200.225.199.225
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.225.'}
+ip: 200.225.199.226
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.226.'}
+ip: 200.225.199.227
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.227.'}
+ip: 200.225.199.228
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.228.'}
+ip: 200.225.199.229
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.229.'}
+ip: 200.225.199.230
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.230.'}
+ip: 200.225.199.231
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.231.'}
+ip: 200.225.199.232
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.232.'}
+ip: 200.225.199.233
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.233.'}
+ip: 200.225.199.234
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.234.'}
+ip: 200.225.199.235
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.235.'}
+ip: 200.225.199.236
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.236.'}
+ip: 200.225.199.237
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.237.'}
+ip: 200.225.199.238
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-gna-001-mx480-a'}
+ip: 200.225.199.239
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.239.'}
+ip: 200.225.199.240
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.240.'}
+ip: 200.225.199.241
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.241.'}
+ip: 200.225.199.242
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-019-piafmx960-01'}
+ip: 200.225.199.243
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.243.'}
+ip: 200.225.199.244
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.244.'}
+ip: 200.225.199.245
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.245.'}
+ip: 200.225.199.246
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bru-001-mx104-01-re0'}
+ip: 200.225.199.247
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.247.'}
+ip: 200.225.199.248
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.248.'}
+ip: 200.225.199.249
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.249.'}
+ip: 200.225.199.250
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.250.'}
+ip: 200.225.199.251
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.251.'}
+ip: 200.225.199.252
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.252.'}
+ip: 200.225.199.253
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.253.'}
+ip: 200.225.199.254
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.199.254.'}
+ip: 200.225.199.255
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.199.255.'}
+ip: 200.225.200.0
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.0.'}
+ip: 200.225.200.1
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.1.'}
+ip: 200.225.200.2
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.2.'}
+ip: 200.225.200.3
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.3.'}
+ip: 200.225.200.4
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.4.'}
+ip: 200.225.200.5
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.5.'}
+ip: 200.225.200.6
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.6.'}
+ip: 200.225.200.7
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.7.'}
+ip: 200.225.200.8
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.8.'}
+ip: 200.225.200.9
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.9.'}
+ip: 200.225.200.10
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-dvl-028-mx80-01'}
+ip: 200.225.200.11
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.11.'}
+ip: 200.225.200.12
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.12.'}
+ip: 200.225.200.13
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.13.'}
+ip: 200.225.200.14
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-srr-004-mx480a-re0'}
+ip: 200.225.200.15
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.15.'}
+ip: 200.225.200.16
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.16.'}
+ip: 200.225.200.17
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.17.'}
+ip: 200.225.200.18
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.18.'}
+ip: 200.225.200.19
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.19.'}
+ip: 200.225.200.20
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.20.'}
+ip: 200.225.200.21
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.21.'}
+ip: 200.225.200.22
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-511-cenesp-mx480-01-re0'}
+ip: 200.225.200.23
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.23.'}
+ip: 200.225.200.24
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.24.'}
+ip: 200.225.200.25
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bhe-515-mx960'}
+ip: 200.225.200.26
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.26.'}
+ip: 200.225.200.27
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.27.'}
+ip: 200.225.200.28
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.28.'}
+ip: 200.225.200.29
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.29.'}
+ip: 200.225.200.30
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.30.'}
+ip: 200.225.200.31
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.31.'}
+ip: 200.225.200.32
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.32.'}
+ip: 200.225.200.33
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.33.'}
+ip: 200.225.200.34
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.34.'}
+ip: 200.225.200.35
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.35.'}
+ip: 200.225.200.36
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.36.'}
+ip: 200.225.200.37
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.37.'}
+ip: 200.225.200.38
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.38.'}
+ip: 200.225.200.39
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.39.'}
+ip: 200.225.200.40
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.40.'}
+ip: 200.225.200.41
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.41.'}
+ip: 200.225.200.42
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.42.'}
+ip: 200.225.200.43
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.43.'}
+ip: 200.225.200.44
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.44.'}
+ip: 200.225.200.45
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.45.'}
+ip: 200.225.200.46
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.46.'}
+ip: 200.225.200.47
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.47.'}
+ip: 200.225.200.48
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.48.'}
+ip: 200.225.200.49
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.49.'}
+ip: 200.225.200.50
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.50.'}
+ip: 200.225.200.51
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.51.'}
+ip: 200.225.200.52
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.52.'}
+ip: 200.225.200.53
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.53.'}
+ip: 200.225.200.54
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.54.'}
+ip: 200.225.200.55
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.55.'}
+ip: 200.225.200.56
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.56.'}
+ip: 200.225.200.57
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.57.'}
+ip: 200.225.200.58
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.58.'}
+ip: 200.225.200.59
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.59.'}
+ip: 200.225.200.60
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.60.'}
+ip: 200.225.200.61
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.61.'}
+ip: 200.225.200.62
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.62.'}
+ip: 200.225.200.63
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.63.'}
+ip: 200.225.200.64
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.64.'}
+ip: 200.225.200.65
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.65.'}
+ip: 200.225.200.66
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-spo-021-piacmx960-01-re0'}
+ip: 200.225.200.67
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.67.'}
+ip: 200.225.200.68
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-009-asr9001-01.GERENCIA'}
+ip: 200.225.200.69
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.69.'}
+ip: 200.225.200.70
+	{'ping': True, 'os': 1, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-009-asr9001-01.GERENCIA'}
+ip: 200.225.200.71
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-009-asr9001-01.GERENCIA'}
+ip: 200.225.200.72
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-009-asr9001-01.GERENCIA'}
+ip: 200.225.200.73
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.73.'}
+ip: 200.225.200.74
+	{'ping': True, 'os': 1, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-009-asr9001-01.GERENCIA'}
+ip: 200.225.200.75
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-009-asr9001-01.GERENCIA'}
+ip: 200.225.200.76
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.76.'}
+ip: 200.225.200.77
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.77.'}
+ip: 200.225.200.78
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.78.'}
+ip: 200.225.200.79
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.79.'}
+ip: 200.225.200.80
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.80.'}
+ip: 200.225.200.81
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.81.'}
+ip: 200.225.200.82
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.82.'}
+ip: 200.225.200.83
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.83.'}
+ip: 200.225.200.84
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.84.'}
+ip: 200.225.200.85
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.85.'}
+ip: 200.225.200.86
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-002-mx480-re0'}
+ip: 200.225.200.87
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.87.'}
+ip: 200.225.200.88
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.88.'}
+ip: 200.225.200.89
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.89.'}
+ip: 200.225.200.90
+	{'ping': True, 'os': 0, 'loopback': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bsa-501-mx480-re0'}
+ip: 200.225.200.91
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.91.'}
+ip: 200.225.200.92
+	{'ping': True, 'os': 2, 'loopback': False, 'hostname': 'Timeout: No Response from 200.225.200.92.'}
+ip: 200.225.200.93
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.93.'}
+ip: 200.225.200.94
+	{'ping': True, 'os': 2, 'loopback': False, 'hostname': 'Timeout: No Response from 200.225.200.94.'}
+ip: 200.225.200.95
+	{'ping': True, 'os': 2, 'loopback': False, 'hostname': 'Timeout: No Response from 200.225.200.95.'}
+ip: 200.225.200.96
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.96.'}
+ip: 200.225.200.97
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.97.'}
+ip: 200.225.200.98
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.98.'}
+ip: 200.225.200.99
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.99.'}
+ip: 200.225.200.100
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.100.'}
+ip: 200.225.200.101
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-ula-001-ptx3000a-re0'}
+ip: 200.225.200.102
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-fac-001-ptx3000a-re0'}
+ip: 200.225.200.103
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-019-ptx3000a-re0'}
+ip: 200.225.200.104
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-511-ptx3000a-re0'}
+ip: 200.225.200.105
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-rpo-001-ptx3000a-re0'}
+ip: 200.225.200.106
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-cas-512-ptx3000a-re0'}
+ip: 200.225.200.107
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-rjo-511-ptx3000a-re0'}
+ip: 200.225.200.108
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bhe-515-ptx3000a-re0'}
+ip: 200.225.200.109
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bsa-501-ptx3000a-re0'}
+ip: 200.225.200.110
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bre-511-ptx3000a-re0'}
+ip: 200.225.200.111
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bre-511-ptx3000b-re0'}
+ip: 200.225.200.112
+	{'ping': False, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-ula-001-ptx3000b-re0'}
+ip: 200.225.200.113
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-cta-511-ptx3000a-re0'}
+ip: 200.225.200.114
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bhe-515-ptx3000b-re1'}
+ip: 200.225.200.115
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-hort-512-ptx3000a-re0'}
+ip: 200.225.200.116
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-019-ptx3000b-re0'}
+ip: 200.225.200.117
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-spo-511-ptx3000b-re0'}
+ip: 200.225.200.118
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.118.'}
+ip: 200.225.200.119
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.119.'}
+ip: 200.225.200.120
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-cas-512-ptx3000b-re0'}
+ip: 200.225.200.121
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.121.'}
+ip: 200.225.200.122
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.122.'}
+ip: 200.225.200.123
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.123.'}
+ip: 200.225.200.124
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.124.'}
+ip: 200.225.200.125
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.125.'}
+ip: 200.225.200.126
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.126.'}
+ip: 200.225.200.127
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.127.'}
+ip: 200.225.200.128
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.128.'}
+ip: 200.225.200.129
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.200.129.'}
+ip: 200.225.200.130
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.130.'}
+ip: 200.225.200.131
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.131.'}
+ip: 200.225.200.132
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.132.'}
+ip: 200.225.200.133
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.133.'}
+ip: 200.225.200.134
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.134.'}
+ip: 200.225.200.135
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.135.'}
+ip: 200.225.200.136
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.136.'}
+ip: 200.225.200.137
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.137.'}
+ip: 200.225.200.138
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.138.'}
+ip: 200.225.200.139
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.139.'}
+ip: 200.225.200.140
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.140.'}
+ip: 200.225.200.141
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.141.'}
+ip: 200.225.200.142
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.142.'}
+ip: 200.225.200.143
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.143.'}
+ip: 200.225.200.144
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.144.'}
+ip: 200.225.200.145
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.145.'}
+ip: 200.225.200.146
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.146.'}
+ip: 200.225.200.147
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.147.'}
+ip: 200.225.200.148
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.148.'}
+ip: 200.225.200.149
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.149.'}
+ip: 200.225.200.150
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.150.'}
+ip: 200.225.200.151
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.151.'}
+ip: 200.225.200.152
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.152.'}
+ip: 200.225.200.153
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.153.'}
+ip: 200.225.200.154
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.154.'}
+ip: 200.225.200.155
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.155.'}
+ip: 200.225.200.156
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.156.'}
+ip: 200.225.200.157
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.157.'}
+ip: 200.225.200.158
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.158.'}
+ip: 200.225.200.159
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.159.'}
+ip: 200.225.200.160
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.160.'}
+ip: 200.225.200.161
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.161.'}
+ip: 200.225.200.162
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.162.'}
+ip: 200.225.200.163
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.163.'}
+ip: 200.225.200.164
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.164.'}
+ip: 200.225.200.165
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.165.'}
+ip: 200.225.200.166
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.166.'}
+ip: 200.225.200.167
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.167.'}
+ip: 200.225.200.168
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.168.'}
+ip: 200.225.200.169
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.169.'}
+ip: 200.225.200.170
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.170.'}
+ip: 200.225.200.171
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.171.'}
+ip: 200.225.200.172
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.172.'}
+ip: 200.225.200.173
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.173.'}
+ip: 200.225.200.174
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.174.'}
+ip: 200.225.200.175
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.175.'}
+ip: 200.225.200.176
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.176.'}
+ip: 200.225.200.177
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.177.'}
+ip: 200.225.200.178
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.178.'}
+ip: 200.225.200.179
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.179.'}
+ip: 200.225.200.180
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.180.'}
+ip: 200.225.200.181
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.181.'}
+ip: 200.225.200.182
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.182.'}
+ip: 200.225.200.183
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.183.'}
+ip: 200.225.200.184
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.184.'}
+ip: 200.225.200.185
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.185.'}
+ip: 200.225.200.186
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.186.'}
+ip: 200.225.200.187
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.187.'}
+ip: 200.225.200.188
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.188.'}
+ip: 200.225.200.189
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.189.'}
+ip: 200.225.200.190
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.190.'}
+ip: 200.225.200.191
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.191.'}
+ip: 200.225.200.192
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.192.'}
+ip: 200.225.200.193
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.193.'}
+ip: 200.225.200.194
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.194.'}
+ip: 200.225.200.195
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.195.'}
+ip: 200.225.200.196
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.196.'}
+ip: 200.225.200.197
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.197.'}
+ip: 200.225.200.198
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.198.'}
+ip: 200.225.200.199
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.199.'}
+ip: 200.225.200.200
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.200.'}
+ip: 200.225.200.201
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.201.'}
+ip: 200.225.200.202
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.202.'}
+ip: 200.225.200.203
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.203.'}
+ip: 200.225.200.204
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.204.'}
+ip: 200.225.200.205
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.205.'}
+ip: 200.225.200.206
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.206.'}
+ip: 200.225.200.207
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.207.'}
+ip: 200.225.200.208
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.208.'}
+ip: 200.225.200.209
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.209.'}
+ip: 200.225.200.210
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.210.'}
+ip: 200.225.200.211
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.211.'}
+ip: 200.225.200.212
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.212.'}
+ip: 200.225.200.213
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.213.'}
+ip: 200.225.200.214
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.214.'}
+ip: 200.225.200.215
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.215.'}
+ip: 200.225.200.216
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.216.'}
+ip: 200.225.200.217
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.217.'}
+ip: 200.225.200.218
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.218.'}
+ip: 200.225.200.219
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.219.'}
+ip: 200.225.200.220
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.220.'}
+ip: 200.225.200.221
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.221.'}
+ip: 200.225.200.222
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.222.'}
+ip: 200.225.200.223
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.223.'}
+ip: 200.225.200.224
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.224.'}
+ip: 200.225.200.225
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.225.'}
+ip: 200.225.200.226
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.226.'}
+ip: 200.225.200.227
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.227.'}
+ip: 200.225.200.228
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.228.'}
+ip: 200.225.200.229
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.229.'}
+ip: 200.225.200.230
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.230.'}
+ip: 200.225.200.231
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.231.'}
+ip: 200.225.200.232
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.232.'}
+ip: 200.225.200.233
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.233.'}
+ip: 200.225.200.234
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.234.'}
+ip: 200.225.200.235
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.235.'}
+ip: 200.225.200.236
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.236.'}
+ip: 200.225.200.237
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.237.'}
+ip: 200.225.200.238
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.238.'}
+ip: 200.225.200.239
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.239.'}
+ip: 200.225.200.240
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.240.'}
+ip: 200.225.200.241
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.241.'}
+ip: 200.225.200.242
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.242.'}
+ip: 200.225.200.243
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.243.'}
+ip: 200.225.200.244
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.244.'}
+ip: 200.225.200.245
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.245.'}
+ip: 200.225.200.246
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.246.'}
+ip: 200.225.200.247
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.247.'}
+ip: 200.225.200.248
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.248.'}
+ip: 200.225.200.249
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.249.'}
+ip: 200.225.200.250
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.250.'}
+ip: 200.225.200.251
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.251.'}
+ip: 200.225.200.252
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.252.'}
+ip: 200.225.200.253
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.253.'}
+ip: 200.225.200.254
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.254.'}
+ip: 200.225.200.255
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.200.255.'}
+ip: 200.225.254.0
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.0.'}
+ip: 200.225.254.1
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cta-511-mx480a-re0'}
+ip: 200.225.254.2
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-fla-002-ptx3000a'}
+ip: 200.225.254.3
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-fla-001-brasmx480a-re0'}
+ip: 200.225.254.4
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bnu-001-asr9001a.algartelecom.com.br'}
+ip: 200.225.254.5
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-iai-001-mx480a-re0'}
+ip: 200.225.254.6
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-soo-001-mx480a-re0'}
+ip: 200.225.254.7
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-jve-001-asr9001a.algartelecom.com.br'}
+ip: 200.225.254.8
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.8.'}
+ip: 200.225.254.9
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.9.'}
+ip: 200.225.254.10
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.10.'}
+ip: 200.225.254.11
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.11.'}
+ip: 200.225.254.12
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.12.'}
+ip: 200.225.254.13
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-mfa-001-mx80a'}
+ip: 200.225.254.14
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.14.'}
+ip: 200.225.254.15
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.15.'}
+ip: 200.225.254.16
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.16.'}
+ip: 200.225.254.17
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.17.'}
+ip: 200.225.254.18
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.18.'}
+ip: 200.225.254.19
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.19.'}
+ip: 200.225.254.20
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.20.'}
+ip: 200.225.254.21
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.21.'}
+ip: 200.225.254.22
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.22.'}
+ip: 200.225.254.23
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.23.'}
+ip: 200.225.254.24
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.24.'}
+ip: 200.225.254.25
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.25.'}
+ip: 200.225.254.26
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.26.'}
+ip: 200.225.254.27
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.27.'}
+ip: 200.225.254.28
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.28.'}
+ip: 200.225.254.29
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.29.'}
+ip: 200.225.254.30
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.30.'}
+ip: 200.225.254.31
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.31.'}
+ip: 200.225.254.32
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.32.'}
+ip: 200.225.254.33
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.33.'}
+ip: 200.225.254.34
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.34.'}
+ip: 200.225.254.35
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.35.'}
+ip: 200.225.254.36
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.36.'}
+ip: 200.225.254.37
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.37.'}
+ip: 200.225.254.38
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.38.'}
+ip: 200.225.254.39
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-iua-001-brasmx480-re0'}
+ip: 200.225.254.40
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-iub-001-asr9001.ctbc.com.br'}
+ip: 200.225.254.41
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-cta-511-asr920a.algartelecom.com.br'}
+ip: 200.225.254.42
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.42.'}
+ip: 200.225.254.43
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.43.'}
+ip: 200.225.254.44
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.44.'}
+ip: 200.225.254.45
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.45.'}
+ip: 200.225.254.46
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.46.'}
+ip: 200.225.254.47
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.47.'}
+ip: 200.225.254.48
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.48.'}
+ip: 200.225.254.49
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.49.'}
+ip: 200.225.254.50
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-fru-001-brasmx480a-re0'}
+ip: 200.225.254.51
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.51.'}
+ip: 200.225.254.52
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.52.'}
+ip: 200.225.254.53
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fru-001-mx104-01-re0'}
+ip: 200.225.254.54
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bhe-003-mx104-carlosprates-01'}
+ip: 200.225.254.55
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bet-511-mx104-betim-01'}
+ip: 200.225.254.56
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cem-512-mx104-contagem-01'}
+ip: 200.225.254.57
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bhe-513-mx104-minasshopping-01'}
+ip: 200.225.254.58
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bhe-018-mx104-ativas-01'}
+ip: 200.225.254.59
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bet-001-mx104-formtap-01'}
+ip: 200.225.254.60
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ura-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.254.61
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.61.'}
+ip: 200.225.254.62
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.62.'}
+ip: 200.225.254.63
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.63.'}
+ip: 200.225.254.64
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-csc-002-mx104-01'}
+ip: 200.225.254.65
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.65.'}
+ip: 200.225.254.66
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.66.'}
+ip: 200.225.254.67
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.67.'}
+ip: 200.225.254.68
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.68.'}
+ip: 200.225.254.69
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.69.'}
+ip: 200.225.254.70
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.70.'}
+ip: 200.225.254.71
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.71.'}
+ip: 200.225.254.72
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.72.'}
+ip: 200.225.254.73
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-002-mx480-re0'}
+ip: 200.225.254.74
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.74.'}
+ip: 200.225.254.75
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.75.'}
+ip: 200.225.254.76
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.76.'}
+ip: 200.225.254.77
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.77.'}
+ip: 200.225.254.78
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.78.'}
+ip: 200.225.254.79
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.79.'}
+ip: 200.225.254.80
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.80.'}
+ip: 200.225.254.81
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.81.'}
+ip: 200.225.254.82
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.82.'}
+ip: 200.225.254.83
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.83.'}
+ip: 200.225.254.84
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.84.'}
+ip: 200.225.254.85
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.85.'}
+ip: 200.225.254.86
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.86.'}
+ip: 200.225.254.87
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.87.'}
+ip: 200.225.254.88
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.88.'}
+ip: 200.225.254.89
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.89.'}
+ip: 200.225.254.90
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.90.'}
+ip: 200.225.254.91
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.91.'}
+ip: 200.225.254.92
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.92.'}
+ip: 200.225.254.93
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.93.'}
+ip: 200.225.254.94
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cas-512-mx80-b'}
+ip: 200.225.254.95
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.95.'}
+ip: 200.225.254.96
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.96.'}
+ip: 200.225.254.97
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.97.'}
+ip: 200.225.254.98
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.98.'}
+ip: 200.225.254.99
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.99.'}
+ip: 200.225.254.100
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.100.'}
+ip: 200.225.254.101
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.101.'}
+ip: 200.225.254.102
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-jfa-001-mx480a-re1'}
+ip: 200.225.254.103
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cco-001-mx480a'}
+ip: 200.225.254.104
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-lda-001-mx480a'}
+ip: 200.225.254.105
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.105.'}
+ip: 200.225.254.106
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-mga-001-mx480a'}
+ip: 200.225.254.107
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.107.'}
+ip: 200.225.254.108
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.108.'}
+ip: 200.225.254.109
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.109.'}
+ip: 200.225.254.110
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bct-001-mx104a-re0'}
+ip: 200.225.254.111
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-fla-002-mx104a-re0'}
+ip: 200.225.254.112
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-pge-001-mx104a-re0'}
+ip: 200.225.254.113
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.113.'}
+ip: 200.225.254.114
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-jca-002-mx80a'}
+ip: 200.225.254.115
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.115.'}
+ip: 200.225.254.116
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.116.'}
+ip: 200.225.254.117
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.117.'}
+ip: 200.225.254.118
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bqe-001-asr9001-01.ctbc.com.br'}
+ip: 200.225.254.119
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.119.'}
+ip: 200.225.254.120
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.120.'}
+ip: 200.225.254.121
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.121.'}
+ip: 200.225.254.122
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.122.'}
+ip: 200.225.254.123
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.123.'}
+ip: 200.225.254.124
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.124.'}
+ip: 200.225.254.125
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.125.'}
+ip: 200.225.254.126
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.126.'}
+ip: 200.225.254.127
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-cta-012-xrv9000-vrr-01.ctbc.com.br'}
+ip: 200.225.254.128
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.128.'}
+ip: 200.225.254.129
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ari-301-mx104-re0'}
+ip: 200.225.254.130
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.130.'}
+ip: 200.225.254.131
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.131.'}
+ip: 200.225.254.132
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.132.'}
+ip: 200.225.254.133
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.133.'}
+ip: 200.225.254.134
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.134.'}
+ip: 200.225.254.135
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.135.'}
+ip: 200.225.254.136
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.136.'}
+ip: 200.225.254.137
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.137.'}
+ip: 200.225.254.138
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-idu-001-mx80a-re0'}
+ip: 200.225.254.139
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.139.'}
+ip: 200.225.254.140
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cda-001-mx104-re0'}
+ip: 200.225.254.141
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.141.'}
+ip: 200.225.254.142
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.142.'}
+ip: 200.225.254.143
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.143.'}
+ip: 200.225.254.144
+	{'ping': True, 'os': 1, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cua-001-asr9006a.ctbc.com.br'}
+ip: 200.225.254.145
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.145.'}
+ip: 200.225.254.146
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.146.'}
+ip: 200.225.254.147
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.147.'}
+ip: 200.225.254.148
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.148.'}
+ip: 200.225.254.149
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.149.'}
+ip: 200.225.254.150
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.150.'}
+ip: 200.225.254.151
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.151.'}
+ip: 200.225.254.152
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.152.'}
+ip: 200.225.254.153
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.153.'}
+ip: 200.225.254.154
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.154.'}
+ip: 200.225.254.155
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.155.'}
+ip: 200.225.254.156
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.156.'}
+ip: 200.225.254.157
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.157.'}
+ip: 200.225.254.158
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.158.'}
+ip: 200.225.254.159
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.159.'}
+ip: 200.225.254.160
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-pas-001-mx480b'}
+ip: 200.225.254.161
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.161.'}
+ip: 200.225.254.162
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.162.'}
+ip: 200.225.254.163
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.163.'}
+ip: 200.225.254.164
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.164.'}
+ip: 200.225.254.165
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.165.'}
+ip: 200.225.254.166
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.166.'}
+ip: 200.225.254.167
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.167.'}
+ip: 200.225.254.168
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-cza-001-mx104a-01-re0'}
+ip: 200.225.254.169
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.169.'}
+ip: 200.225.254.170
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.254.170.'}
+ip: 200.225.254.171
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.171.'}
+ip: 200.225.254.172
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-jpa-001-brasmx480a-re0'}
+ip: 200.225.254.173
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.173.'}
+ip: 200.225.254.174
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.174.'}
+ip: 200.225.254.175
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.175.'}
+ip: 200.225.254.176
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-aju-001-pe-bras-mx204a'}
+ip: 200.225.254.177
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.177.'}
+ip: 200.225.254.178
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-mco-001-pe-bras-mx204a'}
+ip: 200.225.254.179
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-ntl-001-pe-bras-mx204a'}
+ip: 200.225.254.180
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-pso-001-pe-bras-mx204a'}
+ip: 200.225.254.181
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-psa-001-pe-bras-mx204a'}
+ip: 200.225.254.182
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-pcs-001-pe-bras-mx204a'}
+ip: 200.225.254.183
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-vga-001-pe-bras-mx204a'}
+ip: 200.225.254.184
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.254.184.'}
+ip: 200.225.254.185
+	{'ping': True, 'os': -1, 'hostname': 'Timeout: No Response from 200.225.254.185.'}
+ip: 200.225.254.186
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.186.'}
+ip: 200.225.254.187
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-sea-001-pe-bras-mx204a'}
+ip: 200.225.254.188
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-rce-001-brasmx480a-re0'}
+ip: 200.225.254.189
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-sqb-001-mx80'}
+ip: 200.225.254.190
+	{'ping': True, 'os': -1, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-ula-001-bng-mx480-c'}
+ip: 200.225.254.191
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.191.'}
+ip: 200.225.254.192
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-vta-001-brasmx204a'}
+ip: 200.225.254.193
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.193.'}
+ip: 200.225.254.194
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-mx204-a-01'}
+ip: 200.225.254.195
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-ula-001-mx204-b-02'}
+ip: 200.225.254.196
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bl-rt-fsa-001-brasmx204a'}
+ip: 200.225.254.197
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.197.'}
+ip: 200.225.254.198
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.198.'}
+ip: 200.225.254.199
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.199.'}
+ip: 200.225.254.200
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-007-mx480-barratijuca-re0'}
+ip: 200.225.254.201
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-rjo-008-MX104-botafogo-re0'}
+ip: 200.225.254.202
+	{'ping': True, 'os': 2, 'loopback': True, 'hostname': 'Timeout: No Response from 200.225.254.202.'}
+ip: 200.225.254.203
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.203.'}
+ip: 200.225.254.204
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.204.'}
+ip: 200.225.254.205
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.205.'}
+ip: 200.225.254.206
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.206.'}
+ip: 200.225.254.207
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.207.'}
+ip: 200.225.254.208
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.208.'}
+ip: 200.225.254.209
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.209.'}
+ip: 200.225.254.210
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.210.'}
+ip: 200.225.254.211
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.211.'}
+ip: 200.225.254.212
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.212.'}
+ip: 200.225.254.213
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.213.'}
+ip: 200.225.254.214
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.214.'}
+ip: 200.225.254.215
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.215.'}
+ip: 200.225.254.216
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.216.'}
+ip: 200.225.254.217
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.217.'}
+ip: 200.225.254.218
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.218.'}
+ip: 200.225.254.219
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.219.'}
+ip: 200.225.254.220
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.220.'}
+ip: 200.225.254.221
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.221.'}
+ip: 200.225.254.222
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.222.'}
+ip: 200.225.254.223
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.223.'}
+ip: 200.225.254.224
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.224.'}
+ip: 200.225.254.225
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.225.'}
+ip: 200.225.254.226
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.226.'}
+ip: 200.225.254.227
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.227.'}
+ip: 200.225.254.228
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.228.'}
+ip: 200.225.254.229
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.229.'}
+ip: 200.225.254.230
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.230.'}
+ip: 200.225.254.231
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.231.'}
+ip: 200.225.254.232
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.232.'}
+ip: 200.225.254.233
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.233.'}
+ip: 200.225.254.234
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.234.'}
+ip: 200.225.254.235
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.235.'}
+ip: 200.225.254.236
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.236.'}
+ip: 200.225.254.237
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.237.'}
+ip: 200.225.254.238
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.238.'}
+ip: 200.225.254.239
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.239.'}
+ip: 200.225.254.240
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bsa-501-ptx3000b-re0'}
+ip: 200.225.254.241
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.241.'}
+ip: 200.225.254.242
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.242.'}
+ip: 200.225.254.243
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.243.'}
+ip: 200.225.254.244
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.244.'}
+ip: 200.225.254.245
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.245.'}
+ip: 200.225.254.246
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.246.'}
+ip: 200.225.254.247
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.247.'}
+ip: 200.225.254.248
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.248.'}
+ip: 200.225.254.249
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.249.'}
+ip: 200.225.254.250
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bct-001-ptx3000a-re0'}
+ip: 200.225.254.251
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: a-bb-rt-bct-001-ptx3000b-re0'}
+ip: 200.225.254.252
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-fac-001-qfx5200-microborda-re0'}
+ip: 200.225.254.253
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-bre-511-qfx5200-microborda'}
+ip: 200.225.254.254
+	{'ping': True, 'os': 0, 'loopback': True, 'hostname': 'SNMPv2-MIB::sysName.0 = STRING: c-bb-rt-lgs-002-acx5048-microborda'}
+ip: 200.225.254.255
+	{'ping': False, 'hostname': 'Timeout: No Response from 200.225.254.255.'}
