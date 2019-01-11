@@ -136,44 +136,38 @@ class servers_structure:
     def __get_single_hardware(self, host, hash):
         return remote_access_run(host, self.commands_hardware[hash], self.credentials)
 
-    def get_all_hardware(self):
-        jobs = []
-        for host, hash in self.hosts:
-            jobs.append([self.__get_single_hardware, host, hash])
-        self.hardware = []
-        idx = -1
-        results = multi_threaded_execution(jobs, 256)
-        for result in results:
-            idx += 1
-            print(
-                'host: ' + self.hosts[idx][0] + ', hardware: ' + str(result != None),
-                file = sys.stderr
-            )
-            self.hardware.append(results[idx])
+    # def get_all_hardware(self):
+    #     jobs = []
+    #     for host, hash in self.hosts:
+    #         jobs.append([self.__get_single_hardware, host, hash])
+    #     self.hardware = []
+    #     idx = -1
+    #     results = multi_threaded_execution(jobs, 256)
+    #     for result in results:
+    #         idx += 1
+    #         print(
+    #             'host: ' + self.hosts[idx][0] + ', hardware: ' + str(result != None),
+    #             file = sys.stderr
+    #         )
+    #         self.hardware.append(results[idx])
 
-    def get_single_hostname(self):
+    def __get_single_hostname(self, ip):
         result = local_access_run([
             'snmpget',
             '-v', '2c',
             '-c', 'V01prO2005',
-            '189.39.3.1',
+            ip,
             'sysName.0'
         ])
         return result.stdout.decode('utf-8').strip()
 
     def get_all_hostname(self):
         jobs = []
-        for host, hash in self.hosts:
-            jobs.append([self.__get_single_hostname, host, hash])
-        idx = -1
+        for ip, v in self.info.items():
+            jobs.append([self.__get_single_hostname, ip])
         results = multi_threaded_execution(jobs)
-        for result in results:
-            idx += 1
-            print(
-                'host: ' + self.hosts[idx][0] + ', hardware: ' + str(result != None),
-                file = sys.stderr
-            )
-            self.hardware.append(results[idx])
+        for result, job in zip(results, jobs):
+            self.info[job[1]]['hostname'] = result
 
     def print(self):
         for ip, v in self.info.items():
@@ -193,9 +187,8 @@ def main():
     equipments.get_all_os()
     equipments.get_all_loopback()
     equipments.get_all_hostname()
+    # equipments.get_all_hardware()
     equipments.print()
-    # servers_list.get_all_hardware()
-    # servers_list.print_hardware()
 
 def multi_threaded_execution(jobs, workers = 256):
     ans = []
