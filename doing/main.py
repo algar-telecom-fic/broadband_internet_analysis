@@ -7,6 +7,64 @@ from concurrent.futures import ThreadPoolExecutor
 lock = threading.Lock()
 
 class servers_structure:
+	
+	# ~ def __get_single_hardware(self, host, hash):
+        # ~ return remote_access_run(host, self.commands_hardware[hash], self.credentials)
+	
+	def __get_single_hostname(self, ip):
+        result = local_access_run([
+            'snmpget',
+            '-v', '2c',
+            '-c', 'V01prO2005',
+            ip,
+            'sysName.0'
+        ])
+        return result.stdout.decode('utf-8').strip()[32:]
+
+	def __get_single_loopback(self, ip, os):
+        result = remote_access_run(ip, self.commands_loopback[os], self.credentials)
+        if result != None:
+            for s in result:
+                if os == 0:
+                    pos = s.find('address')
+                    if pos != -1:
+                        for i in range(pos + 8, len(s)):
+                            if s[i] == '/':
+                                return s[pos + 8: i]
+                else:
+                    pos = s.find('Loopback0')
+                    if pos != -1:
+                        start = -1
+                        for i in range(pos + 9, len(s)):
+                            if start == -1 and s[i] != ' ':
+                                start = i
+                            elif start != -1 and (s[i] < '0' or s[i] > '9') and s[i] != '.':
+                                return s[start: i]
+        return None
+        
+	def __get_single_os(self, ip):
+        for command in self.commands_os:
+            output = remote_access_run(ip, command, self.credentials)
+            if output == None:
+                continue
+            for os, v in self.operational_systems.items():
+                for line in output:
+                    if line.find(os) != -1:
+                        return v
+        return -1
+        
+	def __get_single_ping(self, ip):
+        result = local_access_run([
+            '/bin/ping',
+            '-c', '1',
+            '-W', '32',
+            ip
+        ])
+        try:
+            result.check_returncode()
+            return True
+        except subprocess.CalledProcessError:
+            return False
 
     def __init__(self, filename):
         self.commands_loopback = {
@@ -61,68 +119,30 @@ class servers_structure:
                 'Failed to read file: \"' + filename + '\"',
                 file = sys.stderr
             )
-
-    def __get_single_ping(self, ip):
-        result = local_access_run([
-            '/bin/ping',
-            '-c', '1',
-            '-W', '32',
-            ip
-        ])
-        try:
-            result.check_returncode()
-            return True
-        except subprocess.CalledProcessError:
-            return False
-
-    def get_all_ping(self):
-        jobs = []
-        for ip in self.info:
-            jobs.append([self.__get_single_ping, ip])
-        results = multi_threaded_execution(jobs)
-        for result, job in zip(results, jobs):
-            self.info[job[1]]['ping'] = result
-
-    def __get_single_os(self, ip):
-        for command in self.commands_os:
-            output = remote_access_run(ip, command, self.credentials)
-            if output == None:
-                continue
-            for os, v in self.operational_systems.items():
-                for line in output:
-                    if line.find(os) != -1:
-                        return v
-        return -1
-
-    def get_all_os(self):
+            
+	# ~ def get_all_hardware(self):
+		# ~ jobs = []
+		# ~ for host, hash in self.hosts:
+			# ~ jobs.append([self.__get_single_hardware, host, hash])
+		# ~ self.hardware = []
+		# ~ idx = -1
+		# ~ results = multi_threaded_execution(jobs, 256)
+		# ~ for result in results:
+			# ~ idx += 1
+			# ~ print(
+				# ~ 'host: ' + self.hosts[idx][0] + ', hardware: ' + str(result != None),
+				# ~ file = sys.stderr
+			# ~ )
+			# ~ self.hardware.append(results[idx])
+			
+	def get_all_hostname(self):
         jobs = []
         for ip, v in self.info.items():
-            if 'ping' in v and v['ping'] == True:
-                jobs.append([self.__get_single_os, ip])
+			if 'loopback' in v and v['loopback'] == True:
+				jobs.append([self.__get_single_hostname, ip])
         results = multi_threaded_execution(jobs)
         for result, job in zip(results, jobs):
-            self.info[job[1]]['os'] = result
-
-    def __get_single_loopback(self, ip, os):
-        result = remote_access_run(ip, self.commands_loopback[os], self.credentials)
-        if result != None:
-            for s in result:
-                if os == 0:
-                    pos = s.find('address')
-                    if pos != -1:
-                        for i in range(pos + 8, len(s)):
-                            if s[i] == '/':
-                                return s[pos + 8: i]
-                else:
-                    pos = s.find('Loopback0')
-                    if pos != -1:
-                        start = -1
-                        for i in range(pos + 9, len(s)):
-                            if start == -1 and s[i] != ' ':
-                                start = i
-                            elif start != -1 and (s[i] < '0' or s[i] > '9') and s[i] != '.':
-                                return s[start: i]
-        return None
+            self.info[job[1]]['hostname'] = result
 
     def get_all_loopback(self):
         jobs = []
@@ -132,42 +152,23 @@ class servers_structure:
         results = multi_threaded_execution(jobs)
         for result, job in zip(results, jobs):
             self.info[job[1]]['loopback'] = (job[1] == result)
-
-    def __get_single_hardware(self, host, hash):
-        return remote_access_run(host, self.commands_hardware[hash], self.credentials)
-
-    # def get_all_hardware(self):
-    #     jobs = []
-    #     for host, hash in self.hosts:
-    #         jobs.append([self.__get_single_hardware, host, hash])
-    #     self.hardware = []
-    #     idx = -1
-    #     results = multi_threaded_execution(jobs, 256)
-    #     for result in results:
-    #         idx += 1
-    #         print(
-    #             'host: ' + self.hosts[idx][0] + ', hardware: ' + str(result != None),
-    #             file = sys.stderr
-    #         )
-    #         self.hardware.append(results[idx])
-
-    def __get_single_hostname(self, ip):
-        result = local_access_run([
-            'snmpget',
-            '-v', '2c',
-            '-c', 'V01prO2005',
-            ip,
-            'sysName.0'
-        ])
-        return result.stdout.decode('utf-8').strip()
-
-    def get_all_hostname(self):
+            
+	def get_all_os(self):
         jobs = []
         for ip, v in self.info.items():
-            jobs.append([self.__get_single_hostname, ip])
+            if 'ping' in v and v['ping'] == True:
+                jobs.append([self.__get_single_os, ip])
         results = multi_threaded_execution(jobs)
         for result, job in zip(results, jobs):
-            self.info[job[1]]['hostname'] = result
+            self.info[job[1]]['os'] = result
+            
+    def get_all_ping(self):
+        jobs = []
+        for ip in self.info:
+            jobs.append([self.__get_single_ping, ip])
+        results = multi_threaded_execution(jobs)
+        for result, job in zip(results, jobs):
+            self.info[job[1]]['ping'] = result
 
     def print(self):
         for ip, v in self.info.items():
