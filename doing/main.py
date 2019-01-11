@@ -109,7 +109,9 @@ class servers_structure:
     self.info = {}
     for prefix in self.ip_prefixes:
       for suffix in range(256):
-        self.info[prefix + str(suffix)] = {}
+        self.info[prefix + str(suffix)] = {
+          'valid' = False,
+        }
     try:
       with open(filename, 'r') as file:
         v = file.readlines()
@@ -144,6 +146,14 @@ class servers_structure:
     results = multi_threaded_execution(jobs)
     for result, job in zip(results, jobs):
       self.info[job[1]]['hostname'] = result
+      aux = result.split('-')
+      if len(aux) > 5:
+        self.info[job[1]]['valid'] = True
+        self.info[job[1]]['area'] = aux[0]
+        self.info[job[1]]['type'] = aux[1]
+        self.info[job[1]]['function'] = aux[2]
+        self.info[job[1]]['nickname'] = str(aux[3]).upper() + str(aux[4])
+        self.info[job[1]]['model'] = aux[5]
 
   def get_all_loopback(self):
     jobs = []
@@ -195,13 +205,20 @@ def main():
   
 def database_insertion(info):
   with pymongo.MongoClient() as client:
-    database = client.banquim_de_breja
-    collection = database.breja
+    database = client.banquim
+    collection = database.tabela
     for ip, v in info.items():
-      if 'hostname' in v:
-        aux = v
-        aux['ip'] = ip
-        collection.insert_one(aux)
+      if v['valid'] == True:
+        document = {
+          'ip': ip,
+          'manufacturer': '',
+          'model': v['model'],
+          'nickname': v['nickname'],
+          'area': v['area'],
+          'type': v['type'],
+          'function': v['function'],
+        }
+        collection.insert_one(document)
 
 def multi_threaded_execution(jobs, workers = 256):
   ans = []
