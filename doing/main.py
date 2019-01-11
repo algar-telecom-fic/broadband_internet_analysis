@@ -110,7 +110,7 @@ class servers_structure:
     for prefix in self.ip_prefixes:
       for suffix in range(256):
         self.info[prefix + str(suffix)] = {
-          'valid' = False,
+          'valid': False,
         }
     try:
       with open(filename, 'r') as file:
