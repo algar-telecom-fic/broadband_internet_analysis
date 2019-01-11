@@ -1,272 +1,260 @@
 [Errno None] Unable to connect to port 22 on 200.225.196.49
 [Errno None] Unable to connect to port 22 on 200.225.196.49
 [Errno None] Unable to connect to port 22 on 200.225.196.62
+[Errno None] Unable to connect to port 22 on 200.225.196.21
 [Errno None] Unable to connect to port 22 on 200.225.196.62
-[Errno None] Unable to connect to port 22 on 200.225.196.21
 [Errno None] Unable to connect to port 22 on 200.225.196.77
 [Errno None] Unable to connect to port 22 on 200.225.196.21
 [Errno None] Unable to connect to port 22 on 200.225.196.77
+[Errno None] Unable to connect to port 22 on 200.225.196.138
 [Errno None] Unable to connect to port 22 on 200.225.196.134
+[Errno None] Unable to connect to port 22 on 200.225.196.160
 [Errno None] Unable to connect to port 22 on 200.225.196.138
 [Errno None] Unable to connect to port 22 on 200.225.196.160
 [Errno None] Unable to connect to port 22 on 200.225.196.134
-[Errno None] Unable to connect to port 22 on 200.225.196.138
-[Errno None] Unable to connect to port 22 on 200.225.196.160
 [Errno None] Unable to connect to port 22 on 200.225.196.181
 [Errno None] Unable to connect to port 22 on 200.225.196.186
 [Errno None] Unable to connect to port 22 on 200.225.196.181
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.196.182
 [Errno None] Unable to connect to port 22 on 200.225.196.186
-
 [Errno None] Unable to connect to port 22 on 200.225.196.200
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+    x = self.__socket.recv(128)
 [Errno None] Unable to connect to port 22 on 200.225.196.182
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+[Errno None] Unable to connect to port 22 on 200.225.196.221
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
+    self._check_banner()
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
+    'Error reading SSH protocol banner' + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
 [Errno None] Unable to connect to port 22 on 200.225.196.200
+
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.196.221
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
     buf = self.packetizer.readline(timeout)
   File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-[Errno 104] Connection reset by peer
     buf += self._read_timeout(timeout)
   File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
-[Errno None] Unable to connect to port 22 on 200.225.196.221
-[Errno None] Unable to connect to port 22 on 200.225.196.241
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno 104] Connection reset by peer
-
+[Errno None] Unable to connect to port 22 on 200.225.196.241
     x = self.__socket.recv(128)
-[Errno 104] Connection reset by peer
-Traceback (most recent call last):
-[Errno None] Unable to connect to port 22 on 200.225.196.241
 ConnectionResetError: [Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
-[Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
 
-    buf = self.packetizer.readline(timeout)
 [Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
+[Errno None] Unable to connect to port 22 on 200.225.196.241
 During handling of the above exception, another exception occurred:
-[Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
 
-[Errno None] Unable to connect to port 22 on 200.225.196.253
-[Errno None] Unable to connect to port 22 on 200.225.196.253
-    buf += self._read_timeout(timeout)
 
 Traceback (most recent call last):
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-
-    x = self.__socket.recv(128)
-Traceback (most recent call last):
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
     self._check_banner()
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-
-    buf = self.packetizer.readline(timeout)
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-During handling of the above exception, another exception occurred:
     'Error reading SSH protocol banner' + str(e)
-[Errno None] Unable to connect to port 22 on 200.225.199.9
-    buf += self._read_timeout(timeout)
-
 paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+[Errno 104] Connection reset by peer
+
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+[Errno None] Unable to connect to port 22 on 200.225.196.253
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+[Errno None] Unable to connect to port 22 on 200.225.196.253
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+[Errno None] Unable to connect to port 22 on 200.225.199.5
+[Errno None] Unable to connect to port 22 on 200.225.199.9
 [Errno None] Unable to connect to port 22 on 200.225.199.13
 [Errno None] Unable to connect to port 22 on 200.225.199.14
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
-
 [Errno 104] Connection reset by peer
+
 [Errno None] Unable to connect to port 22 on 200.225.199.9
-Traceback (most recent call last):
-
-[Errno 104] Connection reset by peer
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
-    x = self.__socket.recv(128)
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.199.13
 [Errno None] Unable to connect to port 22 on 200.225.199.14
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-[Errno 104] Connection reset by peer
-ConnectionResetError: [Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.199.5
-    self._check_banner()
-[Errno 104] Connection reset by peer
-
 
 [Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-[Errno 104] Connection reset by peer
-During handling of the above exception, another exception occurred:
-[Errno 104] Connection reset by peer
-    'Error reading SSH protocol banner' + str(e)
-
-[Errno 104] Connection reset by peer
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
+[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+[Errno 104] Connection reset by peer
+    buf += self._read_timeout(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+[Errno 104] Connection reset by peer
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
 
 [Errno None] Unable to connect to port 22 on 200.225.199.161
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-
-
-[Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-
-[Errno 104] Connection reset by peer
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
-Traceback (most recent call last):
-    self._check_banner()
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
-
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
     buf = self.packetizer.readline(timeout)
-    'Error reading SSH protocol banner' + str(e)
-[Errno None] Unable to connect to port 22 on 200.225.199.5
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+    x = self.__socket.recv(128)
+[Errno 104] Connection reset by peer
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
+
+ConnectionResetError: [Errno 104] Connection reset by peer
+    buf += self._read_timeout(timeout)
+[Errno 104] Connection reset by peer
+
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+[Errno 104] Connection reset by peer
+During handling of the above exception, another exception occurred:
 [Errno None] Unable to connect to port 22 on 200.225.199.161
-[Errno None] Unable to connect to port 22 on 200.225.199.177
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-    buf += self._read_timeout(timeout)
 
-[Errno None] Unable to connect to port 22 on 200.225.199.177
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
     x = self.__socket.recv(128)
+
+
+[Errno 104] Connection reset by peer
 ConnectionResetError: [Errno 104] Connection reset by peer
-[Errno None] Unable to connect to port 22 on 200.225.199.205
-
-During handling of the above exception, another exception occurred:
-
 Traceback (most recent call last):
+
+
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-[Errno None] Unable to connect to port 22 on 200.225.199.225
+[Errno None] Unable to connect to port 22 on 200.225.199.177
+During handling of the above exception, another exception occurred:
     self._check_banner()
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-    'Error reading SSH protocol banner' + str(e)
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 
 [Errno None] Unable to connect to port 22 on 200.225.199.225
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
+[Errno None] Unable to connect to port 22 on 200.225.199.177
 Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.199.205
+Traceback (most recent call last):
+    'Error reading SSH protocol banner' + str(e)
+[Errno None] Unable to connect to port 22 on 200.225.199.225
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+    self._check_banner()
+
+    buf = self.packetizer.readline(timeout)
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.199.245
-[Errno None] Unable to connect to port 22 on 200.225.199.254
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-    buf = self.packetizer.readline(timeout)
-Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
   File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+    'Error reading SSH protocol banner' + str(e)
     buf += self._read_timeout(timeout)
-    buf = self.packetizer.readline(timeout)
+[Errno None] Unable to connect to port 22 on 200.225.199.205
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
   File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
 [Errno None] Unable to connect to port 22 on 200.225.199.245
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-[Errno None] Unable to connect to port 22 on 200.225.200.62
-    x = self.__socket.recv(128)
-    buf += self._read_timeout(timeout)
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
+    self._check_banner()
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
+    'Error reading SSH protocol banner' + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 
 [Errno None] Unable to connect to port 22 on 200.225.199.254
-    x = self.__socket.recv(128)
-During handling of the above exception, another exception occurred:
-ConnectionResetError: [Errno 104] Connection reset by peer
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.200.62
-
-
 Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
 During handling of the above exception, another exception occurred:
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
 
-    self._check_banner()
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
 [Errno None] Unable to connect to port 22 on 200.225.200.81
+[Errno None] Unable to connect to port 22 on 200.225.200.62
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-    'Error reading SSH protocol banner' + str(e)
     self._check_banner()
+
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
+    'Error reading SSH protocol banner' + str(e)
+Exception: Incompatible version (1.5 instead of 2.0)
+[Errno None] Unable to connect to port 22 on 200.225.199.254
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 [Errno None] Unable to connect to port 22 on 200.225.200.81
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-Exception: Incompatible version (1.5 instead of 2.0)
+Traceback (most recent call last):
 
 Error reading SSH protocol banner[Errno 104] Connection reset by peer
-    'Error reading SSH protocol banner' + str(e)
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-Traceback (most recent call last):
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-Traceback (most recent call last):
-
     self._check_banner()
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2032, in _check_banner
-    buf = self.packetizer.readline(timeout)
-    raise SSHException(msg.format(version))
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-paramiko.ssh_exception.SSHException: Incompatible version (1.5 instead of 2.0)
-    buf += self._read_timeout(timeout)
-
 Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+    raise SSHException(msg.format(version))
+paramiko.ssh_exception.SSHException: Incompatible version (1.5 instead of 2.0)
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
 Incompatible version (1.5 instead of 2.0)
+    buf = self.packetizer.readline(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
+    buf += self._read_timeout(timeout)
   File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
     x = self.__socket.recv(128)
 ConnectionResetError: [Errno 104] Connection reset by peer
 
-Traceback (most recent call last):
 During handling of the above exception, another exception occurred:
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
 Exception: Incompatible version (1.5 instead of 2.0)
-
-    buf = self.packetizer.readline(timeout)
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-Authentication failed.
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-    buf += self._read_timeout(timeout)
     self._check_banner()
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
+    'Error reading SSH protocol banner' + str(e)
     self._check_banner()
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2032, in _check_banner
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-    x = self.__socket.recv(128)
+
     raise SSHException(msg.format(version))
-    'Error reading SSH protocol banner' + str(e)
-ConnectionResetError: [Errno 104] Connection reset by peer
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
 paramiko.ssh_exception.SSHException: Incompatible version (1.5 instead of 2.0)
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 
-
+('Bad authentication type', ['publickey']) (allowed_types=['publickey'])
 Incompatible version (1.5 instead of 2.0)
-
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-    self._check_banner()
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-    'Error reading SSH protocol banner' + str(e)
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
 Authentication failed.
+
 [Errno 104] Connection reset by peer
 [Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
+Authentication failed.
+[Errno None] Unable to connect to port 22 on 200.225.254.89
 ('Bad authentication type', ['publickey']) (allowed_types=['publickey'])
-[Errno 104] Connection reset by peer
-('Bad authentication type', ['publickey']) (allowed_types=['publickey'])
+[Errno None] Unable to connect to port 22 on 200.225.254.89
+[Errno None] Unable to connect to port 22 on 200.225.254.84
+[Errno None] Unable to connect to port 22 on 200.225.254.84
+Authentication failed.
+Authentication failed.
 Authentication failed.
 Authentication failed.
 timed out
@@ -347,52 +335,6 @@ timed out
 timed out
 timed out
 timed out
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-    buf += self._read_timeout(timeout)
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
-    x = self.__socket.recv(128)
-ConnectionResetError: [Errno 104] Connection reset by peer
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-    self._check_banner()
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-    'Error reading SSH protocol banner' + str(e)
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
-Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
-    buf += self._read_timeout(timeout)
-[Errno 104] Connection reset by peer
-  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
-
-    x = self.__socket.recv(128)
-ConnectionResetError: [Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
-    self._check_banner()
-  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
-    'Error reading SSH protocol banner' + str(e)
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
-
-Error reading SSH protocol banner[Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
 [Errno 104] Connection reset by peer
 Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 Traceback (most recent call last):
@@ -414,6 +356,34 @@ Traceback (most recent call last):
 paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 
 Error reading SSH protocol banner[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+[Errno 104] Connection reset by peer
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
+    self._check_banner()
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
+
+    'Error reading SSH protocol banner' + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
 Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
@@ -434,5 +404,24 @@ Traceback (most recent call last):
 paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
 
 Error reading SSH protocol banner[Errno 104] Connection reset by peer
-[Errno 104] Connection reset by peer
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2003, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 353, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/lib/python3.6/site-packages/paramiko/packet.py", line 540, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 1856, in run
+    self._check_banner()
+  File "/usr/lib/python3.6/site-packages/paramiko/transport.py", line 2008, in _check_banner
+    'Error reading SSH protocol banner' + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+Error reading SSH protocol banner[Errno 104] Connection reset by peer
 
