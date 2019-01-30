@@ -1,4 +1,4 @@
-# Algar Telecom
+# Algar Telecom Projects
 ## add_edges_routers:
 * insert edges between all already known equipments
 ## capacity_ports_query:
