@@ -1,28 +1,15 @@
-"""from openpyxl import load_workbook
+from openpyxl import Workbook
+from openpyxl.styles import PatternFill
 
-wb = load_workbook('datasheets/CNxEX_MOLDE.xlsx')
-ws = wb['todas_localidades_existentes']
+newbook = Workbook()
 
-concession = []
-expansion  = []
+sheet = newbook.worksheets[0]
 
-num_rows = ws.max_row
-for i in range(2, num_rows):
-    locale = ws.cell(row=i, column=1).value
-    locale_type = ws.cell(row=i, column=2).value 
-    
-    #print("%s %s"%(locale, locale_type))
-    
-    if locale_type == 'CONCESSÃO':
-        concession.append(locale)
-    else:
-        expansion.append(locale)
+sheet.merge_cells('A1:A2')
 
-print(len(concession))
-print(len(expansion))
+sheet.merge_cells('D2:E4')
 
-"""
+sheet.cell(row = 1, column = 1).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')
 
-f = open('datasheets/saida.txt', 'w')
-print(f)
+newbook.save('datasheets/teste.xlsx')
 

@@ -1,5 +1,3 @@
-
-
 #function to add the data from the file to the database
 def add_port(concession_type, locale, station, cto, status):
     #using the global database
@@ -31,15 +29,9 @@ def add_port(concession_type, locale, station, cto, status):
     database[concession_type][locale][station][cto][status] += 1
 
 #function to show everything in the database similarly to the spreadsheet
-def generate_sheet(concession_type):
+def build_database(concession_type):
     global database
 
-    if concession_type == 'concession':
-        filename = 'datasheets/saidaCN.csv'
-    else:
-        filename = 'datasheets/saidaEX.csv'
-    
-    print(filename)
     v = []
     for locale in database[concession_type]:
         for station in database[concession_type][locale]:
@@ -58,15 +50,176 @@ def generate_sheet(concession_type):
                             )
                         )
     v.sort()
-    
+    database[concession_type] = v
  
-    out_file = open(filename, "w")
-    out_file.write("Rótulos de Linha,ESTACAO,CTO,DEFEITO,DESIGNADO,OCUPADO,RESERVADO,VAGO,Total Geral\n")
-    for reg in v:
-        out_file.write(str(reg) + "\n")
-                        
-    out_file.close()
+
+def build_excel_file(concession_type):
+    global database, excel_file
+    from openpyxl import Workbook
     
+
+    excel_file = Workbook()
+    
+    build_styles()
+    build_relatorioAtual(concession_type)
+    excel_file.create_sheet()
+    build_PortaCTOE(concession_type)
+    
+    if concession_type == 'concession':
+        filename = 'datasheets/saidaCN.xlsx'
+    else:
+        filename = 'datasheets/saidaEX.xlsx'
+        
+    print(filename)
+    excel_file.save(filename)
+
+
+def build_styles():
+    global excel_file
+    from openpyxl.styles import NamedStyle, Font, PatternFill, Alignment, Border, Side
+
+    alignment = Alignment(
+        horizontal = 'center',
+        vertical = 'center',
+    )
+    
+    border = Border(
+		left = Side(style = 'thin'),
+		right = Side(style = 'thin'),
+		top = Side(style = 'thin'),
+		bottom = Side(style = 'thin'),
+	)
+    
+    font = Font(
+        bold = True,
+        color = '000000',
+        name = 'Calibri',
+        size = 11,
+    )
+    
+    top_style = NamedStyle('top_style')
+    top_style.alignment = alignment
+    top_style.font = font
+    top_style.border = border
+    excel_file.add_named_style(top_style)
+
+    normal_style = NamedStyle('normal_style')
+    normal_style.border = border
+    excel_file.add_named_style(normal_style)
+    
+    center_style = NamedStyle('center_style')
+    center_style.alignment = alignment
+    center_style.border = border
+    excel_file.add_named_style(center_style)
+
+def build_relatorioAtual(concession_type):
+    from openpyxl.styles import PatternFill
+    sheet = excel_file.worksheets[-1]
+    sheet.title = 'RelatórioAtual'
+    
+    num_columns = 9
+    sheet.cell(row = 1, column = 1).value = 'LOCALIDADE'
+    sheet.cell(row = 1, column = 2).value = 'ESTACAO'
+    sheet.cell(row = 1, column = 3).value = 'CTO'
+    sheet.cell(row = 1, column = 4).value = 'DEFEITO'
+    sheet.cell(row = 1, column = 5).value = 'DESIGNADO'
+    sheet.cell(row = 1, column = 6).value = 'OCUPADO'
+    sheet.cell(row = 1, column = 7).value = 'RESERVADO'
+    sheet.cell(row = 1, column = 8).value = 'VAGO'
+    sheet.cell(row = 1, column = 9).value = 'Total Geral'
+    
+    #this is to change the color of the cells from the first row
+    for i in range(1, num_columns+1):
+        sheet.cell(row = 1, column = i).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid') 
+    
+    current_row = 2
+    for reg in database[concession_type]:
+        sheet.cell(row = current_row, column = 1).value = reg.locale
+        sheet.cell(row = current_row, column = 2).value = reg.station
+        sheet.cell(row = current_row, column = 3).value = reg.cto
+        sheet.cell(row = current_row, column = 4).value = reg.defeito
+        sheet.cell(row = current_row, column = 5).value = reg.designado
+        sheet.cell(row = current_row, column = 6).value = reg.ocupado
+        sheet.cell(row = current_row, column = 7).value = reg.reservado
+        sheet.cell(row = current_row, column = 8).value = reg.vago
+        sheet.cell(row = current_row, column = 9).value = reg.total
+        
+        current_row+=1
+    
+
+def build_PortaCTOE(concession_type):
+    from openpyxl.styles import PatternFill
+    sheet = excel_file.worksheets[-1]
+    sheet.title = '1-Porta CTOE'
+    
+    num_columns = 7
+    sheet.cell(row = 1, column = 1).value = 'LOCALIDADE'
+    sheet.cell(row = 1, column = 2).value = 'ESTACAO'
+    sheet.cell(row = 1, column = 3).value = 'CTO'
+    sheet.cell(row = 1, column = 4).value = 'Possibilidade de Vendas'
+    sheet.cell(row = 1, column = 5).value = 'Capacidade CTOE'
+
+    sheet.cell(row = 2, column = 5).value = 'Ocupado'
+    sheet.cell(row = 2, column = 6).value = 'Disponível'
+    sheet.cell(row = 2, column = 7).value = 'Instalado'
+    
+    sheet.merge_cells('A1:A2')
+    sheet.merge_cells('B1:B2')
+    sheet.merge_cells('C1:C2')
+    sheet.merge_cells('D1:D2')
+    
+    sheet.merge_cells('E1:G1')
+    
+    for i in range(1, num_columns+1):
+        sheet.cell(row = 1, column = i).style = 'top_style'
+        sheet.cell(row = 2, column = i).style = 'top_style'
+        
+    
+    #blue cells
+    sheet.cell(row = 1, column = 1).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')
+    sheet.cell(row = 1, column = 2).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')
+    
+    #yellow cells
+    sheet.cell(row = 1, column = 3).fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid') 
+    sheet.cell(row = 1, column = 4).fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    
+    #green cells
+    sheet.cell(row = 1, column = 5).fill = PatternFill(start_color='A9D08E', end_color='A9D08E', fill_type='solid')
+    
+    #~the forth collor~
+    sheet.cell(row = 2, column = 5).fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
+    sheet.cell(row = 2, column = 6).fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
+    sheet.cell(row = 2, column = 7).fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
+    
+    
+    current_row = 3
+    for reg in database[concession_type]:
+        sheet.cell(row = current_row, column = 1).value = reg.locale
+        sheet.cell(row = current_row, column = 1).style = 'normal_style'
+        
+        sheet.cell(row = current_row, column = 2).value = reg.station
+        sheet.cell(row = current_row, column = 2).style = 'normal_style'
+        
+        sheet.cell(row = current_row, column = 3).value = reg.cto
+        sheet.cell(row = current_row, column = 3).style = 'normal_style'
+        
+        sheet.cell(row = current_row, column = 4).value = ("Sim - %s" % reg.vago) if (int(reg.vago) > 0) else "Não - Indisponibilidade CTOE"
+        sheet.cell(row = current_row, column = 4).style = 'center_style'
+        
+        sheet.cell(row = current_row, column = 5).value = int(reg.designado) + int(reg.ocupado)
+        sheet.cell(row = current_row, column = 5).style = 'center_style'
+        
+        sheet.cell(row = current_row, column = 6).value = reg.vago
+        sheet.cell(row = current_row, column = 6).style = 'center_style'
+        
+        sheet.cell(row = current_row, column = 7).value = reg.total
+        sheet.cell(row = current_row, column = 7).style = 'center_style'
+        
+        current_row+=1
+        
+    
+#this class just wrap all the usefull information
+#it serves mostly just to ordenate the results
 class data:
     def __init__(self, locale, station, cto, defeito, designado, ocupado, reservado, vago, total):
         self.locale = locale
@@ -138,27 +291,35 @@ def read_file(filename, concession, expansion):
             
 
 
+#this file contains the relation between the cities and each concession type
 def read_concession_file(filename):
     from openpyxl import load_workbook
 
+    #loading the file from the disc
     wb = load_workbook(filename)
+    #selectin the right sheet
     ws = wb['todas_localidades_existentes']
 
+    #both lists start empty
     concession = []
     expansion  = []
 
+    #getting the max number of rows
     num_rows = ws.max_row
+    
+    #iterating for all the rows of the sheet
     for i in range(2, num_rows+1):
+        #separating the city and the concession type
         locale = ws.cell(row=i, column=1).value
         locale_type = ws.cell(row=i, column=2).value 
         
-        #print("%s %s"%(locale, locale_type))
-        
+        #depending of the type, we append the locale to the right list
         if locale_type == 'CONCESSÃO':
             concession.append(locale)
         else:
             expansion.append(locale)
     
+    #returning the two lists
     return (concession, expansion)
 
 
@@ -172,10 +333,11 @@ def main():
     filename='datasheets/Circuitos CTO-01-25.csv'
     read_file(filename, concession_lists[0], concession_lists[1])
 
-    generate_sheet('concession')
-    generate_sheet('expansion')
+    build_database('concession')
+    build_database('expansion')
 
-
+    build_excel_file('concession')
+    build_excel_file('expansion')
 
 
 
