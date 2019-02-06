@@ -10,7 +10,7 @@ def add_port(concession_type, locale, station, cto, status):
         database[concession_type][locale][station] = {}
         
     
-    #the cto dictionary is where we're gonna count the registers by their status 
+    #the cto dictionary is where we're gonna count the records by their status 
     if cto not in database[concession_type][locale][station]:
         database[concession_type][locale][station][cto] = {
             'DEFEITO':   0,
@@ -28,15 +28,20 @@ def add_port(concession_type, locale, station, cto, status):
     #each line also adds in it's own status
     database[concession_type][locale][station][cto][status] += 1
 
-#function to show everything in the database similarly to the spreadsheet
+#function to manipulate everything in the database and ordenate it
 def build_database(concession_type):
     global database
 
+    #we're gonna use this list to store and sort the records
     v = []
+    
+    #iterates for everything
     for locale in database[concession_type]:
         for station in database[concession_type][locale]:
-            for cto in database[concession_type][locale][station]:              
+            for cto in database[concession_type][locale][station]:
+                        #append each record to the empty list              
                         v.append(
+                            #create a 'data' object with all the information
                             data(
                                 locale,
                                 station,
@@ -46,43 +51,65 @@ def build_database(concession_type):
                                 database[concession_type][locale][station][cto]['OCUPADO'],
                                 database[concession_type][locale][station][cto]['RESERVADO'],
                                 database[concession_type][locale][station][cto]['VAGO'],
-                                database[concession_type][locale][station][cto]['total'],         
+                                database[concession_type][locale][station][cto]['total'], 
+                                #we are ommiting the 'AUDITORIA' because it doesn't appear in the final sheet      
                             )
                         )
+    
+    #after everything is in the list we can sort it
     v.sort()
+    #we store our list in the same part of the database all the data was to use it globally afterwards
     database[concession_type] = v
  
-
+#this function creates the xlsx file where we're gonna store the results
+#we have one file for each type of concession
 def build_excel_file(concession_type):
+    #using the global database and excel file
     global database, excel_file
+    
+    #this is the library we're using to interact with datasheets files
     from openpyxl import Workbook
     
-
+    #'Workbook' is the main class of the library, it represents a datasheet file (xlsx)
     excel_file = Workbook()
     
+    #first we create the styles we are going to use
     build_styles()
+    
+    #we're going to create several sheets within the same excel file
+    #and we have a function for each of the sheets
+    
+    #this is the first one
     build_relatorioAtual(concession_type)
+    #for the second one we need to first declare a new sheet
     excel_file.create_sheet()
+    #then we can create the second one
     build_PortaCTOE(concession_type)
     
+    #depending of the concession type we choose a different name for the result file
     if concession_type == 'concession':
-        filename = 'datasheets/saidaCN.xlsx'
+        filename = 'datasheets/resultsCN.xlsx'
     else:
-        filename = 'datasheets/saidaEX.xlsx'
-        
-    print(filename)
+        filename = 'datasheets/resultsEX.xlsx'
+     
+       
+    #print(filename)
+    #in the end, we save the file with the name whe chose
     excel_file.save(filename)
 
-
+#this function build the styles we're going to use in the files
 def build_styles():
+    #the excel file we are editating now is a global variable
     global excel_file
     from openpyxl.styles import NamedStyle, Font, PatternFill, Alignment, Border, Side
 
+    #this is for aligning the text inside the cells
     alignment = Alignment(
         horizontal = 'center',
         vertical = 'center',
     )
     
+    #aplying a border to the cell
     border = Border(
 		left = Side(style = 'thin'),
 		right = Side(style = 'thin'),
@@ -90,34 +117,61 @@ def build_styles():
 		bottom = Side(style = 'thin'),
 	)
     
+    #the default font style used in the headlines
     font = Font(
+        #this makes the font bold for the headlines
         bold = True,
         color = '000000',
         name = 'Calibri',
         size = 11,
     )
     
+    #creating the top style for the headline cells
     top_style = NamedStyle('top_style')
+    #applying our configuration to the style we just created
     top_style.alignment = alignment
     top_style.font = font
     top_style.border = border
+    #adding the style to the file
     excel_file.add_named_style(top_style)
 
+    #the normal style
     normal_style = NamedStyle('normal_style')
+    #in this style we don't need an aligment nor a font, we're gonna use the default
+    #which is:
+        #horizontal = 'left',
+        #vertical = 'bottom',
+        #fontName = 'Calibri',
+        #fontSize = 11,
+        #color = '000000'
+        
     normal_style.border = border
+    
+    #adding the style to the file
     excel_file.add_named_style(normal_style)
     
+    
+    #this is style is the same as the normal but with center aligning 
     center_style = NamedStyle('center_style')
     center_style.alignment = alignment
     center_style.border = border
     excel_file.add_named_style(center_style)
 
+
+#function for creating one sheet of the excel file
 def build_relatorioAtual(concession_type):
+    #importing function to change the color of a cell
     from openpyxl.styles import PatternFill
+    
+    #here we select the last sheet of the file as the one we're going to use
     sheet = excel_file.worksheets[-1]
+    #changing the title of the sheet
     sheet.title = 'RelatórioAtual'
     
+    #this particular sheet has 9 columns
     num_columns = 9
+    
+    #filling the first row of cells with the headlines values
     sheet.cell(row = 1, column = 1).value = 'LOCALIDADE'
     sheet.cell(row = 1, column = 2).value = 'ESTACAO'
     sheet.cell(row = 1, column = 3).value = 'CTO'
@@ -130,89 +184,115 @@ def build_relatorioAtual(concession_type):
     
     #this is to change the color of the cells from the first row
     for i in range(1, num_columns+1):
+        #the .fill property controls the color
+        # 'D9E1F2' is the hex representation of a light, clear, beautiful blue
         sheet.cell(row = 1, column = i).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid') 
     
+    #now we're going to fill the cells with the data collected
+    #starting from the second row
     current_row = 2
-    for reg in database[concession_type]:
-        sheet.cell(row = current_row, column = 1).value = reg.locale
-        sheet.cell(row = current_row, column = 2).value = reg.station
-        sheet.cell(row = current_row, column = 3).value = reg.cto
-        sheet.cell(row = current_row, column = 4).value = reg.defeito
-        sheet.cell(row = current_row, column = 5).value = reg.designado
-        sheet.cell(row = current_row, column = 6).value = reg.ocupado
-        sheet.cell(row = current_row, column = 7).value = reg.reservado
-        sheet.cell(row = current_row, column = 8).value = reg.vago
-        sheet.cell(row = current_row, column = 9).value = reg.total
-        
+    
+    #iterating for the records in the database
+    #each record is a 'data' object
+    for record in database[concession_type]:
+        #in each of the nine cells in the current row we fill in the right information
+        #these cells don't need any style, they look OK with the default
+        sheet.cell(row = current_row, column = 1).value = record.locale
+        sheet.cell(row = current_row, column = 2).value = record.station
+        sheet.cell(row = current_row, column = 3).value = record.cto
+        sheet.cell(row = current_row, column = 4).value = record.defeito
+        sheet.cell(row = current_row, column = 5).value = record.designado
+        sheet.cell(row = current_row, column = 6).value = record.ocupado
+        sheet.cell(row = current_row, column = 7).value = record.reservado
+        sheet.cell(row = current_row, column = 8).value = record.vago
+        sheet.cell(row = current_row, column = 9).value = record.total
+        #atualize the current row
         current_row+=1
     
 
+#function for creating the other sheet of the excel file
 def build_PortaCTOE(concession_type):
+    #same old import 
     from openpyxl.styles import PatternFill
+    #using the last worksheet created
     sheet = excel_file.worksheets[-1]
     sheet.title = '1-Porta CTOE'
     
+    #this time we have 7 columns
     num_columns = 7
+    #these are the headlines
+    #this time the headlines are two rows thick
+    
     sheet.cell(row = 1, column = 1).value = 'LOCALIDADE'
     sheet.cell(row = 1, column = 2).value = 'ESTACAO'
     sheet.cell(row = 1, column = 3).value = 'CTO'
     sheet.cell(row = 1, column = 4).value = 'Possibilidade de Vendas'
     sheet.cell(row = 1, column = 5).value = 'Capacidade CTOE'
-
+    
+    #these are the headlines of the second row
     sheet.cell(row = 2, column = 5).value = 'Ocupado'
     sheet.cell(row = 2, column = 6).value = 'Disponível'
     sheet.cell(row = 2, column = 7).value = 'Instalado'
     
+    #this is for merging the cells that ocuppy more than one row 
+    #it mantains the content of the left-most upper-most cell
     sheet.merge_cells('A1:A2')
     sheet.merge_cells('B1:B2')
     sheet.merge_cells('C1:C2')
     sheet.merge_cells('D1:D2')
-    
     sheet.merge_cells('E1:G1')
     
+    #this apply the same top_style we created before to all cells of the first and second row
+    #the cells that were merged receive the style two times
     for i in range(1, num_columns+1):
         sheet.cell(row = 1, column = i).style = 'top_style'
         sheet.cell(row = 2, column = i).style = 'top_style'
         
     
-    #blue cells
+    #setting the color of the blue cells
     sheet.cell(row = 1, column = 1).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')
     sheet.cell(row = 1, column = 2).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')
     
-    #yellow cells
+    #setting the color of the yellow cells
     sheet.cell(row = 1, column = 3).fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid') 
     sheet.cell(row = 1, column = 4).fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
     
-    #green cells
+    #setting the color of the green cells
     sheet.cell(row = 1, column = 5).fill = PatternFill(start_color='A9D08E', end_color='A9D08E', fill_type='solid')
     
-    #~the forth collor~
+    #setting the color of the orange-ish cells
     sheet.cell(row = 2, column = 5).fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
     sheet.cell(row = 2, column = 6).fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
     sheet.cell(row = 2, column = 7).fill = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
     
     
+    #starting for the third row this time
     current_row = 3
-    for reg in database[concession_type]:
-        sheet.cell(row = current_row, column = 1).value = reg.locale
+    #iterate for all the records
+    for record in database[concession_type]:
+    
+        #each cell receive content and style
+        sheet.cell(row = current_row, column = 1).value = record.locale
         sheet.cell(row = current_row, column = 1).style = 'normal_style'
         
-        sheet.cell(row = current_row, column = 2).value = reg.station
+        sheet.cell(row = current_row, column = 2).value = record.station
         sheet.cell(row = current_row, column = 2).style = 'normal_style'
         
-        sheet.cell(row = current_row, column = 3).value = reg.cto
+        sheet.cell(row = current_row, column = 3).value = record.cto
         sheet.cell(row = current_row, column = 3).style = 'normal_style'
         
-        sheet.cell(row = current_row, column = 4).value = ("Sim - %s" % reg.vago) if (int(reg.vago) > 0) else "Não - Indisponibilidade CTOE"
+        #the content of this one is conditional, depending of other property
+        sheet.cell(row = current_row, column = 4).value = ("Sim - %s" % record.vago) if (int(record.vago) > 0) else "Não - Indisponibilidade CTOE"
         sheet.cell(row = current_row, column = 4).style = 'center_style'
         
-        sheet.cell(row = current_row, column = 5).value = int(reg.designado) + int(reg.ocupado)
+        #the content of this other one is the sum of two properties
+        sheet.cell(row = current_row, column = 5).value = int(record.designado) + int(record.ocupado)
         sheet.cell(row = current_row, column = 5).style = 'center_style'
         
-        sheet.cell(row = current_row, column = 6).value = reg.vago
+        sheet.cell(row = current_row, column = 6).value = record.vago
         sheet.cell(row = current_row, column = 6).style = 'center_style'
         
-        sheet.cell(row = current_row, column = 7).value = reg.total
+        sheet.cell(row = current_row, column = 7).value = record.total
         sheet.cell(row = current_row, column = 7).style = 'center_style'
         
         current_row+=1
@@ -221,6 +301,7 @@ def build_PortaCTOE(concession_type):
 #this class just wrap all the usefull information
 #it serves mostly just to ordenate the results
 class data:
+    #the constructor is pretty default
     def __init__(self, locale, station, cto, defeito, designado, ocupado, reservado, vago, total):
         self.locale = locale
         self.station = station
@@ -231,14 +312,18 @@ class data:
         self.reservado = reservado
         self.vago = vago
         self.total = total
-        
+    
+    #this is the '<' operator 
     def __lt__(self, other):
         if self.locale != other.locale:
             return self.locale < other.locale
         if self.station != other.station:
             return self.station < other.station
+        
+        #we're sure the cto is unique so we don't need to compare nothing beyond it
         return self.cto < other.cto
     
+    #this is for converting the class to a string when we need to debug the code
     def __repr__(self):
         return "%s,%s,%s,%s,%s,%s,%s,%s,%s,"%(
             self.locale,
@@ -258,6 +343,7 @@ def read_file(filename, concession, expansion):
     #declaring the database as global will help we use it across different functions 
     global database
     
+    #we're spliting the database in two areas to separate the two types of locales
     database['concession'] = {}
     database['expansion'] = {}
     
