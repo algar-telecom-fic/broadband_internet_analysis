@@ -316,7 +316,29 @@ def build_PortaCTOE(concession_type):
 def build_Crescimento(concession_type, concession_list):
     #using the last worksheet created
     sheet = excel_file.worksheets[-1]
-    sheet.title = '4-Tx-Crescimento'
+    sheet.title = '3-Tx-Crescimento'
+    
+    sheet.cell(row = 1, column = 1).value = 'LOCALIDADE'
+    sheet.cell(row = 1, column = 2).value = 'Ocupação Atual'
+    sheet.cell(row = 1, column = 3).value = 'Ocupação Anterior'
+    sheet.cell(row = 1, column = 4).value = 'Tx Crescimento (Mês)'
+    sheet.cell(row = 1, column = 5).value = 'Capacidade Atual'
+    sheet.cell(row = 1, column = 6).value = 'Espectativa de Esgotamento'
+    sheet.cell(row = 1, column = 7).value = 'Visão de Capacidade'
+    
+    for i in range(1, 8):
+        sheet.cell(row = 1, column = i).style = 'top_style'
+        
+    sheet.cell(row = 1, column = 1).fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')
+    
+    sheet.cell(row = 1, column = 2).fill = PatternFill(start_color='F8CBAD', end_color='F8CBAD', fill_type='solid')
+    sheet.cell(row = 1, column = 3).fill = PatternFill(start_color='F8CBAD', end_color='F8CBAD', fill_type='solid')
+    
+    sheet.cell(row = 1, column = 4).fill = PatternFill(start_color='A9D08E', end_color='A9D08E', fill_type='solid')
+    sheet.cell(row = 1, column = 5).fill = PatternFill(start_color='A9D08E', end_color='A9D08E', fill_type='solid')
+    sheet.cell(row = 1, column = 6).fill = PatternFill(start_color='A9D08E', end_color='A9D08E', fill_type='solid')
+    sheet.cell(row = 1, column = 7).fill = PatternFill(start_color='A9D08E', end_color='A9D08E', fill_type='solid')
+    
     
     current_row = 2
     
@@ -353,15 +375,61 @@ def build_Crescimento(concession_type, concession_list):
         
         ocupado+=record.ocupado
         vago+=record.vago
+    
+    sheet.cell(row = current_row, column = 1).value = current_locale
+    sheet.cell(row = current_row, column = 2).value = ocupado
+    sheet.cell(row = current_row, column = 5).value = vago
         
     global old_date
     
     days = date_difference(old_date)
     
-    for i in range(2, current_row):
+    for i in range(2, current_row+1):
         deltaOcupacao =  int(sheet.cell(row = i, column = 2).value) - int(sheet.cell(row = i, column = 3).value)
-        sheet.cell(row = i, column = 4).value = "%.2f" % ((deltaOcupacao / days) *30)
-               
+        tx_crescimento = ((deltaOcupacao / days) *30)
+        sheet.cell(row = i, column = 4).value = "%.2f" % tx_crescimento
+        
+        sheet.cell(row = i, column = 1).style = 'normal_style'
+        sheet.cell(row = i, column = 2).style = 'normal_style'
+        sheet.cell(row = i, column = 3).style = 'normal_style'
+        sheet.cell(row = i, column = 4).style = 'center_style'
+        sheet.cell(row = i, column = 5).style = 'center_style'
+        sheet.cell(row = i, column = 6).style = 'center_style'
+        sheet.cell(row = i, column = 7).style = 'center_style'
+        
+        try:
+            month_prevision = (float(sheet.cell(row = i, column = 5).value) / tx_crescimento)
+            sheet.cell(row = i, column = 6).value = "%.2f" % month_prevision
+            
+            if month_prevision < 0.00:
+                sheet.cell(row = i, column = 7).value = 'Decrescimento'
+            if 0.01 < month_prevision <= 1.00:
+                sheet.cell(row = i, column = 7).value = '1 - Esgota até Um Mês'
+            if 1.00 < month_prevision <= 2.00:
+                sheet.cell(row = i, column = 7).value = '2 - Esgota até Dois Meses'
+            if 2.00 < month_prevision <= 3.00:
+                sheet.cell(row = i, column = 7).value = '3 - Esgota até Três Meses'
+            if 3.00 < month_prevision <= 4.00:
+                sheet.cell(row = i, column = 7).value = '4 - Esgota até Quatro Meses'
+            if 4.00 < month_prevision <= 5.00:
+                sheet.cell(row = i, column = 7).value = '5 - Esgota até Cinco Meses'
+            if 5.00 < month_prevision <= 6.00:
+                sheet.cell(row = i, column = 7).value = '6 - Esgota até Seis Meses'
+            if 6.00 < month_prevision <= 7.00:
+                sheet.cell(row = i, column = 7).value = '7 - Esgota até Sete Meses'
+            if 7.00 < month_prevision <= 8.00:
+                sheet.cell(row = i, column = 7).value = '8 - Esgota até Oito Meses'
+            if 8.00 < month_prevision <= 9.00:
+                sheet.cell(row = i, column = 7).value = '9 - Esgota até Nove Meses'
+            if 9.00 < month_prevision <= 10.00:
+                sheet.cell(row = i, column = 7).value = '10 - Esgota até Dez Meses'
+            if 10.00 < month_prevision:
+                sheet.cell(row = i, column = 7).value = '11 - Esgota em Mais de 10 Meses'
+             
+        except ZeroDivisionError as e:
+            print(e)
+            sheet.cell(row = i, column = 6).value = "Indisponível"
+            sheet.cell(row = i, column = 7).value = '11 - Esgota em Mais de 10 Meses'
     
 
 
@@ -521,7 +589,7 @@ def main():
     oldCn = 'datasheets/oldCn.xlsx'
     oldEx = 'datasheets/oldEx.xlsx'
 
-    #read_excel_file(oldCn, 'old_conssesion')
+    read_excel_file(oldCn, 'old_concession')
     read_excel_file(oldEx, 'old_expansion')
 
 
@@ -531,7 +599,7 @@ def main():
     
 
 
-    #build_excel_file('concession')
+    build_excel_file('concession', concession_lists[0])
     build_excel_file('expansion', concession_lists[1])
 
 
