@@ -1,3 +1,11 @@
+from aux_functions import now, date_difference
+
+#this is the library we're using to interact with datasheets files
+from openpyxl import Workbook
+from openpyxl.styles import NamedStyle, Font, PatternFill, Alignment, Border, Side
+from openpyxl import load_workbook
+
+
 #function to add the data from the file to the database
 def add_port(concession_type, locale, station, cto, status):
     #using the global database
@@ -63,12 +71,11 @@ def build_database(concession_type):
  
 #this function creates the xlsx file where we're gonna store the results
 #we have one file for each type of concession
-def build_excel_file(concession_type):
+def build_excel_file(concession_type, concession_list):
     #using the global database and excel file
     global database, excel_file
     
-    #this is the library we're using to interact with datasheets files
-    from openpyxl import Workbook
+    
     
     #'Workbook' is the main class of the library, it represents a datasheet file (xlsx)
     excel_file = Workbook()
@@ -86,6 +93,10 @@ def build_excel_file(concession_type):
     #then we can create the second one
     build_PortaCTOE(concession_type)
     
+    excel_file.create_sheet()
+    
+    build_Crescimento(concession_type, concession_list)
+    
     #depending of the concession type we choose a different name for the result file
     if concession_type == 'concession':
         filename = 'datasheets/resultsCN.xlsx'
@@ -101,7 +112,7 @@ def build_excel_file(concession_type):
 def build_styles():
     #the excel file we are editating now is a global variable
     global excel_file
-    from openpyxl.styles import NamedStyle, Font, PatternFill, Alignment, Border, Side
+    
 
     #this is for aligning the text inside the cells
     alignment = Alignment(
@@ -160,16 +171,15 @@ def build_styles():
 
 #function for creating one sheet of the excel file
 def build_relatorioAtual(concession_type):
-    #importing function to change the color of a cell
-    from openpyxl.styles import PatternFill
+    
     
     #here we select the last sheet of the file as the one we're going to use
     sheet = excel_file.worksheets[-1]
     #changing the title of the sheet
     sheet.title = 'RelatórioAtual'
     
-    #this particular sheet has 9 columns
-    num_columns = 9
+    #this particular sheet has 10 columns
+    num_columns = 10
     
     #filling the first row of cells with the headlines values
     sheet.cell(row = 1, column = 1).value = 'LOCALIDADE'
@@ -181,6 +191,7 @@ def build_relatorioAtual(concession_type):
     sheet.cell(row = 1, column = 7).value = 'RESERVADO'
     sheet.cell(row = 1, column = 8).value = 'VAGO'
     sheet.cell(row = 1, column = 9).value = 'Total Geral'
+    
     
     #this is to change the color of the cells from the first row
     for i in range(1, num_columns+1):
@@ -209,11 +220,14 @@ def build_relatorioAtual(concession_type):
         #atualize the current row
         current_row+=1
     
+    #we need to save the date we generated this file
+    sheet.cell(row = 1, column = 10).value = 'Data'
+    sheet.cell(row = 2, column = 10).value = now()
+    
 
 #function for creating the other sheet of the excel file
 def build_PortaCTOE(concession_type):
-    #same old import 
-    from openpyxl.styles import PatternFill
+
     #using the last worksheet created
     sheet = excel_file.worksheets[-1]
     sheet.title = '1-Porta CTOE'
@@ -297,7 +311,60 @@ def build_PortaCTOE(concession_type):
         
         current_row+=1
         
+
+
+def build_Crescimento(concession_type, concession_list):
+    #using the last worksheet created
+    sheet = excel_file.worksheets[-1]
+    sheet.title = '4-Tx-Crescimento'
     
+    current_row = 2
+    
+    olddata = 'old_'+concession_type
+    for locale in concession_list:
+        ocupado = 0
+        
+        if locale in database[olddata]:
+            for station in database[olddata][locale]:
+                for cto in database[olddata][locale][station]:
+                    ocupado+=database[olddata][locale][station][cto]['OCUPADO']
+        
+        sheet.cell(row = current_row, column = 3).value = ocupado
+        current_row+=1
+    
+    
+    current_locale = database[concession_type][0].locale
+
+    ocupado = 0
+    vago = 0
+    current_row = 2
+
+    for record in database[concession_type]:
+        if record.locale != current_locale:
+            
+            sheet.cell(row = current_row, column = 1).value = current_locale
+            sheet.cell(row = current_row, column = 2).value = ocupado
+            sheet.cell(row = current_row, column = 5).value = vago
+            
+            current_locale = record.locale
+            current_row+=1
+            ocupado = 0
+            vago = 0
+        
+        ocupado+=record.ocupado
+        vago+=record.vago
+        
+    global old_date
+    
+    days = date_difference(old_date)
+    
+    for i in range(2, current_row):
+        deltaOcupacao =  int(sheet.cell(row = i, column = 2).value) - int(sheet.cell(row = i, column = 3).value)
+        sheet.cell(row = i, column = 4).value = "%.2f" % ((deltaOcupacao / days) *30)
+               
+    
+
+
 #this class just wrap all the usefull information
 #it serves mostly just to ordenate the results
 class data:
@@ -377,9 +444,41 @@ def read_file(filename, concession, expansion):
             
 
 
+def read_excel_file(filename, concession_type):
+    global database, old_date
+    
+    wb = load_workbook(filename)
+    ws = wb['RelatórioAtual']
+    
+    num_rows = ws.max_row 
+    
+    database[concession_type] = {}
+    
+    for i in range(2, num_rows+1):
+        locale  = ws.cell(row = i, column = 1).value
+        station = ws.cell(row = i, column = 2).value
+        cto     = ws.cell(row = i, column = 3).value
+        
+        if locale not in database[concession_type]:
+            database[concession_type][locale] = {}
+        if station not in database[concession_type][locale]:
+            database[concession_type][locale][station] = {}
+        
+        database[concession_type][locale][station][cto] = {
+            'DEFEITO':   ws.cell(row = i, column = 4).value,
+            'DESIGNADO': ws.cell(row = i, column = 5).value,
+            'OCUPADO':   ws.cell(row = i, column = 6).value,
+            'RESERVADO': ws.cell(row = i, column = 7).value,
+            'VAGO':      ws.cell(row = i, column = 8).value,
+            'total':     ws.cell(row = i, column = 9).value,
+        }
+    
+    old_date = str(ws.cell(row = 2, column = 10).value)
+    print("aquiii %s" %old_date)
+
 #this file contains the relation between the cities and each concession type
 def read_concession_file(filename):
-    from openpyxl import load_workbook
+
 
     #loading the file from the disc
     wb = load_workbook(filename)
@@ -419,11 +518,21 @@ def main():
     filename='datasheets/Circuitos CTO-01-25.csv'
     read_file(filename, concession_lists[0], concession_lists[1])
 
+    oldCn = 'datasheets/oldCn.xlsx'
+    oldEx = 'datasheets/oldEx.xlsx'
+
+    #read_excel_file(oldCn, 'old_conssesion')
+    read_excel_file(oldEx, 'old_expansion')
+
+
     build_database('concession')
     build_database('expansion')
 
-    build_excel_file('concession')
-    build_excel_file('expansion')
+    
+
+
+    #build_excel_file('concession')
+    build_excel_file('expansion', concession_lists[1])
 
 
 
