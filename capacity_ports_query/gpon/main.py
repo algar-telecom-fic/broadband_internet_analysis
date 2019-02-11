@@ -71,7 +71,7 @@ def build_database(concession_type):
  
 #this function creates the xlsx file where we're gonna store the results
 #we have one file for each type of concession
-def build_excel_file(concession_type, concession_list):
+def build_excel_file(concession_type, concession_list, fileCn, fileEx):
     #using the global database and excel file
     global database, excel_file
     
@@ -99,9 +99,9 @@ def build_excel_file(concession_type, concession_list):
     
     #depending of the concession type we choose a different name for the result file
     if concession_type == 'concession':
-        filename = 'datasheets/resultsCN.xlsx'
+        filename = fileCn
     else:
-        filename = 'datasheets/resultsEX.xlsx'
+        filename = fileEx
      
        
     #print(filename)
@@ -386,7 +386,11 @@ def build_Crescimento(concession_type, concession_list):
     
     for i in range(2, current_row+1):
         deltaOcupacao =  int(sheet.cell(row = i, column = 2).value) - int(sheet.cell(row = i, column = 3).value)
-        tx_crescimento = ((deltaOcupacao / days) *30)
+        try:
+            tx_crescimento = ((deltaOcupacao / days) *30)
+        except ZeroDivisionError as e:
+            tx_crescimento = 0
+        
         sheet.cell(row = i, column = 4).value = "%.2f" % tx_crescimento
         
         sheet.cell(row = i, column = 1).style = 'normal_style'
@@ -542,7 +546,6 @@ def read_excel_file(filename, concession_type):
         }
     
     old_date = str(ws.cell(row = 2, column = 10).value)
-    print("aquiii %s" %old_date)
 
 #this file contains the relation between the cities and each concession type
 def read_concession_file(filename):
@@ -577,30 +580,38 @@ def read_concession_file(filename):
 
 
 def main():
+    from simpleUI import configs
+    
     global database
     database = {}
 
+
+    """
     concession_filename = 'datasheets/CNxEX_MOLDE.xlsx'
-    concession_lists = read_concession_file(concession_filename)
-
     filename='datasheets/Circuitos CTO-01-25.csv'
-    read_file(filename, concession_lists[0], concession_lists[1])
-
     oldCn = 'datasheets/oldCn.xlsx'
     oldEx = 'datasheets/oldEx.xlsx'
-
+    """ 
+    try:
+        concession_filename, filename, oldCn, oldEx, fileCn, fileEx = configs()
+    except Exception as e:
+        print(e)
+        exit()
+        
+        
+           
+    concession_lists = read_concession_file(concession_filename)
+   
+    read_file(filename, concession_lists[0], concession_lists[1])
+   
     read_excel_file(oldCn, 'old_concession')
     read_excel_file(oldEx, 'old_expansion')
 
-
     build_database('concession')
     build_database('expansion')
-
     
-
-
-    build_excel_file('concession', concession_lists[0])
-    build_excel_file('expansion', concession_lists[1])
+    build_excel_file('concession', concession_lists[0], fileCn, fileEx)
+    build_excel_file('expansion', concession_lists[1], fileCn, fileEx)
 
 
 
