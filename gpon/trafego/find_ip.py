@@ -1,5 +1,5 @@
 #this function receives an string and looks for an IP address inside the string
-def ip(input_str):
+def find_ip(input_str):
 
 	#importing the regular expression module
 	from re import compile
