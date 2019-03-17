@@ -67,8 +67,7 @@ def build_mongodb(current_file, previous_file, date_difference):
       print(i.locale)
       print(i.station)
       print('occupied')
-      kappa1 = database[previous_file]
-      print('1')
+      print(database[previous_file])
       kappa2 = database[previous_file][i.regional]
       print('2')
       kappa3 = database[previous_file][i.regional][i.locale]
