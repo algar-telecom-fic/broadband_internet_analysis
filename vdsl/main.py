@@ -101,10 +101,10 @@ def build_mongodb(current_file, previous_file, date_difference):
 			'Crescimento': increasing,
 			'Previsão de esgotamento': prediction,
     })
-  with pymongo.MongoClient() as client:
-    database = client.capacidade
-    collection = database.vdsl
-    collection.insert(documents)
+	with pymongo.MongoClient() as client:
+		database = client.capacidade
+		collection = database.vdsl
+		collection.insert(documents)
 
 def get_cabinet(v):
 	if len(v[ord('U') - ord('A')]) == 0:
