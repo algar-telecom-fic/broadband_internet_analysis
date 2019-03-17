@@ -118,7 +118,7 @@ def main():
   read_file(current_file)
   read_file(previous_file)
   build_database(current_file)
-  build_excel_file(current_file, previous_file, date_difference)
+  build_mongodb(current_file, previous_file, date_difference)
 
 def read_config_file(filename):
   global database
