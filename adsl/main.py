@@ -17,6 +17,8 @@ class data:
     if self.locale != other.locale:
       return self.locale < other.locale
     return self.station < other.station
+  def __str__(self):
+    return str(self.regional) + str(self.locale) + str(self.station) + str(self.self.total) + str(self.available) + str(self.occupied)
 
 def add_port(filename, regional, locale, station, port):
   global database
@@ -60,7 +62,19 @@ def build_mongodb(current_file, previous_file, date_difference):
   documents = []
   for i in database[current_file]:
     try:
-      print(database)
+      print(previous_file)
+      print(i.regional)
+      print(i.locale)
+      print(i.station)
+      print('occupied')
+      kappa1 = database[previous_file]
+      print('1')
+      kappa2 = database[previous_file][i.regional]
+      print('2')
+      kappa3 = database[previous_file][i.regional][i.locale]
+      print('3')
+      kappa4 = database[previous_file][i.regional][i.locale][i.station]
+      print('4')
       before = database[previous_file][i.regional][i.locale][i.station]['occupied']
       median = (i.occupied - before) / (date_difference / 30)
       increasing = round(median, 1)
