@@ -58,7 +58,7 @@ def build_database(current_file):
   database[current_file] = v
 
 def build_mongodb(current_file, previous_file, date_difference):
-  global database, excel_file
+  global database
   documents = []
   for i in database[current_file]:
     try:

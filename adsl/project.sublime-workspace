@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"regional"
+			],
+			[
 				"in",
 				"increasing"
 			],
@@ -32,7 +36,6 @@
 			"settings":
 			{
 				"buffer_size": 120,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -40,7 +43,7 @@
 			"file": "main.py",
 			"settings":
 			{
-				"buffer_size": 5083,
+				"buffer_size": 5239,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -78,9 +81,10 @@
 	},
 	"file_history":
 	[
+		"/home/gardusi/github/broadband_internet_analysis/adsl/config.txt",
+		"/home/gardusi/github/broadband_internet_analysis/adsl/main.py",
 		"/home/gardusi/github/broadband_internet_analysis/adsl/eoq.sh",
 		"/home/gardusi/github/broadband_internet_analysis/adsl/adsl.json",
-		"/home/gardusi/github/broadband_internet_analysis/adsl/main.py",
 		"/home/gardusi/github/broadband_internet_analysis/adsl/eoq.py",
 		"/home/gardusi/github/broadband_internet_analysis/gpon/main.py",
 		"/home/gardusi/github/broadband_internet_analysis/gpon/teste.py",
@@ -201,8 +205,8 @@
 						"selection":
 						[
 							[
-								95,
-								95
+								0,
+								0
 							]
 						],
 						"settings":
@@ -228,24 +232,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5083,
+						"buffer_size": 5239,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1007,
-								1007
+								1338,
+								1338
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 55.0,
+						"translation.y": 814.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
