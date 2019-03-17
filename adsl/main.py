@@ -55,13 +55,6 @@ def build_database(current_file):
   v.sort()
   database[current_file] = v
 
-def main():
-  current_file, previous_file, date_difference = read_config_file('config.txt')
-  read_file(current_file)
-  read_file(previous_file)
-  build_database(current_file)
-  build_mongodb(current_file, previous_file, date_difference)
-
 def build_mongodb(current_file, previous_file, date_difference):
   global database, excel_file
   documents = []
@@ -103,6 +96,13 @@ def build_mongodb(current_file, previous_file, date_difference):
     database = client.capacidade
     collection = database.adsl
     collection.insert(documents)
+
+def main():
+  current_file, previous_file, date_difference = read_config_file('config.txt')
+  read_file(current_file)
+  read_file(previous_file)
+  build_database(current_file)
+  build_mongodb(current_file, previous_file, date_difference)
 
 def read_config_file(filename):
   global database
