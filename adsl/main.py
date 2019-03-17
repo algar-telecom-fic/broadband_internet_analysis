@@ -60,9 +60,8 @@ def build_mongodb(current_file, previous_file, date_difference):
   documents = []
   for i in database[current_file]:
     try:
-      print('kappa')
+      print(database)
       before = database[previous_file][i.regional][i.locale][i.station]['occupied']
-      print('keepo')
       median = (i.occupied - before) / (date_difference / 30)
       increasing = round(median, 1)
       if i.available == 0:
