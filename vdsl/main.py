@@ -1,3 +1,28 @@
+from math import ceil
+import pymongo
+
+class data:
+	def __init__(self, regional, locale, station, cabinet, total, available, occupied):
+		self.regional = regional
+		self.locale = locale
+		self.station = station
+		self.cabinet = cabinet
+		self.total = total
+		self.available = available
+		self.occupied = occupied
+	def __lt__(self, other):
+		if self.available != other.available:
+			return self.available < other.available
+		if self.regional != other.regional:
+			return self.regional < other.regional
+		if self.locale != other.locale:
+			return self.locale < other.locale
+		if self.station != other.station:
+			return self.station < other.station
+		return self.cabinet < other.cabinet
+	def __str__(self):
+		return str(self.regional) + str(self.locale) + str(self.station) + str(self.cabinet) + str(self.total) + str(self.available) + str(self.occupied)
+
 def add_port(filename, regional, locale, station, cabinet, port):
 	global database
 	if regional not in database[filename]:
@@ -39,130 +64,48 @@ def build_database(current_file):
 	v.sort()
 	database[current_file] = v
 
-def build_excel_file(current_file, previous_file, date_difference):
-	global database, excel_file
-	from math import ceil
-	from openpyxl import Workbook
-	from openpyxl.utils import get_column_letter
-	from openpyxl.styles import PatternFill
-	excel_file = Workbook()
-	sheet = excel_file.worksheets[0]
-	sheet.title = 'Results'
-	build_styles()
-	current_row = 1
-	columns = 9
-	greatest_column = [0 for i in range(columns + 1)]
-	sheet.cell(row = current_row, column = 1).value = 'Regional'
-	sheet.cell(row = current_row, column = 2).value = 'Localidade'
-	sheet.cell(row = current_row, column = 3).value = 'Estação mãe'
-	sheet.cell(row = current_row, column = 4).value = 'Armário'
-	sheet.cell(row = current_row, column = 5).value = 'Total de portas'
-	sheet.cell(row = current_row, column = 6).value = 'Portas disponíveis'
-	sheet.cell(row = current_row, column = 7).value = 'Portas ocupadas'
-	sheet.cell(row = current_row, column = 8).value = 'Crescimento'
-	sheet.cell(row = current_row, column = 9).value = 'Previsão de esgotamento'
-	for j in range(1, columns + 1):
-		sheet.cell(row = current_row, column = j).style = 'top_style'
-		greatest_column[j] = max(greatest_column[j], len(str(sheet.cell(row = current_row, column = j).value)))
+def build_mongodb(current_file, previous_file, date_difference):
+	global database
+	documents = []
 	for i in database[current_file]:
-		current_row += 1
-		sheet.cell(row = current_row, column = 1).value = i.regional
-		sheet.cell(row = current_row, column = 2).value = i.locale
-		sheet.cell(row = current_row, column = 3).value = i.station
-		sheet.cell(row = current_row, column = 4).value = i.cabinet
-		sheet.cell(row = current_row, column = 5).value = i.total
-		sheet.cell(row = current_row, column = 6).value = i.available
-		sheet.cell(row = current_row, column = 7).value = i.occupied
 		try:
 			before = database[previous_file][i.regional][i.locale][i.station][i.cabinet]['occupied']
 			median = (i.occupied - before) / (date_difference / 30)
-			sheet.cell(row = current_row, column = 8).value = round(median, 1)
+			increasing = round(median, 1)
 			if i.available == 0:
-				sheet.cell(row = current_row, column = 9).value = 'Esgotado'
+				prediction = 'Esgotado'
 			elif median > 0:
 				value = ceil(i.available / median)
 				if value == 1:
-					sheet.cell(row = current_row, column = 9).value = 'Esgota em até 1 mês'
+					prediction = 'Esgota em até 1 mês'
 				elif value > 10:
-					sheet.cell(row = current_row, column = 9).value = 'Esgota em mais de 10 meses'
+					prediction = 'Esgota em mais de 10 meses'
 				else:
-					sheet.cell(row = current_row, column = 9).value = 'Esgota em até ' + str(value) + ' meses'
+					prediction = 'Esgota em até ' + str(value) + ' meses'
 			elif median < 0:
-				sheet.cell(row = current_row, column = columns).value = 'Decrescimento'
+				prediction = 'Decrescimento'
 			else:
-				sheet.cell(row = current_row, column = columns).value = 'Estável'
+				prediction = 'Estável'
 		except Exception as e:
 			print(e)
-			sheet.cell(row = current_row, column = 8).value = 'Sem histórico'
-			sheet.cell(row = current_row, column = 9).value = 'Esgotado' if i.available == 0 else 'Sem histórico'
-		for j in range(1, columns + 1):
-			sheet.cell(row = current_row, column = j).style = 'normal_style'
-			greatest_column[j] = max(greatest_column[j], len(str(sheet.cell(row = current_row, column = j).value)))
-		current_color = 'FF0000' if i.available == 0 else ('00FF00' if i.available > 10 else 'FFFF00')
-		sheet.cell(row = current_row, column = 6).fill = PatternFill('solid', fgColor = current_color)
-	for i in range(current_row + 1):
-		sheet.row_dimensions[i + 1].height = 15
-	for j in range(1, columns + 1):
-		sheet.column_dimensions[get_column_letter(j)].width = greatest_column[j]
-	if not excel_file.views:
-		excel_file.views.append(openpyxl.workbook.views.BookView())
-	excel_file.save('results.xlsx')
+			increasing = 'Sem histórico'
+			prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
+		documents.append({
+      'Regional': i.regional,
+			'Localidade': i.locale,
+			'Estação mãe': i.station,
+			'Armário': i.cabinet,
+			'Total de portas': i.total,
+			'Portas disponíveis': i.available,
+			'Portas ocupadas': i.occupied,
+			'Crescimento': increasing,
+			'Previsão de esgotamento': prediction,
+    })
+  with pymongo.MongoClient() as client:
+    database = client.capacidade
+    collection = database.vdsl
+    collection.insert(documents)
 
-def build_styles():
-	global excel_file
-	from openpyxl.styles import NamedStyle, Font, PatternFill, Alignment, Border, Side
-	alignment = Alignment(
-		horizontal = 'center',
-		vertical = 'center',
-	)
-	border = Border(
-		left = Side(style = 'thin'),
-		right = Side(style = 'thin'),
-		top = Side(style = 'thin'),
-		bottom = Side(style = 'thin'),
-	)
-	top_style = NamedStyle('top_style')
-	top_style.alignment = alignment
-	top_style.border = border
-	top_style.fill = PatternFill('solid', fgColor = "000000")
-	top_style.font = Font(
-		bold = True,
-		color = 'FFFFFF',
-		name = 'Calibri',
-		size = 10,
-	)
-	excel_file.add_named_style(top_style)
-	normal_style = NamedStyle('normal_style')
-	normal_style.alignment = alignment
-	normal_style.border = border
-	normal_style.fill = PatternFill('solid', fgColor = "FFFFFF")
-	normal_style.font = Font(
-		color = '000000',
-		name = 'Calibri',
-		size = 10,
-	)
-	excel_file.add_named_style(normal_style)
-
-class data:
-	def __init__(self, regional, locale, station, cabinet, total, available, occupied):
-		self.regional = regional
-		self.locale = locale
-		self.station = station
-		self.cabinet = cabinet
-		self.total = total
-		self.available = available
-		self.occupied = occupied
-	def __lt__(self, other):
-		if self.available != other.available:
-			return self.available < other.available
-		if self.regional != other.regional:
-			return self.regional < other.regional
-		if self.locale != other.locale:
-			return self.locale < other.locale
-		if self.station != other.station:
-			return self.station < other.station
-		return self.cabinet < other.cabinet
-		
 def get_cabinet(v):
 	if len(v[ord('U') - ord('A')]) == 0:
 		return v[ord('H') - ord('A')] + ' ARD RR'
