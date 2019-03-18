@@ -99,7 +99,7 @@ def build_mongodb(current_file, previous_file, date_difference):
     })
   with pymongo.MongoClient() as client:
     database = client.capacidade
-    collection = database.adsl
+    collection = database.adsl_jaum_data
     collection.insert(documents)
 
 def main():
