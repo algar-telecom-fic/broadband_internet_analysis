@@ -85,7 +85,7 @@ def build_mongodb(current_file, previous_file, date_difference):
       increasing = 'Esgotado' if i.available == 0 else 'Sem histórico'
       prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
     documents.append({
-      datetime.datetime.now(): {
+      str(datetime.datetime.now()): {
         'Regional': i.regional,
         'Localidade': i.locale,
         'Estação mãe': ' '.join(i.station.split(' ')[:-1]),
