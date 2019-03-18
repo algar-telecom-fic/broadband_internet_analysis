@@ -87,17 +87,16 @@ def build_mongodb(current_file, previous_file, date_difference):
       increasing = 'Esgotado' if i.available == 0 else 'Sem histórico'
       prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
     documents.append({
-      today: {
-        'Regional': i.regional,
-        'Localidade': i.locale,
-        'Estação mãe': ' '.join(i.station.split(' ')[:-1]),
-        'Estação': i.station,
-        'Total de portas': i.total,
-        'Portas disponíveis': i.available,
-        'Portas ocupadas': i.occupied,
-        'Crescimento': increasing,
-        'Previsão de esgotamento': prediction,
-      }
+      'Regional': i.regional,
+      'Localidade': i.locale,
+      'Estação mãe': ' '.join(i.station.split(' ')[:-1]),
+      'Estação': i.station,
+      'Total de portas': i.total,
+      'Portas disponíveis': i.available,
+      'Portas ocupadas': i.occupied,
+      'Crescimento': increasing,
+      'Previsão de esgotamento': prediction,
+      'Data': today,
     })
   with pymongo.MongoClient() as client:
     database = client.capacidade
