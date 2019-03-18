@@ -61,6 +61,8 @@ def build_database(current_file):
 def build_mongodb(current_file, previous_file, date_difference):
   global database
   documents = []
+  date = datetime.datetime.now()
+  today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
   for i in database[current_file]:
     try:
       before = database[previous_file][i.regional][i.locale][i.station]['occupied']
@@ -85,7 +87,7 @@ def build_mongodb(current_file, previous_file, date_difference):
       increasing = 'Esgotado' if i.available == 0 else 'Sem histórico'
       prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
     documents.append({
-      str(datetime.datetime.now()): {
+      today: {
         'Regional': i.regional,
         'Localidade': i.locale,
         'Estação mãe': ' '.join(i.station.split(' ')[:-1]),
