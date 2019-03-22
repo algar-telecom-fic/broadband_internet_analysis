@@ -15,27 +15,26 @@ class Technology(abc.ABC):
     pass
 
 class ADSL(Technology):
+  technologies = [
+    'huawei',
+    'huawei ngn',
+    'keymile',
+    'keymile adsl',
+    'zte',
+  ]
+  occupied = [
+    'auditoria',
+    'ocupado',
+    'reservado ngn',
+  ]
+  available = [
+    'disponivel',
+    'disponivel ngn',
+  ]
 
   def __init__(self, filename):
     try:
       with open(filename, 'r', encoding = 'ISO-8859-1') as input_file:
-        technologies = [
-          'huawei',
-          'huawei ngn',
-          'keymile',
-          'keymile adsl',
-          'zte',
-        ]
-        occupied = [
-          'auditoria',
-          'ocupado',
-          'reservado ngn',
-        ]
-        available = [
-          'disponivel',
-          'disponivel ngn',
-        ]
-        print('eoq')
         for line in input_file.readlines():
           v = line.split(';')
           technology = str(v[18]).strip().lower()
@@ -45,7 +44,7 @@ class ADSL(Technology):
             locale = str(v[6]).strip()
             station = str(v[7]).strip()
             port = +1 if status in available else (-1 if status in occupied else 0)
-            add_port(regional, locale, station, port)
+            self.add_port(regional, locale, station, port)
     except Exception as e:
       print(e)
       print('Failed to read file: ' + filename)
