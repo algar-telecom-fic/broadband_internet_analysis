@@ -284,8 +284,8 @@
 						"selection":
 						[
 							[
-								4483,
-								2749
+								803,
+								803
 							]
 						],
 						"settings":
@@ -295,7 +295,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1426.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -332,7 +332,7 @@
 		"cols":
 		[
 			0.0,
-			0.392098712922,
+			0.361764240265,
 			1.0
 		],
 		"rows":
