@@ -33,21 +33,7 @@ class ADSL(Technology):
   ]
 
   def __init__(self, filename):
-    try:
-      with open(filename, 'r', encoding = 'ISO-8859-1') as input_file:
-        for line in input_file.readlines():
-          v = line.split(';')
-          technology = str(v[18]).strip().lower()
-          if technology in self.technologies:
-            status = str(v[4]).strip()
-            regional = str(v[5]).strip()
-            locale = str(v[6]).strip()
-            station = str(v[7]).strip()
-            port = +1 if status in self.available else (-1 if status in self.occupied else 0)
-            self.add_port(regional, locale, station, port)
-    except Exception as e:
-      print(e)
-      print('Failed to read file: ' + filename)
+
 
   def add_port(self, regional, locale, station, port):
     if regional not in self.database:
@@ -123,8 +109,6 @@ def main():
   current_file.build_mongodb(previous_file, date_difference)
 
 def read_config_file(filename):
-  global database
-  database = {}
   try:
     with open(filename, 'r') as config_file:
       v = config_file.readlines()
@@ -132,6 +116,23 @@ def read_config_file(filename):
       previous_file = v[1].split('=')[1].strip().split('"')[1].strip()
       date_difference = int(v[2].split('=')[1].strip().split('"')[1].strip())
       return (current_file, previous_file, date_difference)
+  except Exception as e:
+    print(e)
+    print('Failed to read file: ' + filename)
+
+def read_file(filepath):
+  try:
+    with open(filename, 'r', encoding = 'ISO-8859-1') as input_file:
+      for line in input_file.readlines():
+        v = line.split(';')
+        technology = str(v[18]).strip().lower()
+        if technology in self.technologies:
+          status = str(v[4]).strip()
+          regional = str(v[5]).strip()
+          locale = str(v[6]).strip()
+          station = str(v[7]).strip()
+          port = +1 if status in self.available else (-1 if status in self.occupied else 0)
+          self.add_port(regional, locale, station, port)
   except Exception as e:
     print(e)
     print('Failed to read file: ' + filename)
