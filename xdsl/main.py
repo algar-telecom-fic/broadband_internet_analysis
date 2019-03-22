@@ -16,7 +16,7 @@ class Technology(abc.ABC):
 
 class ADSL(Technology):
 
-  def __init__(filename):
+  def __init__(self, filename):
     try:
       with open(filename, 'r', encoding = 'ISO-8859-1') as input_file:
         technologies = [
