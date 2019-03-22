@@ -15,21 +15,21 @@ class Technology(abc.ABC):
     pass
 
 class ADSL(Technology):
-  technologies = [
-    'huawei',
-    'huawei ngn',
-    'keymile',
-    'keymile adsl',
-    'zte',
+  available = [
+    'disponivel',
+    'disponivel ngn',
   ]
   occupied = [
     'auditoria',
     'ocupado',
     'reservado ngn',
   ]
-  available = [
-    'disponivel',
-    'disponivel ngn',
+  technologies = [
+    'huawei',
+    'huawei ngn',
+    'keymile',
+    'keymile adsl',
+    'zte',
   ]
 
   def __init__(self, filename):
@@ -38,12 +38,12 @@ class ADSL(Technology):
         for line in input_file.readlines():
           v = line.split(';')
           technology = str(v[18]).strip().lower()
-          if technology in technologies:
+          if technology in self.technologies:
             status = str(v[4]).strip()
             regional = str(v[5]).strip()
             locale = str(v[6]).strip()
             station = str(v[7]).strip()
-            port = +1 if status in available else (-1 if status in occupied else 0)
+            port = +1 if status in self.available else (-1 if status in self.occupied else 0)
             self.add_port(regional, locale, station, port)
     except Exception as e:
       print(e)
