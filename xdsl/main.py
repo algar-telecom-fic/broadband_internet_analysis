@@ -112,8 +112,8 @@ class ADSL(Technology):
             'Data': today,
           })
     with pymongo.MongoClient() as client:
-      database = client('capacidade')
-      collection = database('xdsl_adsl')
+      database = client['capacidade']
+      collection = database['xdsl_adsl']
       collection.insert(documents)
 
 def main():
