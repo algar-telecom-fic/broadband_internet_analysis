@@ -66,7 +66,7 @@ class ADSL(Technology):
     elif port < 0:
       self.database[regional][locale][station]['occupied'] += 1
 
-  def build_mongodb(self, previous, diff):
+  def build_mongodb(self, previous, date_difference):
     documents = []
     date = datetime.datetime.now()
     today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
