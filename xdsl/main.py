@@ -100,13 +100,13 @@ class ADSL(Technology):
             increasing = error
             prediction = error
           documents.append({
-            'Regional': i.regional,
-            'Localidade': i.locale,
-            'Estação mãe': ' '.join(i.station.split(' ')[:-1]),
-            'Estação': i.station,
-            'Total de portas': i.total,
-            'Portas disponíveis': i.available,
-            'Portas ocupadas': i.occupied,
+            'Regional': regional,
+            'Localidade': locale,
+            'Estação mãe': ' '.join(station.split(' ')[: -1]),
+            'Estação': station,
+            'Total de portas': total,
+            'Portas disponíveis': available,
+            'Portas ocupadas': occupied,
             'Crescimento': increasing,
             'Previsão de esgotamento': prediction,
             'Data': today,
