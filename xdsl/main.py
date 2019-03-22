@@ -35,6 +35,7 @@ class ADSL(Technology):
           'disponivel',
           'disponivel ngn',
         ]
+        print('eoq')
         for line in input_file.readlines():
           v = line.split(';')
           technology = str(v[18]).strip().lower()
