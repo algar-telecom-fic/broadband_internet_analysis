@@ -1,4 +1,5 @@
-from math import ceil
+import datetime
+import math
 import pymongo
 
 def build_excel_file(current_file, previous_file, date_difference):
@@ -17,7 +18,7 @@ def build_excel_file(current_file, previous_file, date_difference):
       else:
         kappa = database[current_file][node_name]['capacity']
         keepo = round(database[current_file][node_name]['capacity'] * database[current_file][node_name]['usage'] / 100.0, 2)
-        prediction_num = ceil((kappa - keepo) / increasing_mbps)
+        prediction_num = math.ceil((kappa - keepo) / increasing_mbps)
         if value < 0:
           prediction = 'Decrescimento'
         else:
