@@ -104,7 +104,7 @@ class ADSL(Technology):
           })
     with pymongo.MongoClient() as client:
       database = client['capacidade']
-      collection = database['xdsl_adsl']
+      collection = database['adsl']
       collection.insert(documents)
 
 class VDSL(Technology):
@@ -195,7 +195,7 @@ class VDSL(Technology):
             })
     with pymongo.MongoClient() as client:
       database = client['capacidade']
-      collection = database['xdsl_vdsl']
+      collection = database['vdsl']
       collection.insert(documents)
 
   def get_cabinet(self, v):
