@@ -210,9 +210,9 @@ def main():
   current_adsl.build_mongodb(previous_adsl, date_difference)
   current_vdsl.build_mongodb(previous_vdsl, date_difference)
 
-def read_config_file(filename):
+def read_config_file(filepath):
   try:
-    with open(filename, 'r') as config_file:
+    with open(filepath, 'r') as config_file:
       v = config_file.readlines()
       current_file = v[0].split('=')[1].strip().split('"')[1].strip()
       previous_file = v[1].split('=')[1].strip().split('"')[1].strip()
@@ -220,18 +220,18 @@ def read_config_file(filename):
       return (current_file, previous_file, date_difference)
   except Exception as e:
     print(e)
-    print('Failed to read file: ' + filename)
+    print('Failed to read file: ' + filepath)
 
 def read_file(filepath):
   technologies = (ADSL(), VDSL())
   try:
-    with open(filename, 'r', encoding = 'ISO-8859-1') as input_file:
+    with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
         for technology in technologies:
           technology.add_port(v)
   except Exception as e:
     print(e)
-    print('Failed to read file: ' + filename)
+    print('Failed to read file: ' + filepath)
 
 main()
