@@ -213,31 +213,25 @@ def main():
   current_vdsl.build_mongodb(previous_vdsl, date_difference)
 
 def read_config_file(filepath):
-  try:
-    print('a')
-    with open(filepath, 'r') as config_file:
-      print('b')
-      v = config_file.readlines()
-      print('c')
-      current_file = v[0].split('=')[1].strip().split('"')[1].strip()
-      previous_file = v[1].split('=')[1].strip().split('"')[1].strip()
-      date_difference = int(v[2].split('=')[1].strip().split('"')[1].strip())
-      print('d')
-      return (current_file, previous_file, date_difference)
-  except Exception as e:
-    print(e)
-    print('Failed to read file: ' + filepath)
+  with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
+    v = config_file.readlines()
+    current_file = v[0].split('=')[1].strip().split('"')[1].strip()
+    previous_file = v[1].split('=')[1].strip().split('"')[1].strip()
+    date_difference = int(v[2].split('=')[1].strip().split('"')[1].strip())
+    return (current_file, previous_file, date_difference)
 
 def read_file(filepath):
+  print('a')
   technologies = (ADSL(), VDSL())
-  try:
-    with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
-      for line in input_file.readlines():
-        v = line.split(';')
-        for technology in technologies:
-          technology.add_port(v)
-  except Exception as e:
-    print(e)
-    print('Failed to read file: ' + filepath)
+  print('b')
+  with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
+    print('c')
+    for line in input_file.readlines():
+      print('d')
+      v = line.split(';')
+      print('e')
+      for technology in technologies:
+        technology.add_port(v)
+      print('f')
 
 main()
