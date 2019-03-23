@@ -64,6 +64,7 @@ class ADSL(Technology):
     for regional in self.database:
       for locale in self.database[regional]:
         for station in self.database[regional][locale]:
+          print(self.database[regional][locale][station])
           available = self.database[regional][locale][station]['available']
           occupied = self.database[regional][locale][station]['occupied']
           total = self.database[regional][locale][station]['total']
@@ -221,7 +222,7 @@ def read_config_file(filepath):
     return (current_file, previous_file, date_difference)
 
 def read_file(filepath):
-  technologies = [ADSL(), VDSL()]
+  technologies = (ADSL(), VDSL())
   with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
     for line in input_file.readlines():
       v = line.split(';')
