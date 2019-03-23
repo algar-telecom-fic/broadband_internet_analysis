@@ -193,8 +193,8 @@ class VDSL(Technology):
               'Total de portas': i.total,
             })
     with pymongo.MongoClient() as client:
-      database = client.capacidade
-      collection = database.vdsl
+      database = client['capacidade']
+      collection = database['xdsl_vdsl']
       collection.insert(documents)
 
   def get_cabinet(self, v):
