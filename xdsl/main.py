@@ -131,7 +131,7 @@ class VDSL(Technology):
     station = str(v[7]).strip()
     cabinet = self.get_cabinet(v)
     if regional not in database:
-    database[regional] = {}
+      database[regional] = {}
     if locale not in database[regional]:
       database[regional][locale] = {}
     if station not in database[regional][locale]:
