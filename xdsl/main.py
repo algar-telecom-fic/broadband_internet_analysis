@@ -55,7 +55,7 @@ class ADSL(Technology):
     self.database[regional][locale][station]['total'] += 1
     if status in self.available:
       self.database[regional][locale][station]['available'] += 1
-    elif status in self.occupied else 0:
+    elif status in self.occupied:
       self.database[regional][locale][station]['occupied'] += 1
 
   def build_mongodb(self, previous, date_difference):
@@ -143,7 +143,7 @@ class VDSL(Technology):
         'total': 0,
       }
     database[regional][locale][station][cabinet]['total'] += 1
-    if status in self.available > 0:
+    if status in self.available:
       database[regional][locale][station][cabinet]['available'] += 1
     elif status in self.occupied:
       database[regional][locale][station][cabinet]['occupied'] += 1
