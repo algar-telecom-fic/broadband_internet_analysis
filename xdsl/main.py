@@ -225,6 +225,7 @@ def read_file(filepath):
   with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
     for line in input_file.readlines():
       v = line.split(';')
+      print(v)
       for technology in technologies:
         technology.add_port(v)
 
