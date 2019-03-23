@@ -31,18 +31,21 @@ def build_excel_file(current_file, previous_file, date_difference):
       print(e)
       for j in range(7, 11):
         sheet.cell(row = current_row, column = j).value = 'Sem histórico'
+    date = datetime.datetime.utcnow()
+    today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
     documents.append({
-      'Node': node_name,
-      'CMTS': '?',
-      'Quantidade de clientes': '?',
       'Capacidade (Mbps)': database[current_file][node_name]['capacity'],
-      'Utilização média entre as portadoras (Mbps)': round(database[current_file][node_name]['capacity'] * database[current_file][node_name]['usage'] / 100.0, 2),
-      'Utilização média entre as portadoras (%)': database[current_file][node_name]['usage'] / 100.0,
+      'CMTS': '?',
       'Crescimento mensal (%)': increasing_percentage,
       'Crescimento mensal (Mbps)': increasing_mbps,
+      'Data': today,
+      'Node': node_name,
       'Previsão de congestionamento (Mês)': prediction_num,
       'Previsão de congestionamento': prediction,
       'Projeto': '?',
+      'Quantidade de clientes': '?',
+      'Utilização média entre as portadoras (%)': database[current_file][node_name]['usage'] / 100.0,
+      'Utilização média entre as portadoras (Mbps)': round(database[current_file][node_name]['capacity'] * database[current_file][node_name]['usage'] / 100.0, 2),
     })
   with pymongo.MongoClient() as client:
     database = client.capacidade
