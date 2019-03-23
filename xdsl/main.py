@@ -221,14 +221,15 @@ def read_config_file(filepath):
     return (current_file, previous_file, date_difference)
 
 def read_file(filepath):
-  # technologies = (ADSL(), VDSL())
-  technologies = (ADSL())
-  # technologies = (VDSL())
+  technologies = (ADSL(), VDSL())
   with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
     for line in input_file.readlines():
       v = line.split(';')
-      print(v)
       for technology in technologies:
-        technology.add_port(v)
+        try:
+          technology.add_port(v)
+        except Exception as e:
+          print(e)
+          print(technology)
 
 main()
