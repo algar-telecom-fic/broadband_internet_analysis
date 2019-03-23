@@ -64,7 +64,6 @@ class ADSL(Technology):
     for regional in self.database:
       for locale in self.database[regional]:
         for station in self.database[regional][locale]:
-          print(self.database[regional][locale][station])
           available = self.database[regional][locale][station]['available']
           occupied = self.database[regional][locale][station]['occupied']
           total = self.database[regional][locale][station]['total']
@@ -183,16 +182,16 @@ class VDSL(Technology):
               increasing = 'Sem histórico'
               prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
             documents.append({
-              'Armário': i.cabinet,
+              'Armário': cabinet,
               'Crescimento': increasing,
               'Data': self.today,
-              'Estação mãe': i.station,
-              'Localidade': i.locale,
-              'Portas disponíveis': i.available,
-              'Portas ocupadas': i.occupied,
+              'Estação mãe': station,
+              'Localidade': locale,
+              'Portas disponíveis': available,
+              'Portas ocupadas': occupied,
               'Previsão de esgotamento': prediction,
-              'Regional': i.regional,
-              'Total de portas': i.total,
+              'Regional': regional,
+              'Total de portas': total,
             })
     with pymongo.MongoClient() as client:
       database = client['capacidade']
