@@ -5,6 +5,8 @@ import pymongo
 
 class Technology(abc.ABC):
   database = {}
+  date = datetime.datetime.utcnow()
+  today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
 
   @abc.abstractmethod
   def add_port(self):
@@ -25,10 +27,10 @@ class ADSL(Technology):
     'reservado ngn',
   ]
   technologies = [
-    'huawei',
     'huawei ngn',
-    'keymile',
+    'huawei',
     'keymile adsl',
+    'keymile',
     'zte',
   ]
 
@@ -58,14 +60,12 @@ class ADSL(Technology):
 
   def build_mongodb(self, previous, date_difference):
     documents = []
-    date = datetime.datetime.utcnow()
-    today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
     for regional in self.database:
       for locale in self.database[regional]:
         for station in self.database[regional][locale]:
-          total = self.database[regional][locale][station]['total']
           available = self.database[regional][locale][station]['available']
           occupied = self.database[regional][locale][station]['occupied']
+          total = self.database[regional][locale][station]['total']
           try:
             occupied_before = previous.database[regional][locale][station]['occupied']
             median = (occupied - occupied_before) / (date_difference / 30)
@@ -90,16 +90,16 @@ class ADSL(Technology):
             increasing = error
             prediction = error
           documents.append({
-            'Regional': regional,
-            'Localidade': locale,
+            'Crescimento': increasing,
+            'Data': self.today,
             'Estação mãe': ' '.join(station.split(' ')[: -1]),
             'Estação': station,
-            'Total de portas': total,
+            'Localidade': locale,
             'Portas disponíveis': available,
             'Portas ocupadas': occupied,
-            'Crescimento': increasing,
             'Previsão de esgotamento': prediction,
-            'Data': today,
+            'Regional': regional,
+            'Total de portas': total,
           })
     with pymongo.MongoClient() as client:
       database = client['capacidade']
@@ -125,20 +125,90 @@ class VDSL(Technology):
     technology = str(v[18]).strip().lower()
     if technology not in self.technologies:
       return
-    elif technology in vdsl.technologies:
-      status = str(v[4]).strip()
-      regional = str(v[5]).strip()
-      locale = str(v[6]).strip()
-      station = str(v[7]).strip()
-      cabinet = get_cabinet(v)
-      port = +1 if status in available else (-1 if status in occupied else 0)
-      add_port(filename, regional, locale, station, cabinet, port)
+    status = str(v[4]).strip()
+    regional = str(v[5]).strip()
+    locale = str(v[6]).strip()
+    station = str(v[7]).strip()
+    cabinet = self.get_cabinet(v)
+    if regional not in database:
+    database[regional] = {}
+    if locale not in database[regional]:
+      database[regional][locale] = {}
+    if station not in database[regional][locale]:
+      database[regional][locale][station] = {}
+    if cabinet not in database[regional][locale][station]:
+      database[regional][locale][station][cabinet] = {
+        'available': 0,
+        'occupied': 0,
+        'total': 0,
+      }
+    database[regional][locale][station][cabinet]['total'] += 1
+    if status in self.available > 0:
+      database[regional][locale][station][cabinet]['available'] += 1
+    elif status in self.occupied:
+      database[regional][locale][station][cabinet]['occupied'] += 1
+
+  def build_mongodb(self, previous, date_difference):
+    documents = []
+    for regional in self.database:
+      for locale in self.database[regional]:
+        for station in self.database[regional][locale]:
+          for cabinet in self.database[regional][locale][station]:
+            available = database[regional][locale][station][cabinet]['available']
+            occupied = database[regional][locale][station][cabinet]['occupied']
+            total = database[regional][locale][station][cabinet]['total']
+            try:
+              occupied_before = previous.database[regional][locale][station][cabinet]['occupied']
+              median = (occupied - occupied_before) / (date_difference / 30)
+              increasing = round(median, 1)
+              if available == 0:
+                prediction = 'Esgotado'
+              elif median > 0:
+                value = ceil(available / median)
+                if value == 1:
+                  prediction = 'Esgota em até 1 mês'
+                elif value > 10:
+                  prediction = 'Esgota em mais de 10 meses'
+                else:
+                  prediction = 'Esgota em até ' + str(value) + ' meses'
+              elif median < 0:
+                prediction = 'Decrescimento'
+              else:
+                prediction = 'Estável'
+            except Exception as e:
+              print(e)
+              increasing = 'Sem histórico'
+              prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
+            documents.append({
+              'Armário': i.cabinet,
+              'Crescimento': increasing,
+              'Data': self.today,
+              'Estação mãe': i.station,
+              'Localidade': i.locale,
+              'Portas disponíveis': i.available,
+              'Portas ocupadas': i.occupied,
+              'Previsão de esgotamento': prediction,
+              'Regional': i.regional,
+              'Total de portas': i.total,
+            })
+    with pymongo.MongoClient() as client:
+      database = client.capacidade
+      collection = database.vdsl
+      collection.insert(documents)
+
+  def get_cabinet(self, v):
+    if len(v[ord('U') - ord('A')]) == 0:
+      return v[ord('H') - ord('A')] + ' ARD RR'
+    if v[ord('U') - ord('A')].find('ARD ') == -1:
+      return v[ord('U') - ord('A')] + ' ARD ' + v[ord('V') - ord('A')]
+    return v[ord('U') - ord('A')]
 
 def main():
   current_filepath, previous_filepath, date_difference = read_config_file('config.txt')
   current_adsl, current_vdsl = read_file(current_filepath)
-  previous_file = ADSL(previous_filepath)
-  current_file.build_mongodb(previous_file, date_difference)
+  previous_adsl, previous_vdsl = read_file(previous_filepath)
+  current_adsl.build_mongodb(previous_adsl, date_difference)
+  current_vdsl.build_mongodb(previous_vdsl, date_difference)
 
 def read_config_file(filename):
   try:

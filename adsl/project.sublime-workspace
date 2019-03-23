@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"teh",
+				"technology"
+			],
+			[
+				"tech",
+				"technologies"
+			],
+			[
 				"date",
 				"date_difference"
 			],
@@ -52,7 +60,7 @@
 			"file": "/home/gardusi/github/broadband_internet_analysis/xdsl/main.py",
 			"settings":
 			{
-				"buffer_size": 4591,
+				"buffer_size": 5224,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -140,7 +148,7 @@
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -154,6 +162,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ceil",
 			"date_di",
 			"'",
 			"import",
@@ -220,8 +229,8 @@
 						"selection":
 						[
 							[
-								912,
-								912
+								5222,
+								5222
 							]
 						],
 						"settings":
@@ -231,7 +240,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 152.0,
+						"translation.y": 2337.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -249,15 +258,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4591,
+						"buffer_size": 5224,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3943,
-								3943
+								3624,
+								3624
 							]
 						],
 						"settings":
@@ -267,7 +276,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2285.0,
+						"translation.y": 1810.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -304,7 +313,7 @@
 		"cols":
 		[
 			0.0,
-			0.361764240265,
+			0.352500184377,
 			1.0
 		],
 		"rows":
