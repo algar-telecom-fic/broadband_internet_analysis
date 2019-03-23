@@ -222,11 +222,15 @@ def read_config_file(filepath):
 
 def read_file(filepath):
   technologies = (ADSL(), VDSL())
-  with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
-    for line in input_file.readlines():
-      v = line.split(';')
-      print(v)
-      for technology in technologies:
-        technology.add_port(v)
+  for i in technologies:
+    print(i)
+  # technologies = (ADSL())
+  # technologies = (VDSL())
+  # with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
+  #   for line in input_file.readlines():
+  #     v = line.split(';')
+  #     print(v)
+  #     for technology in technologies:
+  #       technology.add_port(v)
 
 main()
