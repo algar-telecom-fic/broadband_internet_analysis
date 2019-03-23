@@ -222,14 +222,18 @@ def read_config_file(filepath):
 
 def read_file(filepath):
   technologies = (ADSL(), VDSL())
-  with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
-    for line in input_file.readlines():
-      v = line.split(';')
-      for technology in technologies:
-        try:
-          technology.add_port(v)
-        except Exception as e:
-          print(e)
-          print(technology)
+  try:
+    with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
+      try:
+        for line in input_file.readlines():
+          v = line.split(';')
+          for technology in technologies:
+            technology.add_port(v)
+      except Exception as e:
+        print('********* keepo *********')
+        print(e)
+  except Exception as e:
+    print('********* kappa *********')
+    print(e)
 
 main()
