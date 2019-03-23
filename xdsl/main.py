@@ -226,14 +226,18 @@ def read_file(filepath):
     with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
       try:
         for line in input_file.readlines():
-          v = line.split(';')
-          for technology in technologies:
-            technology.add_port(v)
-      except Exception as e:
+          try:
+            v = line.split(';')
+            for technology in technologies:
+              technology.add_port(v)
+          except Exception as c:
+            print('********* copo *********')
+            print(c)
+      except Exception as b:
         print('********* keepo *********')
-        print(e)
-  except Exception as e:
+        print(b)
+  except Exception as a:
     print('********* kappa *********')
-    print(e)
+    print(a)
 
 main()
