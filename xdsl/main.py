@@ -5,7 +5,6 @@ import os
 import pymongo
 
 class Technology(abc.ABC):
-  database = {}
   date = datetime.datetime.utcnow()
   today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
 
@@ -18,6 +17,7 @@ class Technology(abc.ABC):
     pass
 
 class ADSL(Technology):
+  database = {}
   available = [
     'disponivel ngn',
     'disponivel',
@@ -109,6 +109,7 @@ class ADSL(Technology):
       collection.insert(documents)
 
 class VDSL(Technology):
+  database = {}
   available = [
     'disponivel ngn',
     'disponivel',
