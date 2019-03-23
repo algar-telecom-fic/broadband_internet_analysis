@@ -212,11 +212,15 @@ def main():
 
 def read_config_file(filepath):
   try:
+    print('a')
     with open(filepath, 'r') as config_file:
+      print('b')
       v = config_file.readlines()
+      print('c')
       current_file = v[0].split('=')[1].strip().split('"')[1].strip()
       previous_file = v[1].split('=')[1].strip().split('"')[1].strip()
       date_difference = int(v[2].split('=')[1].strip().split('"')[1].strip())
+      print('d')
       return (current_file, previous_file, date_difference)
   except Exception as e:
     print(e)
