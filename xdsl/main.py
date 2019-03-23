@@ -1,6 +1,6 @@
 import abc
-from math import ceil
 import datetime
+import math
 import pymongo
 
 class Technology(abc.ABC):
@@ -32,10 +32,14 @@ class ADSL(Technology):
     'zte',
   ]
 
-  def __init__(self, filename):
-
-
-  def add_port(self, regional, locale, station, port):
+  def add_port(self, v):
+    technology = str(v[18]).strip().lower()
+    if technology not in self.technologies:
+      return
+    status = str(v[4]).strip()
+    regional = str(v[5]).strip()
+    locale = str(v[6]).strip()
+    station = str(v[7]).strip()
     if regional not in self.database:
       self.database[regional] = {}
     if locale not in self.database[regional]:
@@ -47,14 +51,14 @@ class ADSL(Technology):
         'occupied': 0,
       }
     self.database[regional][locale][station]['total'] += 1
-    if port > 0:
+    if status in self.available:
       self.database[regional][locale][station]['available'] += 1
-    elif port < 0:
+    elif status in self.occupied else 0:
       self.database[regional][locale][station]['occupied'] += 1
 
   def build_mongodb(self, previous, date_difference):
     documents = []
-    date = datetime.datetime.now()
+    date = datetime.datetime.utcnow()
     today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
     for regional in self.database:
       for locale in self.database[regional]:
@@ -69,7 +73,7 @@ class ADSL(Technology):
             if available == 0:
               prediction = 'Esgotado'
             elif median > 0:
-              value = ceil(available / median)
+              value = math.ceil(available / median)
               if value == 1:
                 prediction = 'Esgota em até 1 mês'
               elif value > 10:
@@ -102,9 +106,37 @@ class ADSL(Technology):
       collection = database['xdsl_adsl']
       collection.insert(documents)
 
+class VDSL(Technology):
+  available = [
+    'disponivel',
+    'disponivel ngn',
+  ]
+  occupied = [
+    'auditoria',
+    'ocupado',
+    'reservado ngn',
+  ]
+  technologies = [
+    'huawei vdsl',
+    'keymile vdsl',
+  ]
+
+  def add_port(self, v):
+    technology = str(v[18]).strip().lower()
+    if technology not in self.technologies:
+      return
+    elif technology in vdsl.technologies:
+      status = str(v[4]).strip()
+      regional = str(v[5]).strip()
+      locale = str(v[6]).strip()
+      station = str(v[7]).strip()
+      cabinet = get_cabinet(v)
+      port = +1 if status in available else (-1 if status in occupied else 0)
+      add_port(filename, regional, locale, station, cabinet, port)
+
 def main():
   current_filepath, previous_filepath, date_difference = read_config_file('config.txt')
-  current_file = ADSL(current_filepath)
+  current_adsl, current_vdsl = read_file(current_filepath)
   previous_file = ADSL(previous_filepath)
   current_file.build_mongodb(previous_file, date_difference)
 
@@ -121,18 +153,13 @@ def read_config_file(filename):
     print('Failed to read file: ' + filename)
 
 def read_file(filepath):
+  technologies = (ADSL(), VDSL())
   try:
     with open(filename, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
-        technology = str(v[18]).strip().lower()
-        if technology in self.technologies:
-          status = str(v[4]).strip()
-          regional = str(v[5]).strip()
-          locale = str(v[6]).strip()
-          station = str(v[7]).strip()
-          port = +1 if status in self.available else (-1 if status in self.occupied else 0)
-          self.add_port(regional, locale, station, port)
+        for technology in technologies:
+          technology.add_port(v)
   except Exception as e:
     print(e)
     print('Failed to read file: ' + filename)

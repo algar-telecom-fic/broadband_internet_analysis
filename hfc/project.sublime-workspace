@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"incre",
+				"increasing_percentage"
+			],
+			[
 				"in",
 				"inputList"
 			],
@@ -19,23 +23,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "config.txt",
-			"settings":
-			{
-				"buffer_size": 206,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "main.py",
-			"settings":
-			{
-				"buffer_size": 7005,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -69,6 +56,10 @@
 	},
 	"file_history":
 	[
+		"/home/gardusi/github/broadband_internet_analysis/hfc/config.txt",
+		"/home/gardusi/github/broadband_internet_analysis/hfc/main.py",
+		"/home/gardusi/github/broadband_internet_analysis/adsl/main.py",
+		"/home/gardusi/github/broadband_internet_analysis/adsl/config.txt",
 		"/home/gardusi/github/competitive_programming/doing/c++.cpp",
 		"/home/gardusi/github/competitive_programming/doing/python.py",
 		"/home/gardusi/github/competitive_programming/doing/stdout.txt",
@@ -124,6 +115,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sheet.cell(row = current_row, column = 10).value",
 			"solve",
 			"i",
 			"\n  ",
@@ -140,11 +132,12 @@
 			"print"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"prediction",
 			"other_solve",
 			"days",
 			"insert",
@@ -162,72 +155,13 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "config.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 206,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 1,
-					"file": "main.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								832,
-								832
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -259,7 +193,7 @@
 		"cols":
 		[
 			0.0,
-			0.364997927348,
+			0.369898064931,
 			1.0
 		],
 		"rows":
@@ -277,7 +211,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 78.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -311,7 +245,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
