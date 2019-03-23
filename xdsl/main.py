@@ -131,23 +131,23 @@ class VDSL(Technology):
     locale = str(v[6]).strip()
     station = str(v[7]).strip()
     cabinet = self.get_cabinet(v)
-    if regional not in database:
-      database[regional] = {}
-    if locale not in database[regional]:
-      database[regional][locale] = {}
-    if station not in database[regional][locale]:
-      database[regional][locale][station] = {}
-    if cabinet not in database[regional][locale][station]:
-      database[regional][locale][station][cabinet] = {
+    if regional not in self.database:
+      self.database[regional] = {}
+    if locale not in self.database[regional]:
+      self.database[regional][locale] = {}
+    if station not in self.database[regional][locale]:
+      self.database[regional][locale][station] = {}
+    if cabinet not in self.database[regional][locale][station]:
+      self.database[regional][locale][station][cabinet] = {
         'available': 0,
         'occupied': 0,
         'total': 0,
       }
-    database[regional][locale][station][cabinet]['total'] += 1
+    self.database[regional][locale][station][cabinet]['total'] += 1
     if status in self.available:
-      database[regional][locale][station][cabinet]['available'] += 1
+      self.database[regional][locale][station][cabinet]['available'] += 1
     elif status in self.occupied:
-      database[regional][locale][station][cabinet]['occupied'] += 1
+      self.database[regional][locale][station][cabinet]['occupied'] += 1
 
   def build_mongodb(self, previous, date_difference):
     documents = []
@@ -155,9 +155,9 @@ class VDSL(Technology):
       for locale in self.database[regional]:
         for station in self.database[regional][locale]:
           for cabinet in self.database[regional][locale][station]:
-            available = database[regional][locale][station][cabinet]['available']
-            occupied = database[regional][locale][station][cabinet]['occupied']
-            total = database[regional][locale][station][cabinet]['total']
+            available = self.database[regional][locale][station][cabinet]['available']
+            occupied = self.database[regional][locale][station][cabinet]['occupied']
+            total = self.database[regional][locale][station][cabinet]['total']
             try:
               occupied_before = previous.database[regional][locale][station][cabinet]['occupied']
               median = (occupied - occupied_before) / (date_difference / 30)
@@ -221,17 +221,11 @@ def read_config_file(filepath):
     return (current_file, previous_file, date_difference)
 
 def read_file(filepath):
-  print('a')
   technologies = (ADSL(), VDSL())
-  print('b')
   with open(filepath, 'r', encoding = 'ISO-8859-1') as input_file:
-    print('c')
     for line in input_file.readlines():
-      print('d')
       v = line.split(';')
-      print('e')
       for technology in technologies:
         technology.add_port(v)
-      print('f')
 
 main()
