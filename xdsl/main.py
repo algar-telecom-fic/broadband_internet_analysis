@@ -19,8 +19,8 @@ class Technology(abc.ABC):
 
 class ADSL(Technology):
   available = [
-    'disponivel',
     'disponivel ngn',
+    'disponivel',
   ]
   occupied = [
     'auditoria',
@@ -49,9 +49,9 @@ class ADSL(Technology):
       self.database[regional][locale] = {}
     if station not in self.database[regional][locale]:
       self.database[regional][locale][station] = {
-        'total': 0,
         'available': 0,
         'occupied': 0,
+        'total': 0,
       }
     self.database[regional][locale][station]['total'] += 1
     if status in self.available:
@@ -109,8 +109,8 @@ class ADSL(Technology):
 
 class VDSL(Technology):
   available = [
-    'disponivel',
     'disponivel ngn',
+    'disponivel',
   ]
   occupied = [
     'auditoria',
