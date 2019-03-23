@@ -1,6 +1,7 @@
 import abc
 import datetime
 import math
+import os
 import pymongo
 
 class Technology(abc.ABC):
@@ -204,7 +205,8 @@ class VDSL(Technology):
     return v[ord('U') - ord('A')]
 
 def main():
-  current_filepath, previous_filepath, date_difference = read_config_file('config.txt')
+  filepath = os.path.dirname(os.path.abspath(__file__))
+  current_filepath, previous_filepath, date_difference = read_config_file(filepath + '/config.txt')
   current_adsl, current_vdsl = read_file(current_filepath)
   previous_adsl, previous_vdsl = read_file(previous_filepath)
   current_adsl.build_mongodb(previous_adsl, date_difference)
