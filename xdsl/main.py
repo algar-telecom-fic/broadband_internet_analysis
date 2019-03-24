@@ -6,7 +6,6 @@ import pymongo
 
 class Technology(abc.ABC):
   date = datetime.datetime.utcnow()
-  today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
 
   @abc.abstractmethod
   def add_port(self):
@@ -92,7 +91,7 @@ class ADSL(Technology):
             prediction = error
           documents.append({
             'Crescimento': increasing,
-            'Data': self.today,
+            'Data': self.date,
             'Estação mãe': ' '.join(station.split(' ')[: -1]),
             'Estação': station,
             'Localidade': locale,
@@ -184,7 +183,7 @@ class VDSL(Technology):
             documents.append({
               'Armário': cabinet,
               'Crescimento': increasing,
-              'Data': self.today,
+              'Data': self.date,
               'Estação mãe': station,
               'Localidade': locale,
               'Portas disponíveis': available,

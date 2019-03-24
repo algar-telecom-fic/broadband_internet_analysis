@@ -33,13 +33,12 @@ def build_excel_file(current_file, previous_file, date_difference):
       for j in range(7, 11):
         sheet.cell(row = current_row, column = j).value = 'Sem histórico'
     date = datetime.datetime.utcnow()
-    today = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
     documents.append({
       'Capacidade (Mbps)': database[current_file][node_name]['capacity'],
       'CMTS': '?',
       'Crescimento mensal (%)': increasing_percentage,
       'Crescimento mensal (Mbps)': increasing_mbps,
-      'Data': today,
+      'Data': date,
       'Node': node_name,
       'Previsão de congestionamento (Mês)': prediction_num,
       'Previsão de congestionamento': prediction,
