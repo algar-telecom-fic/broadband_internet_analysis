@@ -20,14 +20,15 @@ class GPON:
       self.date_difference = v[3].split('=')[1].strip().split('"')[1].strip()
 
   def get_ip(self, s):
+    print(s)
     return re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', s)
 
   def read_current_traffic(self):
     with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
-        ip = self.get_ip(v[ord('G') - ord('A')])
         print(v)
+        ip = self.get_ip(v[ord('G') - ord('A')])
         print(ip)
         if ip == None:
           continue
