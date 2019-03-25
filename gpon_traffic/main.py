@@ -27,7 +27,9 @@ class GPON:
       for line in input_file.readlines():
         v = line.split(';')
         ip = self.get_ip(v[ord('G') - ord('A')])
-        self.database[ip]['Capacidade'] += int(v[ord('H') - ord('A')])
+        print(v)
+        print(ip)
+        self.database[ip]['Capacidade'] += int(v[ord('H') - ord('A')].strip())
         self.database[ip]['sum'] += float(v[ord('I') - ord('A')])
         self.database[ip]['qtd'] += 1
         self.database[ip]['Switch'] = v[ord('E') - ord('A')]
