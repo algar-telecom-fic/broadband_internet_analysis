@@ -29,6 +29,8 @@ class GPON:
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip == None:
           continue
+        print(v)
+        print(ip)
         self.database[ip]['Capacidade'] += int(v[ord('H') - ord('A')].strip())
         self.database[ip]['sum'] += float(v[ord('I') - ord('A')])
         self.database[ip]['qtd'] += 1
