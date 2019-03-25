@@ -31,22 +31,18 @@ class GPON:
       for line in input_file.readlines():
         v = line.split(';')
         ip = self.get_ip(v[ord('G') - ord('A')])
-        if ip == None:
-          continue
-        print(ip)
-        self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
-        self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')].strip())
-        self.database[ip]['Switch'] = v[ord('E') - ord('A')]
+        if ip in self.database:
+          self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
+          self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')].strip())
+          self.database[ip]['Switch'] = v[ord('E') - ord('A')]
 
   def read_previous_traffic(self):
     with open(self.filepath_previous, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
         ip = self.get_ip(v[ord('G') - ord('A')])
-        if ip == None:
-          continue
-        print(ip)
-        self.database[ip]['Utilização passada'] = float(v[ord('I') - ord('A')])
+        if ip in self.database:
+          self.database[ip]['Utilização passada'] = float(v[ord('I') - ord('A')])
 
   def read_traffic(self):
     self.read_current_traffic()
