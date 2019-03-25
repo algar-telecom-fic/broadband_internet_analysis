@@ -48,6 +48,6 @@ def main():
   gpon = GPON(os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt')
   gpon.read_ports()
   for i in gpon.database:
-    print(i)
+    print(gpon.database[i])
 
 main()
