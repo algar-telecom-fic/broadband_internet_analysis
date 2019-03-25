@@ -19,8 +19,20 @@ class GPON:
       self.filepath_previous = v[2].split('=')[1].strip().split('"')[1].strip()
       self.date_difference = v[3].split('=')[1].strip().split('"')[1].strip()
 
+  def build_mongodb(self):
+    documents = []
+    for ip in self.database:
+      self.database[i]['Utilização gbps'] = self.database[i]['Utilização'] * self.database[i]['Capacidade']
+      self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / self.date_difference
+      self.database[i]['Esgotamento dias'] = (self.database[i]['Capacidade'] - self.database[i]['Utilização gbps']) / Crescimento MB / mês
+      self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
+      documents.append(self.database[i])
+    with pymongo.MongoClient() as client:
+      database = client['capacidade']
+      collection = database['gpon_traffic']
+      collection.insert(documents)
+
   def get_ip(self, s):
-    print(s)
     try:
       return re.findall(r'[0-9]+(?:\.[0-9]+){3}', s)[0]
     except Exception:
@@ -59,6 +71,7 @@ class GPON:
             'ANEL METRO_': '?',
             'Capacidade': 0,
             'Capacidade_': '?',
+            'Data': self.date,
             'Estação': v[ord('P') - ord('A')].strip(),
             'IP OLT': ip,
             'Localidade': v[ord('O') - ord('A')].strip(),
@@ -67,8 +80,8 @@ class GPON:
             'Portas Livres': 0,
             'Portas Ocupdas': 0,
             'Total Instalado': 0,
-            'Utilização': 0,
             'Utilização 12/11': '?',
+            'Utilização': 0,
             'Utilização_': '?',
             'VLAN': v[ord('Y') - ord('A')].strip(),
           }
@@ -80,7 +93,6 @@ def main():
   gpon = GPON(os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt')
   gpon.read_ports()
   gpon.read_traffic()
-  for i in gpon.database:
-    print(gpon.database[i])
+  gpon.build_mongodb()
 
 main()
