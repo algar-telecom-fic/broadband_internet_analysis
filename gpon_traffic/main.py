@@ -10,6 +10,25 @@ class GPON:
   }
   database = {}
   date = datetime.datetime.utcnow()
+  ip_exceptions = {
+    '172.30.16.49': 10,
+    '172.30.20.93': 2,
+    '172.30.20.187': 2,
+    '172.24.6.135': 2,
+    '172.17.16.1': 2,
+    '172.24.29.50': 2,
+    '172.30.20.132': 2,
+    '172.17.18.2': 1,
+    '172.17.18.209': 1,
+    '172.17.12.1': 2,
+    '172.24.158.146': 2,
+    '172.17.10.3': 2,
+    '172.17.22.6': 2,
+    '172.30.13.125': 2,
+    '172.30.10.64': 1,
+    '172.17.18.129': 1,
+    '172.24.6.135': 2,
+  }
 
   def __init__(self, filepath):
     with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
@@ -26,6 +45,8 @@ class GPON:
       self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / float(self.date_difference)
       self.database[i]['Esgotamento dias'] = max(0, (self.database[i]['Capacidade'] - self.database[i]['Utilização gbps']) / max(1, self.database[i]['Crescimento MB / mês']))
       self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
+      if i in self.ip_exceptions:
+        self.database[i]['Capacidade'] = self.ip_exceptions[i]
       documents.append(self.database[i])
     with pymongo.MongoClient() as client:
       database = client['capacidade']
