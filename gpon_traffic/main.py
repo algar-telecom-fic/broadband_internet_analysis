@@ -24,7 +24,7 @@ class GPON:
     for i in self.database:
       self.database[i]['Utilização gbps'] = self.database[i]['Utilização'] * self.database[i]['Capacidade']
       self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / float(self.date_difference)
-      self.database[i]['Esgotamento dias'] = (self.database[i]['Capacidade'] - self.database[i]['Utilização gbps']) / max(1, self.database[i]['Crescimento MB / mês'])
+      self.database[i]['Esgotamento dias'] = max(0, (self.database[i]['Capacidade'] - self.database[i]['Utilização gbps']) / max(1, self.database[i]['Crescimento MB / mês']))
       self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
       documents.append(self.database[i])
     with pymongo.MongoClient() as client:
