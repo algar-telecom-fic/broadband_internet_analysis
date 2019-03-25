@@ -1,4 +1,4 @@
-ports = ""
-current_file = "/home/gardusi/github/input_xdsl.csv"
-previous_file = "/home/gardusi/github/input_xdsl.csv"
+ports = "/home/gardusi/github/input_gpon_portas.csv"
+current_file = "/home/gardusi/github/input_gpon_trafego.csv"
+previous_file = "/home/gardusi/github/input_gpon_trafego.csv"
 date_difference = "13"
