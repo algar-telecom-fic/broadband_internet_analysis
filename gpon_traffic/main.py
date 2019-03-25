@@ -25,7 +25,7 @@ class GPON:
         ip = v[ord('Z') - ord('A')].strip()
         status = v[ord('P') - ord('A')].strip()
         if ip not in self.database:
-          database[ip] = {
+          self.database[ip] = {
             'ANEL METRO': '?',
             'Capacidade_': '?',
             'Estação': v[ord('R') - ord('A')].strip(),
@@ -40,9 +40,9 @@ class GPON:
             'Utilização': '?',
             'VLAN': v[1 + ord('Z') - ord('A')].strip(),
           }
-        database[ip]['Total Instalado'] += 1
+        self.database[ip]['Total Instalado'] += 1
         if status in self.convert_status:
-          database[ip][convert_status[status]] += 1
+          self.database[ip][convert_status[status]] += 1
 
 def main():
   gpon = GPON(os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt')
