@@ -23,7 +23,7 @@ class GPON:
     documents = []
     for i in self.database:
       self.database[i]['Utilização gbps'] = self.database[i]['Utilização'] * self.database[i]['Capacidade']
-      self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / self.date_difference
+      self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização passada']) / float(self.date_difference)
       self.database[i]['Esgotamento dias'] = (self.database[i]['Capacidade'] - self.database[i]['Utilização gbps']) / self.database[i]['Crescimento MB / mês']
       self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
       documents.append(self.database[i])
