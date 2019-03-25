@@ -1,5 +1,6 @@
 import datetime
 import os
+import re
 import pymongo
 
 class GPON:
@@ -18,6 +19,30 @@ class GPON:
       self.filepath_previous = v[2].split('=')[1].strip().split('"')[1].strip()
       self.date_difference = v[3].split('=')[1].strip().split('"')[1].strip()
 
+  def get_ip(self, s):
+    return re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', s)
+
+  def read_current_traffic(self):
+    with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
+      for line in input_file.readlines():
+        v = line.split(';')
+        ip = self.get_ip(v[ord('G') - ord('A')])
+        self.database[ip]['Capacidade'] += int(v[ord('H') - ord('A')])
+        self.database[ip]['sum'] += float(v[ord('I') - ord('A')])
+        self.database[ip]['qtd'] += 1
+        self.database[ip]['Switch'] = v[ord('E') - ord('A')]
+
+  def read_previous_traffic(self):
+    with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
+      for line in input_file.readlines():
+        v = line.split(';')
+        ip = self.get_ip(v[ord('G') - ord('A')])
+        self.database[ip]['Utilização passada'] = int(v[ord('H') - ord('A')])
+
+  def read_traffic(self):
+    self.read_current_traffic()
+    self.read_previous_traffic()
+
   def read_ports(self):
     with open(self.filepath_ports, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
@@ -26,7 +51,8 @@ class GPON:
         status = v[ord('N') - ord('A')].strip()
         if ip not in self.database:
           self.database[ip] = {
-            'ANEL METRO': '?',
+            'ANEL METRO_': '?',
+            'Capacidade': 0,
             'Capacidade_': '?',
             'Estação': v[ord('P') - ord('A')].strip(),
             'IP OLT': ip,
@@ -35,9 +61,11 @@ class GPON:
             'OLT': v[ord('V') - ord('A')].strip(),
             'Portas Livres': 0,
             'Portas Ocupdas': 0,
+            'qtd': 0,
+            'sum': 0,
             'Total Instalado': 0,
             'Utilização 12/11': '?',
-            'Utilização': '?',
+            'Utilização_': '?',
             'VLAN': v[ord('Y') - ord('A')].strip(),
           }
         self.database[ip]['Total Instalado'] += 1
@@ -47,6 +75,7 @@ class GPON:
 def main():
   gpon = GPON(os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt')
   gpon.read_ports()
+  gpon.read_traffic()
   for i in gpon.database:
     print(gpon.database[i])
 
