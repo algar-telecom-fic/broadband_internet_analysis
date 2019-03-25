@@ -53,7 +53,9 @@ def build_excel_file(current_file, previous_file, date_difference):
     collection.insert(documents)
 
 def main():
-  current_file, previous_file, date_difference = read_config_file('config.txt')
+  import os
+  filepath = os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt'
+  current_file, previous_file, date_difference = read_config_file(filepath)
   read_file(current_file)
   read_file(previous_file)
   build_excel_file(current_file, previous_file, date_difference)
