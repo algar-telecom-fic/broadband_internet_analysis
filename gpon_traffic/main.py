@@ -42,7 +42,7 @@ class GPON:
           }
         self.database[ip]['Total Instalado'] += 1
         if status in self.convert_status:
-          self.database[ip][convert_status[status]] += 1
+          self.database[ip][self.convert_status[status]] += 1
 
 def main():
   gpon = GPON(os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt')
