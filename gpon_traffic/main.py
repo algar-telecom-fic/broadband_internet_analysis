@@ -34,7 +34,7 @@ class GPON:
         if ip == None:
           continue
         print(ip)
-        self.database[ip]['Capacidade'] += int(v[ord('H') - ord('A')].strip())
+        self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
         self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')])
         self.database[ip]['Switch'] = v[ord('E') - ord('A')]
 
