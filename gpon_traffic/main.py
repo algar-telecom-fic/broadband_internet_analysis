@@ -24,6 +24,9 @@ class GPON:
         v = line.split(';')
         ip = v[ord('Z') - ord('A')].strip()
         status = v[ord('P') - ord('A')].strip()
+        print(v)
+        print(ip)
+        print(status)
         if ip not in self.database:
           self.database[ip] = {
             'ANEL METRO': '?',
