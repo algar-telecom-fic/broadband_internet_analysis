@@ -21,17 +21,19 @@ class GPON:
 
   def get_ip(self, s):
     print(s)
-    return re.find(r'[0-9]+(?:\.[0-9]+){3}', s)
+    try:
+      return re.findall(r'[0-9]+(?:\.[0-9]+){3}', s)[0]
+    except Exception:
+      return None
 
   def read_current_traffic(self):
     with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
-        print(v)
         ip = self.get_ip(v[ord('G') - ord('A')])
-        print(ip)
         if ip == None:
           continue
+        print(ip)
         self.database[ip]['Capacidade'] += int(v[ord('H') - ord('A')].strip())
         self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')])
         self.database[ip]['Switch'] = v[ord('E') - ord('A')]
@@ -43,6 +45,7 @@ class GPON:
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip == None:
           continue
+        print(ip)
         self.database[ip]['Utilização passada'] = float(v[ord('I') - ord('A')])
 
   def read_traffic(self):
