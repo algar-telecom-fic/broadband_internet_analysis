@@ -29,19 +29,18 @@ class GPON:
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip == None:
           continue
-        print(v)
-        print(ip)
         self.database[ip]['Capacidade'] += int(v[ord('H') - ord('A')].strip())
-        self.database[ip]['sum'] += float(v[ord('I') - ord('A')])
-        self.database[ip]['qtd'] += 1
+        self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')])
         self.database[ip]['Switch'] = v[ord('E') - ord('A')]
 
   def read_previous_traffic(self):
-    with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
+    with open(self.filepath_previous, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
         ip = self.get_ip(v[ord('G') - ord('A')])
-        self.database[ip]['Utilização passada'] = int(v[ord('H') - ord('A')])
+        if ip == None:
+          continue
+        self.database[ip]['Utilização passada'] = float(v[ord('I') - ord('A')])
 
   def read_traffic(self):
     self.read_current_traffic()
@@ -65,8 +64,6 @@ class GPON:
             'OLT': v[ord('V') - ord('A')].strip(),
             'Portas Livres': 0,
             'Portas Ocupdas': 0,
-            'qtd': 0,
-            'sum': 0,
             'Total Instalado': 0,
             'Utilização 12/11': '?',
             'Utilização_': '?',
