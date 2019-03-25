@@ -22,26 +22,23 @@ class GPON:
     with open(self.filepath_ports, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
-        ip = v[ord('Z') - ord('A')].strip()
-        status = v[ord('P') - ord('A')].strip()
-        print(v)
-        print(ip)
-        print(status)
+        ip = v[ord('X') - ord('A')].strip()
+        status = v[ord('N') - ord('A')].strip()
         if ip not in self.database:
           self.database[ip] = {
             'ANEL METRO': '?',
             'Capacidade_': '?',
-            'Estação': v[ord('R') - ord('A')].strip(),
+            'Estação': v[ord('P') - ord('A')].strip(),
             'IP OLT': ip,
-            'Localidade': v[ord('Q') - ord('A')].strip(),
-            'Modelo': v[ord('U') - ord('A')].strip(),
-            'OLT': v[ord('X') - ord('A')].strip(),
+            'Localidade': v[ord('O') - ord('A')].strip(),
+            'Modelo': v[ord('S') - ord('A')].strip(),
+            'OLT': v[ord('V') - ord('A')].strip(),
             'Portas Livres': 0,
             'Portas Ocupdas': 0,
             'Total Instalado': 0,
             'Utilização 12/11': '?',
             'Utilização': '?',
-            'VLAN': v[1 + ord('Z') - ord('A')].strip(),
+            'VLAN': v[ord('Y') - ord('A')].strip(),
           }
         self.database[ip]['Total Instalado'] += 1
         if status in self.convert_status:
