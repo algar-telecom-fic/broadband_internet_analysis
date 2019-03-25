@@ -21,7 +21,7 @@ class GPON:
 
   def get_ip(self, s):
     print(s)
-    return re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', s)
+    return re.findall(r'[0-9]+(?:\.[0-9]+){3}', s)
 
   def read_current_traffic(self):
     with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
