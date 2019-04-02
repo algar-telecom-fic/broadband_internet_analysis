@@ -1,16 +1,3 @@
-# import pymysql
-
-# def main():
-#   db = pymysql.connect(
-#     'localhost',
-#     'peduardo',
-#     'pe',
-#     'kappacidade'
-#   )
-#   return 0
-
-# main()
-
 import mysql.connector
 
 def main():
@@ -20,5 +7,9 @@ def main():
     passwd = 'pe',
     database = 'kappacidade'
   )
+  cursor = db.cursor()
+  cursor.execute('SHOW TABLES')
+  for i in cursor:
+    print(i)
 
 main()
