@@ -14,6 +14,7 @@ def main():
       + 'task_id INT AUTO_INCREMENT'
     + ')'
   )
+  print(cmd)
   cursor = db.cursor()
   cursor.execute(
     cmd
