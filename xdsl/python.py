@@ -1,7 +1,7 @@
-import PyMySQL
+import pymysql
 
 def main():
-  db = PyMySQL.connect(
+  db = pymysql.connect(
     'localhost',
     'peduardo',
     'pe',
