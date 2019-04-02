@@ -7,14 +7,17 @@ def main():
     passwd = 'pe',
     database = 'kappacidade'
   )
-  cmd = 'CREATE TABLE IF NOT EXISTS'
-  + ' xdsl'
-  + ' ('
-    + 'task_id INT AUTO_INCREMENT'
-  + ')'
-  print(cmd)
+  cmd = (
+    'CREATE TABLE IF NOT EXISTS'
+    + ' xdsl'
+    + ' ('
+      + 'task_id INT AUTO_INCREMENT'
+    + ')'
+  )
   cursor = db.cursor()
-  cursor.execute(cmd)
+  cursor.execute(
+    cmd
+  )
   cursor.execute('SHOW TABLES')
   for i in cursor:
     print(i)
