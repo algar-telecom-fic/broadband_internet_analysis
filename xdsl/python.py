@@ -12,6 +12,10 @@ def main():
     + ' xdsl'
     + ' ('
       + 'task_id INT AUTO_INCREMENT'
+      + 'PRIMARY KEY'
+      + ' ('
+        + 'task_id'
+      + ')'
     + ')'
   )
   print(cmd)
