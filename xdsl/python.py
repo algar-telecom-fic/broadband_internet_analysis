@@ -11,7 +11,7 @@ def main():
     'CREATE TABLE IF NOT EXISTS'
     + ' xdsl'
     + ' ('
-      + 'task_id INT AUTO_INCREMENT'
+      + 'task_id INT AUTO_INCREMENT,'
       + 'PRIMARY KEY'
       + ' ('
         + 'task_id'
