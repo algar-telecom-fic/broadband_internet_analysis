@@ -8,10 +8,10 @@ def main():
     database = 'kappacidade'
   )
   cmd = 'CREATE TABLE IF NOT EXISTS'
-    + ' xdsl'
-    + ' ('
-      + 'task_id INT AUTO_INCREMENT'
-    + ')'
+  + ' xdsl'
+  + ' ('
+    + 'task_id INT AUTO_INCREMENT'
+  + ')'
   print(cmd)
   cursor = db.cursor()
   cursor.execute(cmd)
