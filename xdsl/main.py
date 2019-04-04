@@ -3,7 +3,9 @@ import datetime
 import math
 import os
 import pymongo
-from os.path.dirname(os.path.abspath(__file__)) + '../' import sql
+import sys
+sys.path.insert(0, str(os.path.dirname(os.path.abspath(__file__))) + '../')
+import sql
 
 class Technology(abc.ABC):
   date = datetime.datetime.utcnow()
