@@ -12,8 +12,16 @@ def main():
     'CREATE TABLE IF NOT EXISTS'
     + ' xdsl'
     + ' ('
-      + 'task_id INT AUTO_INCREMENT'
-      + ', PRIMARY KEY (task_id)'
+      + 'id INT AUTO_INCREMENT'
+      + ', PRIMARY KEY (id)'
+    + ')'
+  )
+  cursor.execute(
+    'CREATE TABLE IF NOT EXISTS'
+    + ' adsl'
+    + ' ('
+      + 'id INT AUTO_INCREMENT'
+      + ', PRIMARY KEY (id)'
     + ')'
   )
   cursor.execute('SHOW TABLES')
