@@ -3,6 +3,8 @@ import datetime
 import math
 import os
 import pymongo
+import sys
+sys.path.append('..')
 from .. import sql
 
 class Technology(abc.ABC):
