@@ -1,6 +1,6 @@
 create table expansao(
   id int not null auto_increment primary key,
-  dia TIMESTAMP default CURRENT_TIMESTAMP,
+  dia TIMESTAMP,
   local varchar(30) not null,
   estacao varchar(30) not null,
   cto char(13) not null,
@@ -9,13 +9,14 @@ create table expansao(
   reservado int default 0,
   ocupado int not null,
   vago int not null,
-  total int not null
+  total int not null,
+  previsao_esgotamento int
 );
 
 
 create table concessao(
   id int not null auto_increment primary key,
-  dia TIMESTAMP default CURRENT_TIMESTAMP,
+  dia TIMESTAMP,
   local varchar(30) not null,
   estacao varchar(30) not null,
   cto char(13) not null,
@@ -24,7 +25,8 @@ create table concessao(
   reservado int default 0,
   ocupado int not null,
   vago int not null,
-  total int not null
+  total int not null,
+  previsao_esgotamento int
 );
 
 
@@ -36,7 +38,7 @@ create table cidades(
 
 
 DELIMITER $$
-CREATE PROCEDURE compara_datas (IN nomecto CHAR(13))
+CREATE FUNCTION previsao_esgotamento (nomecto CHAR(13)) RETURNS INTEGER DETERMINISTIC
 BEGIN
 	DECLARE maxDate TIMESTAMP;
 	DECLARE minDate TIMESTAMP;
@@ -44,20 +46,30 @@ BEGIN
   DECLARE ocupadoRecente INT;
   DECLARE ocupadoAntigo INT;
   DECLARE vagoRecente INT;
-  DECLARE previsao INT;
+  DECLARE previsao INTEGER;
   DECLARE taxa FLOAT;
 
-
-	SELECT MAX(dia) INTO maxDate from expansao where cto = nomecto;
-	SELECT MAX(dia) INTO minDate from expansao where cto = nomecto and dia < maxDate;
-
+	SELECT MAX(dia), ocupado, vago INTO maxDate, ocupadoRecente, vagoRecente from expansao where cto = nomecto;
+	SELECT MAX(dia), ocupado INTO minDate, ocupadoAntigo from expansao where cto = nomecto and dia < maxDate;
 	set numDias = (SELECT TIMESTAMPDIFF(day,minDate,maxDate));
-  SELECT ocupado, vago into ocupadoRecente, vagoRecente FROM expansao where cto=nomecto and dia = maxDate limit 1;
-  SELECT ocupado into ocupadoAntigo FROM expansao WHERE cto=nomecto and dia = minDate limit 1;
-
   set taxa = (ocupadoRecente - ocupadoAntigo) / numDias;
   set previsao = vagoRecente / taxa;
-  select previsao as Previsao_em_dias;
+
+  RETURN previsao;
+
+END $$
+DELIMITER ;
+
+
+
+
+DELIMITER $$
+CREATE PROCEDURE get_time_diff (OUT diferenca INTEGER, OUT max_date TIMESTAMP, OUT min_date TIMESTAMP)
+BEGIN
+  SELECT MAX(dia) into max_date from expansao;
+  SELECT MAX(dia) into min_date from expansao where dia < max_date;
+
+  SET diferenca = (SELECT TIMESTAMPDIFF(day, min_date, max_date));
 
 END $$
 DELIMITER ;
