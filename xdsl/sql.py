@@ -19,14 +19,12 @@ class SQL:
     for item in items:
       command += item + ', '
     command += 'PRIMARY KEY' + '(' + primary_key + '))'
-    print(command)
-    self.__execute(command)
-
-  def __execute(self, command):
     self.cursor.execute(command)
 
   def show_tables(self):
-    pass
+    self.cursor.execute('SHOW TABLES')
+    for i in self.cursor:
+      print(i)
 
 def main():
   sql = SQL(
@@ -42,5 +40,6 @@ def main():
     ],
     primary_key = 'id'
   )
+  sql.show_tables()
 
 main()
