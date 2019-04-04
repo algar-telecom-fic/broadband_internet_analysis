@@ -18,7 +18,7 @@ class SQL:
     )
     for item in items:
       command += item + ', '
-    command += ', ' + primary_key + ')'
+    command += primary_key + ')'
     print(command)
     self.__execute(command)
 
