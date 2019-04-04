@@ -14,11 +14,11 @@ class SQL:
   def create_table(self, table_name, items, primary_key):
     command = (
       'CREATE TABLE IF NOT EXISTS'
-      + ' ' + table_name + ' ('
+      + ' ' + table_name + '('
     )
     for item in items:
       command += item + ', '
-    command += primary_key + ')'
+    command += 'PRIMARY KEY' + '(' + primary_key + ')'
     print(command)
     self.__execute(command)
 
