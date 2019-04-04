@@ -9,6 +9,7 @@ class SQL:
       passwd = passwd,
       database = database
     )
+    self.cursor = self.connection.cursor()
 
   def create_table(self, table_name, items, primary_key):
     command = (
@@ -16,14 +17,16 @@ class SQL:
       + ' ' + table_name + ' ('
     )
     for item in items:
-      command += ', ' + item
+      command += item + ', '
     command += ', ' + primary_key + ')'
     print(command)
-    # self.execute(command)
+    self.__execute(command)
 
-  def execute(self, command):
-    cursor = self.connection.cursor()
-    cursor.execute(command)
+  def __execute(self, command):
+    self.cursor.execute(command)
+
+  def show_tables(self):
+    pass
 
 def main():
   sql = SQL(
