@@ -1,0 +1,43 @@
+import mysql.connector
+
+class SQL:
+
+  def __init__(self, host: str, user: str, passwd: str, database: str) -> None:
+    self.connection = mysql.connector.connect(
+      host = host,
+      user = user,
+      passwd = passwd,
+      database = database
+    )
+
+  def create_table(self, table_name, items, primary_key):
+    command = (
+      'CREATE TABLE IF NOT EXISTS'
+      + ' ' + table_name + ' ('
+    )
+    for item in items:
+      command += ', ' + item
+    command += ', ' + primary_key + ')'
+    print(command)
+    # self.execute(command)
+
+  def execute(self, command):
+    cursor = self.connection.cursor()
+    cursor.execute(command)
+
+def main():
+  sql = SQL(
+    host = '0.0.0.0',
+    user = 'peduardo',
+    passwd = 'pe',
+    database = 'kappacidade'
+  )
+  sql.create_table(
+    table_name = 'xdsl',
+    items = [
+      'id INT AUTO_INCREMENT'
+    ],
+    primary_key = 'id'
+  )
+
+main()
