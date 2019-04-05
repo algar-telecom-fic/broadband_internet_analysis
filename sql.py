@@ -41,5 +41,3 @@ def main():
     primary_key = 'id'
   )
   sql.show_tables()
-
-main()
