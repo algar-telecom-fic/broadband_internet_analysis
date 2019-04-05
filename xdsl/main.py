@@ -4,8 +4,8 @@ import math
 import os
 import pymongo
 import sys
-sys.path.append('..')
-from .. import sql
+sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
+import sql
 
 class Technology(abc.ABC):
   date = datetime.datetime.utcnow()
