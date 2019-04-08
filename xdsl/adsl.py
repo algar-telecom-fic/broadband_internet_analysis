@@ -4,7 +4,7 @@ import xdsl
 
 import sys
 sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
-import sql
+import mysql
 
 class ADSL(xdsl.XDSL):
   database = {}
