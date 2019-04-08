@@ -8,6 +8,19 @@ class ADSL(xdsl.XDSL):
     'disponivel ngn',
     'disponivel',
   ]
+  mysql_table_info = {
+    'available': 'INT',
+    'date': 'DATETIME',
+    'grand_station': 'TINYTEXT',
+    'id': 'INT AUTO_INCREMENT',
+    'increasing': 'DOUBLE',
+    'location': 'TINYTEXT',
+    'occupied': 'INT',
+    'prediction': 'TINYTEXT',
+    'regional': 'TINYTEXT',
+    'station': 'TINYTEXT',
+    'total': 'INT',
+  }
   occupied = [
     'auditoria',
     'ocupado',
@@ -20,6 +33,20 @@ class ADSL(xdsl.XDSL):
     'keymile',
     'zte',
   ]
+
+  def start_db(self):
+    db = mySQL(
+      host = '10.11.135.47',
+      user = 'peduardo',
+      passwd = 'pe',
+      database = 'kappacidade'
+    )
+    db.create_table(
+      table_name = 'adsl',
+      items = self.table_info,
+      primary_key = 'id'
+    )
+    db.show_tables()
 
   def add_port(self, v):
     technology = str(v[18]).strip().lower()
