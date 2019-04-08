@@ -12,7 +12,7 @@ class ADSL(xdsl.XDSL):
     'disponivel ngn',
     'disponivel',
   ]
-  mysql_table_info = {
+  table_info = {
     'available': 'INT',
     'date': 'DATETIME',
     'grand_station': 'TINYTEXT',
@@ -47,7 +47,7 @@ class ADSL(xdsl.XDSL):
     )
     db.create_table(
       table_name = 'adsl',
-      items = self.table_info,
+      table_info = self.table_info,
       primary_key = 'id'
     )
     db.show_tables()
