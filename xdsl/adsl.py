@@ -39,7 +39,7 @@ class ADSL(xdsl.XDSL):
   ]
 
   def start_db(self):
-    db = sql.mySQL(
+    db = mysql.mySQL(
       host = '10.11.135.47',
       user = 'peduardo',
       passwd = 'pe',
