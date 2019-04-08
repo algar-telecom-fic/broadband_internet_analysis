@@ -4,7 +4,7 @@ import xdsl
 
 import sys
 sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
-import mysql
+import mysql_gardusi
 
 class ADSL(xdsl.XDSL):
   database = {}
@@ -39,7 +39,7 @@ class ADSL(xdsl.XDSL):
   ]
 
   def start_db(self):
-    db = mysql.mySQL(
+    db = mysql_gardusi.mySQL(
       host = '10.11.135.47',
       user = 'peduardo',
       passwd = 'pe',
