@@ -11,14 +11,15 @@ class mySQL:
     )
     self.cursor = self.connection.cursor()
 
-  def create_table(self, table_name: str, items: list, primary_key: str) -> None:
+  def create_table(self, table_name: str, table_info: dict, primary_key: str) -> None:
     command = (
       'CREATE TABLE IF NOT EXISTS'
       + ' ' + table_name + '('
     )
-    for item in items:
-      command += item + ', '
+    for key, value in table_info.items():
+      command += key + ' ' + value + ', '
     command += 'PRIMARY KEY' + '(' + primary_key + '))'
+    print(command)
     self.cursor.execute(command)
 
   def show_tables(self) -> None:
