@@ -1,6 +1,6 @@
 import math
 import pymongo
-import xdsl
+from xdsl import *
 
 class ADSL(XDSL):
   database = {}
