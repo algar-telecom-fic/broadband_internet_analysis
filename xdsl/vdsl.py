@@ -2,7 +2,7 @@ import math
 import pymongo
 import xdsl
 
-class VDSL(XDSL):
+class VDSL(xdsl.XDSL):
   database = {}
   available = [
     'disponivel ngn',

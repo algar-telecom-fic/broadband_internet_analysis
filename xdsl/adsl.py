@@ -1,8 +1,8 @@
 import math
 import pymongo
-from xdsl import *
+import xdsl
 
-class ADSL(XDSL):
+class ADSL(xdsl.XDSL):
   database = {}
   available = [
     'disponivel ngn',
