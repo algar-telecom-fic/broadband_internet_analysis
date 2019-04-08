@@ -2,6 +2,10 @@ import math
 import pymongo
 import xdsl
 
+import sys
+sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
+import sql
+
 class ADSL(xdsl.XDSL):
   database = {}
   available = [
@@ -35,7 +39,7 @@ class ADSL(xdsl.XDSL):
   ]
 
   def start_db(self):
-    db = mySQL(
+    db = sql.mySQL(
       host = '10.11.135.47',
       user = 'peduardo',
       passwd = 'pe',
