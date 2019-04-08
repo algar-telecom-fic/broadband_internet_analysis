@@ -40,7 +40,7 @@ class ADSL(xdsl.XDSL):
 
   def start_db(self):
     db = mysql_gardusi.mySQL(
-      host = '10.11.135.47',
+      host = '0.0.0.0',
       user = 'peduardo',
       passwd = 'pe',
       database = 'kappacidade'
