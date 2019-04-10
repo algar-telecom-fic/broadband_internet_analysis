@@ -4,6 +4,10 @@ class mySQL:
 
   # use 'database'
   def __init__(self, host: str, user: str, passwd: str, database: str) -> None:
+    print(host)
+    print(user)
+    print(passwd)
+    print(database)
     self.connection = mysql.connector.connect(
       host = host,
       user = user,
