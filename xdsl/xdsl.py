@@ -5,7 +5,7 @@ sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
 import mysql_gardusi
 
 class XDSL(abc.ABC):
-  database = 'kappacidade'
+  database_name = 'kappacidade'
   date = datetime.datetime.utcnow(),
   host = '0.0.0.0',
   passwd = 'pe',
@@ -22,7 +22,7 @@ class XDSL(abc.ABC):
 
   def insert_documents(self):
     db = mysql_gardusi.mySQL(
-      database = self.database,
+      database = self.database_name,
       host = self.host,
       passwd = self.passwd,
       user = self.user,
