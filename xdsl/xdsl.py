@@ -9,7 +9,7 @@ class XDSL(abc.ABC):
   date = datetime.datetime.utcnow(),
   host = '0.0.0.0',
   passwd = 'pe',
-  primary_key = 'id'
+  primary_key = 'id',
   user = 'peduardo',
 
   @abc.abstractmethod
