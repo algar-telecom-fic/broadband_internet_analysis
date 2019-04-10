@@ -92,7 +92,7 @@ class ADSL(xdsl.XDSL):
             prediction = error
           self.documents.append({
             'increasing': increasing,
-            'date': self.date,
+            'date': self.date[0],
             'grand_station': ' '.join(station.split(' ')[: -1]),
             'station': station,
             'location': locale,
