@@ -7,7 +7,7 @@ class mySQL:
     print(host)
     print(user)
     print(passwd)
-    print(database)r
+    print(database)
     self.connection = mysql.connector.connect(
       host = host[0],
       user = user[0],
