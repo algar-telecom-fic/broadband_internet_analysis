@@ -33,7 +33,7 @@ class mySQL:
     )
     for i in range(len(values)):
       for key in list(table_info.keys()):
-        if key in values[i][key]:
+        if key in values[i]:
           print(values[i][key], end = ' ')
       print()
     print(command)
