@@ -7,9 +7,8 @@ def main():
   current_filepath, previous_filepath, date_difference = read_config_file(filepath + '/config.txt')
   current_adsl, current_vdsl = read_file(current_filepath)
   previous_adsl, previous_vdsl = read_file(previous_filepath)
-  current_adsl.build_mongodb(previous_adsl, date_difference)
-  current_vdsl.build_mongodb(previous_vdsl, date_difference)
-  current_adsl.start_db()
+  current_adsl.build_documents(previous_adsl, date_difference)
+  current_vdsl.build_documents(previous_vdsl, date_difference)
 
 def read_config_file(filepath):
   with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:

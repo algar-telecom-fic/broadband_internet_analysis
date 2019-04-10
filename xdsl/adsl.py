@@ -1,9 +1,6 @@
 import math
 import pymongo
 import xdsl
-import sys
-sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
-import mysql_gardusi
 
 class ADSL(xdsl.XDSL):
   database = {}

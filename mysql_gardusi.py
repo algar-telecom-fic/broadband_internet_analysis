@@ -30,6 +30,6 @@ class mySQL:
       'INSERT INTO'
       + ' ' + table_name + ' ('
       + ', '.join(list(table_info.keys()))
-      ') ' + 'VALUES' + ' '
+      + ') ' + 'VALUES' + ' '
     )
     print(command)
