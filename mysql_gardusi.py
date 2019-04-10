@@ -9,10 +9,10 @@ class mySQL:
     print(passwd)
     print(database)
     self.connection = mysql.connector.connect(
-      host = host,
-      user = user,
-      passwd = passwd,
-      database = database
+      host = host[0],
+      user = user[0],
+      passwd = passwd[0],
+      database = database[0],
     )
     self.cursor = self.connection.cursor()
 
