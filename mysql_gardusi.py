@@ -38,7 +38,7 @@ class mySQL:
       keepo = []
       for key in list(table_info.keys()):
         if key in values[i]:
-          copo = '\'' + values[i][key] + '\''
+          copo = '\'' + str(values[i][key]) + '\''
           keepo.append(copo)
       kappa.append('(' + ', '.join(list(map(str, keepo))) + ')')
     print(command)
