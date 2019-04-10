@@ -10,6 +10,7 @@ class XDSL(abc.ABC):
   host = '0.0.0.0',
   passwd = 'pe',
   user = 'peduardo',
+  primary_key = 'id'
 
   @abc.abstractmethod
   def add_port(self):
@@ -19,15 +20,20 @@ class XDSL(abc.ABC):
   def build_documents(self):
     pass
 
-  def insert_documents(self, database, host, passwd, user, primary_key, table_info, table_name):
+  def insert_documents(self, table_info, table_name):
     db = mysql_gardusi.mySQL(
-      database = database,
-      host = host,
-      passwd = passwd,
-      user = user,
+      database = self.database,
+      host = self.host,
+      passwd = self.passwd,
+      user = self.user,
     )
     db.create_table(
-      primary_key = primary_key,
+      primary_key = self.primary_key,
       table_info = table_info,
       table_name = table_name,
+    )
+    db.insert_documents(
+      self.table_name
+      self.table_info,
+      self.documents,
     )

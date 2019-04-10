@@ -90,7 +90,7 @@ class ADSL(xdsl.XDSL):
             error = 'Esgotado' if available == 0 else 'Sem histórico'
             increasing = error
             prediction = error
-          documents.append({
+          self.documents.append({
             'Crescimento': increasing,
             'Data': self.date,
             'Estação mãe': ' '.join(station.split(' ')[: -1]),
