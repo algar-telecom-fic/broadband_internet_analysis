@@ -21,7 +21,6 @@ class mySQL:
     for key, value in table_info.items():
       command += key + ' ' + value + ', '
     command += 'PRIMARY KEY' + '(' + primary_key[0] + '))'
-    print(command)
     self.cursor.execute(command)
 
   # INSERT INTO 'table_name' ("keys") VALUES ("values_0"), ("values_1"), ... ;
@@ -32,4 +31,8 @@ class mySQL:
       + ', '.join(list(table_info.keys()))
       + ') ' + 'VALUES' + ' '
     )
+    for i in range(len(documents)):
+      for key in list(table_info.keys()):
+        print(values[i][key], end = ' ')
+      print()
     print(command)
