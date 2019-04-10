@@ -31,7 +31,7 @@ class mySQL:
       + ', '.join(list(table_info.keys()))
       + ') ' + 'VALUES' + ' '
     )
-    for i in range(len(documents)):
+    for i in range(len(values)):
       for key in list(table_info.keys()):
         print(values[i][key], end = ' ')
       print()
