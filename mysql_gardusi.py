@@ -33,9 +33,12 @@ class mySQL:
       + ', '.join(list(eoq.keys()))
       + ') ' + 'VALUES' + ' '
     )
+    kappa = []
     for i in range(len(values)):
+      keepo = []
       for key in list(table_info.keys()):
         if key in values[i]:
-          print(values[i][key], end = ' ')
-      print()
+          keepo.append(values[i][key])
+      keepo = ', '.join(keepo)
+      print(keepo)
     print(command)
