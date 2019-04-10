@@ -29,8 +29,8 @@ class XDSL(abc.ABC):
     )
     db.create_table(
       primary_key = self.primary_key,
-      table_info = table_info,
-      table_name = table_name,
+      table_info = self.table_info,
+      table_name = self.table_name,
     )
     db.insert_into(
       self.table_name,
