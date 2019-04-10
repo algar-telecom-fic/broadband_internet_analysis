@@ -2,6 +2,7 @@ import mysql.connector
 
 class mySQL:
 
+  # use 'database'
   def __init__(self, host: str, user: str, passwd: str, database: str) -> None:
     self.connection = mysql.connector.connect(
       host = host,
@@ -11,6 +12,7 @@ class mySQL:
     )
     self.cursor = self.connection.cursor()
 
+  # CREATE TABLE IF NOT EXISTS 'table_name' ('key_0' 'value_0', 'key_1' 'value_1', ..., )
   def create_table(self, table_name: str, table_info: dict, primary_key: str) -> None:
     command = (
       'CREATE TABLE IF NOT EXISTS'
@@ -22,24 +24,12 @@ class mySQL:
     print(command)
     self.cursor.execute(command)
 
-  def show_tables(self) -> None:
-    self.cursor.execute('SHOW TABLES')
-    for i in self.cursor:
-      print(i)
-
-# db = mySQL(
-#   host = '0.0.0.0',
-#   user = 'username',
-#   passwd = 'password',
-#   database = 'database_name'
-# )
-
-# db.create_table(
-#   table_name = 'xdsl',
-#   items = [
-#     'id INT AUTO_INCREMENT'
-#   ],
-#   primary_key = 'id'
-# )
-
-# sql.show_tables()
+  # INSERT INTO 'table_name' ("keys") VALUES ("values_0"), ("values_1"), ... ;
+  def insert(self, table_name: str, table_info: dict, values: list) -> None:
+    command = (
+      'INSERT INTO'
+      + ' ' + table_name + ' ('
+      + ', '.join(list(table_info.keys()))
+      ') ' + 'VALUES' + ' '
+    )
+    print(command)

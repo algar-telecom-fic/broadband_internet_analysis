@@ -1,7 +1,6 @@
 import math
 import pymongo
 import xdsl
-
 import sys
 sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
 import mysql_gardusi
@@ -25,6 +24,7 @@ class ADSL(xdsl.XDSL):
     'station': 'TINYTEXT',
     'total': 'INT',
   }
+  table_name = 'adsl'
   occupied = [
     'auditoria',
     'ocupado',
@@ -37,20 +37,6 @@ class ADSL(xdsl.XDSL):
     'keymile',
     'zte',
   ]
-
-  def start_db(self):
-    db = mysql_gardusi.mySQL(
-      host = '0.0.0.0',
-      user = 'peduardo',
-      passwd = 'pe',
-      database = 'kappacidade'
-    )
-    db.create_table(
-      table_name = 'adsl',
-      table_info = self.table_info,
-      primary_key = 'id'
-    )
-    db.show_tables()
 
   def add_port(self, v):
     technology = str(v[18]).strip().lower()
@@ -76,8 +62,8 @@ class ADSL(xdsl.XDSL):
     elif status in self.occupied:
       self.database[regional][locale][station]['occupied'] += 1
 
-  def build_mongodb(self, previous, date_difference):
-    documents = []
+  def build_documents(self, previous, date_difference):
+    self.documents = []
     for regional in self.database:
       for locale in self.database[regional]:
         for station in self.database[regional][locale]:
@@ -119,7 +105,3 @@ class ADSL(xdsl.XDSL):
             'Regional': regional,
             'Total de portas': total,
           })
-    with pymongo.MongoClient() as client:
-      database = client['capacidade']
-      collection = database['adsl']
-      collection.insert(documents)

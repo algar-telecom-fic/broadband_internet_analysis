@@ -45,7 +45,7 @@ class VDSL(xdsl.XDSL):
     elif status in self.occupied:
       self.database[regional][locale][station][cabinet]['occupied'] += 1
 
-  def build_mongodb(self, previous, date_difference):
+  def build_documents(self, previous, date_difference):
     documents = []
     for regional in self.database:
       for locale in self.database[regional]:
