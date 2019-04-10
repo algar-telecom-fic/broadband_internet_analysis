@@ -4,10 +4,6 @@ class mySQL:
 
   # use 'database'
   def __init__(self, host: str, user: str, passwd: str, database: str) -> None:
-    print(host)
-    print(user)
-    print(passwd)
-    print(database)
     self.connection = mysql.connector.connect(
       host = host[0],
       user = user[0],
@@ -24,7 +20,7 @@ class mySQL:
     )
     for key, value in table_info.items():
       command += key + ' ' + value + ', '
-    command += 'PRIMARY KEY' + '(' + primary_key + '))'
+    command += 'PRIMARY KEY' + '(' + primary_key[0] + '))'
     print(command)
     self.cursor.execute(command)
 
