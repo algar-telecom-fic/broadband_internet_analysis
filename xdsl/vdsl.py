@@ -13,6 +13,7 @@ class VDSL(xdsl.XDSL):
     'cabinet': 'TINYTEXT',
     'date': 'DATETIME',
     'grand_station': 'TINYTEXT',
+    'id': 'INT AUTO_INCREMENT',
     'increasing': 'DOUBLE',
     'location': 'TINYTEXT',
     'occupied': 'INT',
