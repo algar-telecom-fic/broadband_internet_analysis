@@ -37,7 +37,7 @@ class mySQL:
     for idx in range(len(values)):
       document = []
       for key in list(columns.keys()):
-        document.append('\'' + str(values[i][key]) + '\'')
+        document.append('\'' + str(values[idx][key]) + '\'')
       documents.append('(' + ', '.join(list(map(str, document))) + ')')
     command += ', '.join(documents)
     self.cursor.execute(command)
