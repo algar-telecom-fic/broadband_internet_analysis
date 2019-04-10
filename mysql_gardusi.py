@@ -2,7 +2,7 @@ import mysql.connector
 
 class mySQL:
 
-  # use 'database'
+  # use 'database';
   def __init__(self, host: str, user: str, passwd: str, database: str) -> None:
     self.connection = mysql.connector.connect(
       host = host[0],
@@ -12,7 +12,7 @@ class mySQL:
     )
     self.cursor = self.connection.cursor()
 
-  # CREATE TABLE IF NOT EXISTS 'table_name' ('key_0' 'value_0', 'key_1' 'value_1', ..., )
+  # CREATE TABLE IF NOT EXISTS 'table_name' ('key_0' 'value_0', 'key_1' 'value_1', ...);
   def create_table(self, table_name: str, table_info: dict, primary_key: str) -> None:
     command = (
       'CREATE TABLE IF NOT EXISTS'
@@ -25,22 +25,19 @@ class mySQL:
 
   # INSERT INTO 'table_name' ("keys") VALUES ("values_0"), ("values_1"), ... ;
   def insert_into(self, table_name: str, table_info: dict, values: list) -> None:
-    eoq = table_info
-    eoq.pop('id', None)
+    columns = table_info
+    columns.pop('id', None)
     command = (
       'INSERT INTO'
       + ' ' + table_name + ' ('
-      + ', '.join(list(eoq.keys()))
+      + ', '.join(list(columns.keys()))
       + ') ' + 'VALUES' + ' '
     )
-    kappa = []
-    for i in range(len(values)):
-      keepo = []
-      for key in list(table_info.keys()):
-        if key in values[i]:
-          copo = '\'' + str(values[i][key]) + '\''
-          keepo.append(copo)
-      kappa.append('(' + ', '.join(list(map(str, keepo))) + ')')
-    command += ', '.join(kappa)
-    print(command)
+    documents = []
+    for idx in range(len(values)):
+      document = []
+      for key in list(columns.keys()):
+        document.append('\'' + str(values[i][key]) + '\'')
+      documents.append('(' + ', '.join(list(map(str, document))) + ')')
+    command += ', '.join(documents)
     self.cursor.execute(command)
