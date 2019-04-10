@@ -5,10 +5,10 @@ class mySQL:
   # use 'database';
   def __init__(self, host: str, user: str, passwd: str, database: str) -> None:
     self.connection = mysql.connector.connect(
-      host = host[0],
-      user = user[0],
-      passwd = passwd[0],
-      database = database[0],
+      host = host,
+      user = user,
+      passwd = passwd,
+      database = database,
     )
     self.cursor = self.connection.cursor()
 
@@ -20,7 +20,7 @@ class mySQL:
     )
     for key, value in table_info.items():
       command += key + ' ' + value + ', '
-    command += 'PRIMARY KEY' + '(' + primary_key[0] + '))'
+    command += 'PRIMARY KEY' + '(' + primary_key + '))'
     self.cursor.execute(command)
 
   # INSERT INTO 'table_name' ("keys") VALUES ("values_0"), ("values_1"), ... ;
