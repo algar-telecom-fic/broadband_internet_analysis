@@ -25,10 +25,12 @@ class mySQL:
 
   # INSERT INTO 'table_name' ("keys") VALUES ("values_0"), ("values_1"), ... ;
   def insert_into(self, table_name: str, table_info: dict, values: list) -> None:
+    eoq = table_info
+    eoq.pop('id', None)
     command = (
       'INSERT INTO'
       + ' ' + table_name + ' ('
-      + ', '.join(list(table_info.keys()))
+      + ', '.join(list(eoq.keys()))
       + ') ' + 'VALUES' + ' '
     )
     for i in range(len(values)):
