@@ -6,7 +6,7 @@ import mysql_gardusi
 
 class XDSL(abc.ABC):
   database_name = 'kappacidade',
-  date = datetime.datetime.utcnow(),
+  date = datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S'),
   host = '0.0.0.0',
   passwd = 'pe',
   primary_key = 'id',
