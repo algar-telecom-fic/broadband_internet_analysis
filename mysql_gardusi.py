@@ -39,6 +39,6 @@ class mySQL:
       for key in list(table_info.keys()):
         if key in values[i]:
           keepo.append(values[i][key])
-      keepo = ', '.join(list(map(str, keepo)))
-      print(keepo)
+      kappa.append('(' + ', '.join(list(map(str, keepo))) ')')
     print(command)
+    print(', '.join(kappa))
