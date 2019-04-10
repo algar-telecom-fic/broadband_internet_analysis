@@ -22,10 +22,10 @@ class XDSL(abc.ABC):
 
   def insert_documents(self):
     db = mysql_gardusi.mySQL(
-      database = self.database_name,
-      host = self.host,
-      passwd = self.passwd,
-      user = self.user,
+      self.host,
+      self.user,
+      self.passwd,
+      self.database_name,
     )
     db.create_table(
       primary_key = self.primary_key,
