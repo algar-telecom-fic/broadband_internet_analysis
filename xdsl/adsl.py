@@ -21,12 +21,12 @@ class ADSL(xdsl.XDSL):
     'station': 'TINYTEXT',
     'total': 'INT',
   }
-  table_name = 'adsl'
   occupied = [
     'auditoria',
     'ocupado',
     'reservado ngn',
   ]
+  table_name = 'adsl'
   technologies = [
     'huawei ngn',
     'huawei',

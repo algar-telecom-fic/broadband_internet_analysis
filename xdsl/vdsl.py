@@ -8,11 +8,24 @@ class VDSL(xdsl.XDSL):
     'disponivel ngn',
     'disponivel',
   ]
+  table_info = {
+    'available': 'INT',
+    'cabinet': TINYTEXT,
+    'date': 'DATETIME',
+    'grand_station': 'TINYTEXT',
+    'increasing': 'DOUBLE',
+    'location': 'TINYTEXT',
+    'occupied': 'INT',
+    'prediction': 'TINYTEXT',
+    'regional': 'TINYTEXT',
+    'total': 'INT',
+  }
   occupied = [
     'auditoria',
     'ocupado',
     'reservado ngn',
   ]
+  table_name = 'vdsl'
   technologies = [
     'huawei vdsl',
     'keymile vdsl',
@@ -46,7 +59,7 @@ class VDSL(xdsl.XDSL):
       self.database[regional][locale][station][cabinet]['occupied'] += 1
 
   def build_documents(self, previous, date_difference):
-    documents = []
+    self.documents = []
     for regional in self.database:
       for locale in self.database[regional]:
         for station in self.database[regional][locale]:
@@ -77,21 +90,17 @@ class VDSL(xdsl.XDSL):
               increasing = 'Sem histórico'
               prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
             documents.append({
-              'Armário': cabinet,
-              'Crescimento': increasing,
-              'Data': self.date,
-              'Estação mãe': station,
-              'Localidade': locale,
-              'Portas disponíveis': available,
-              'Portas ocupadas': occupied,
-              'Previsão de esgotamento': prediction,
-              'Regional': regional,
-              'Total de portas': total,
+              'available': available,
+              'cabinet': cabinet,
+              'date': self.date,
+              'grand_station': station,
+              'increasing': increasing,
+              'location': locale,
+              'occupied': occupied,
+              'prediction': prediction,
+              'regional': regional,
+              'total': total,
             })
-    with pymongo.MongoClient() as client:
-      database = client['capacidade']
-      collection = database['vdsl']
-      collection.insert(documents)
 
   def get_cabinet(self, v):
     if len(v[ord('U') - ord('A')]) == 0:
