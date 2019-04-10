@@ -20,7 +20,7 @@ class XDSL(abc.ABC):
   def build_documents(self):
     pass
 
-  def insert_documents(self, table_info, table_name):
+  def insert_documents(self):
     db = mysql_gardusi.mySQL(
       database = self.database,
       host = self.host,
@@ -32,7 +32,7 @@ class XDSL(abc.ABC):
       table_info = table_info,
       table_name = table_name,
     )
-    db.insert_documents(
+    db.insert_into(
       self.table_name,
       self.table_info,
       self.documents,

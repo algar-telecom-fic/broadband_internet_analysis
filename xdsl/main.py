@@ -9,6 +9,7 @@ def main():
   previous_adsl, previous_vdsl = read_file(previous_filepath)
   current_adsl.build_documents(previous_adsl, date_difference)
   current_vdsl.build_documents(previous_vdsl, date_difference)
+  current_adsl.insert_documents()
 
 def read_config_file(filepath):
   with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:

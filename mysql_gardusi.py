@@ -25,7 +25,7 @@ class mySQL:
     self.cursor.execute(command)
 
   # INSERT INTO 'table_name' ("keys") VALUES ("values_0"), ("values_1"), ... ;
-  def insert(self, table_name: str, table_info: dict, values: list) -> None:
+  def insert_into(self, table_name: str, table_info: dict, values: list) -> None:
     command = (
       'INSERT INTO'
       + ' ' + table_name + ' ('
