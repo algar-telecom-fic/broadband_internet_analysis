@@ -41,5 +41,6 @@ class mySQL:
           copo = '\'' + str(values[i][key]) + '\''
           keepo.append(copo)
       kappa.append('(' + ', '.join(list(map(str, keepo))) + ')')
+    command += ', '.join(kappa)
     print(command)
-    print(', '.join(kappa))
+    self.cursor.execute(command)
