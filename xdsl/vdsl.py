@@ -89,7 +89,7 @@ class VDSL(xdsl.XDSL):
               print(e)
               increasing = 'Sem histórico'
               prediction = 'Esgotado' if i.available == 0 else 'Sem histórico'
-            documents.append({
+            self.documents.append({
               'available': available,
               'cabinet': cabinet,
               'date': self.date,
