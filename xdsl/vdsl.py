@@ -10,7 +10,7 @@ class VDSL(xdsl.XDSL):
   ]
   table_info = {
     'available': 'INT',
-    'cabinet': TINYTEXT,
+    'cabinet': 'TINYTEXT',
     'date': 'DATETIME',
     'grand_station': 'TINYTEXT',
     'increasing': 'DOUBLE',
