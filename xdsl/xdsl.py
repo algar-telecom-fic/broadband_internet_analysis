@@ -9,8 +9,8 @@ class XDSL(abc.ABC):
   date = datetime.datetime.utcnow(),
   host = '0.0.0.0',
   passwd = 'pe',
-  user = 'peduardo',
   primary_key = 'id'
+  user = 'peduardo',
 
   @abc.abstractmethod
   def add_port(self):
@@ -33,7 +33,7 @@ class XDSL(abc.ABC):
       table_name = table_name,
     )
     db.insert_documents(
-      self.table_name
+      self.table_name,
       self.table_info,
       self.documents,
     )
