@@ -2,8 +2,8 @@ import configparser
 import mysql.connector
 
 class Database:
-    def __init__(self, configFilename):
-        self.configureDB(configFilename)
+    def __init__(self):
+        self.configureDB('/home/pediogo/Documentos/broadband_internet_analysis/gpon/portas/dbconfigs.env')
 
 
     def configureDB(self, configFilename):

@@ -6,13 +6,17 @@ from datetime import datetime
 
 class Main:
 
-    def __init__(self):
-        cidade_filename, dados_filename = UIManager().get_filenames()
+    def __init__(self, cidade_filename="", dados_filename=""):
+        #cidade_filename, dados_filename = UIManager().get_filenames()
 
+        print("cidade: " + cidade_filename)
         self.cidades = Cidades(cidade_filename)
-        self.processaCSV(dados_filename)
-        self.recuperaDados()
-        self.insereDados()
+
+        if dados_filename != "":
+            self.processaCSV(dados_filename)
+            self.recuperaDados()
+            self.insereDados()
+
 
     def processaCSV(self, filename):
         with open(filename, 'r', encoding='ISO-8859-1') as input_file:
@@ -43,8 +47,8 @@ class Main:
 
 
     def insereDados(self):
-        hoje = datetime.utcnow()
-
+        #hoje = datetime.utcnow()
+        hoje = datetime(2019, 1, 25)
 
         argsCn = []
         for nome, cto in self.concessao.items():
@@ -84,7 +88,7 @@ class Main:
                 (hoje,) + cto.as_a_tuple() + (previsao,)
             )
 
-        db = Database('dbconfigs.env')
+        db = Database()
 
         query = """INSERT INTO concessao (dia, local, estacao, cto, defeito, designado, reservado, ocupado, vago, total, previsao_esgotamento)
                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
@@ -96,7 +100,7 @@ class Main:
 
 
     def recuperaDados(self):
-        db = Database('dbconfigs.env')
+        db = Database()
         self.antigoConcessao = {}
         self.antigoExpansao = {}
         for registro in db.executaQuery('SELECT * from concessao where dia = (select Max(dia) from concessao)'):

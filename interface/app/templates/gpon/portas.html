@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+      <div class="container">
+        <!-- Example row of columns -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <div class="alert alert-warning">
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+        {% endwith %}
+
+        <h1 class="display-3">GPON Portas</h1>
+        <p>Por favor selecione os arquivos desejados.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Cidades</h2>
+            <p>
+              Aqui vai o arquivo com o nome das cidades e a relação que diz se ela pertence à concessão ou à expansão.
+              Só precisa adicionar esse arquivo se aconteceu alguma alteração recentemente.
+              Esse arquivo deve estar em formato .xlsx
+            </p>
+            <form method=post enctype=multipart/form-data action={{ url_for('gpon_portas', choice='cidades') }}>
+                <input type=file name=file>
+                <input class="btn btn-secondary" type=submit value="Atualizar »">
+            </form>
+            <!--<p><a class="btn btn-secondary" href="#" role="button">Atualizar »</a></p>-->
+          </div>
+          <div class="col-md-6">
+            <h2>Dados</h2>
+            <p>
+              Esse é o arquivo .csv com todos os dados crus retirados para a análise.
+            </p>
+            <form method=post enctype=multipart/form-data action={{ url_for('gpon_portas', choice='dados') }}>
+                <input type=file name=file>
+                <input class="btn btn-secondary" type=submit value="Atualizar »">
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
+  </div>
+</main>
+
+{% endblock %}

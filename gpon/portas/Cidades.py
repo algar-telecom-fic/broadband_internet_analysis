@@ -10,7 +10,7 @@ class Cidades:
         self.processaCidades(filename)
 
     def processaCidades(self, filename):
-        db = Database('dbconfigs.env')
+        db = Database()
 
         if filename == "":
             query = "SELECT nome, tipo FROM cidades"

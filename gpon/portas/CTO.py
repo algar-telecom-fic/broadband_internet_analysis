@@ -26,6 +26,7 @@ class CTO:
 
     def addLeitura(self, status):
         self.dict[status]+=1
+        self.dict['TOTAL']+=1
 
     def as_a_tuple(self):
         return (
@@ -34,8 +35,8 @@ class CTO:
                 self.dict['CTO'][:13],
                 self.dict['DEFEITO'],
                 self.dict['DESIGNADO'],
-                self.dict['OCUPADO'],
                 self.dict['RESERVADO'],
+                self.dict['OCUPADO'],
                 self.dict['VAGO'],
                 self.dict['TOTAL'],
                 )
