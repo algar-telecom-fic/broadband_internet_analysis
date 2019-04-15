@@ -1,6 +1,7 @@
 import datetime
 import math
-import pymongo
+sys.path.append('/home/gardusi/github/sql_library/')
+import mysql_gardusi
 
 date = datetime.datetime.now()
 database_name = 'kappacidade'
