@@ -82,7 +82,7 @@ class GPON:
         self.database[i]['Capacidade'] = self.ip_exceptions[i]
       valid = True
       for key in self.table_info.keys():
-        if key not in database[i]:
+        if key not in self.database[i]:
           valid = False
       if valid == True:
         self.documents.append(self.database[i])
