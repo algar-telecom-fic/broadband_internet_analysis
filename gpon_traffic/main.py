@@ -1,6 +1,9 @@
 import datetime
 import os
 import re
+import sys
+sys.path.append('/home/gardusi/github/sql_library/')
+import mysql_json
 
 class GPON:
   convert_status = {
@@ -63,10 +66,10 @@ class GPON:
   def __init__(self, filepath):
     with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
       v = config_file.readlines()
-      self.filepath_ports = v[0].split('=')[1].strip().split(''')[1].strip()
-      self.filepath_current = v[1].split('=')[1].strip().split(''')[1].strip()
-      self.filepath_previous = v[2].split('=')[1].strip().split(''')[1].strip()
-      self.date_difference = v[3].split('=')[1].strip().split(''')[1].strip()
+      self.filepath_ports = v[0].split('=')[1].strip().split('\'')[1].strip()
+      self.filepath_current = v[1].split('=')[1].strip().split('\'')[1].strip()
+      self.filepath_previous = v[2].split('=')[1].strip().split('\'')[1].strip()
+      self.date_difference = v[3].split('=')[1].strip().split('\'')[1].strip()
 
   def build_mongodb(self):
     documents = []
