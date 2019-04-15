@@ -1,8 +1,33 @@
 import datetime
 import math
-import pymongo
+import sys
+sys.path.append('/home/gardusi/github/sql_library/')
+import mysql_json
 
-def build_excel_file(current_file, previous_file, date_difference):
+date = datetime.datetime.now()
+database_name = 'kappacidade'
+host = '0.0.0.0'
+passwd = 'pe'
+primary_key = 'id'
+user = 'peduardo'
+table_name = 'hfc'
+table_info = {
+  'id': 'INT AUTO_INCREMENT',
+  'Capacidade (Mbps)': 'INT',
+  'CMTS': 'TINYTEXT',
+  'Crescimento mensal (%)': 'DOUBLE',
+  'Crescimento mensal (Mbps)': 'INT',
+  'Data': 'DATETIME',
+  'Node': 'TINYTEXT',
+  'Previsão de congestionamento (Mês)': 'DOUBLE',
+  'Previsão de congestionamento': 'TINYTEXT',
+  'Projeto': 'TINYTEXT',
+  'Quantidade de clientes': 'TINYTEXT',
+  'Utilização média entre as portadoras (%)': 'DOUBLE',
+  'Utilização média entre as portadoras (Mbps)': 'DOUBLE',
+}
+
+def build_documents(current_file, previous_file, date_difference):
   global database
   documents = []
   for node_name in database[current_file]:
@@ -32,7 +57,7 @@ def build_excel_file(current_file, previous_file, date_difference):
       print(e)
       for j in range(7, 11):
         sheet.cell(row = current_row, column = j).value = 'Sem histórico'
-    date = datetime.datetime.utcnow()
+
     documents.append({
       'Capacidade (Mbps)': database[current_file][node_name]['capacity'],
       'CMTS': '?',
@@ -47,10 +72,25 @@ def build_excel_file(current_file, previous_file, date_difference):
       'Utilização média entre as portadoras (%)': database[current_file][node_name]['usage'] / 100.0,
       'Utilização média entre as portadoras (Mbps)': round(database[current_file][node_name]['capacity'] * database[current_file][node_name]['usage'] / 100.0, 2),
     })
-  with pymongo.MongoClient() as client:
-    database = client.capacidade
-    collection = database.hfc
-    collection.insert(documents)
+  return documents
+
+def insert_documents(documents):
+  db = mysql_json.mySQL(
+    database = database_name,
+    host = host,
+    passwd = passwd,
+    user = user,
+  )
+  db.create_table(
+    primary_key = primary_key,
+    table_info = table_info,
+    table_name = table_name,
+  )
+  db.insert_into(
+    table_name,
+    table_info,
+    documents,
+  )
 
 def main():
   import os
@@ -58,7 +98,8 @@ def main():
   current_file, previous_file, date_difference = read_config_file(filepath)
   read_file(current_file)
   read_file(previous_file)
-  build_excel_file(current_file, previous_file, date_difference)
+  documents = build_documents(current_file, previous_file, date_difference)
+  insert_documents(documents)
 
 def read_config_file(filename):
   global database

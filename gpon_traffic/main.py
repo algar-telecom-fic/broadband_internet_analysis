@@ -1,7 +1,9 @@
 import datetime
 import os
 import re
-import pymongo
+import sys
+sys.path.append('/home/gardusi/github/sql_library/')
+import mysql_json
 
 class GPON:
   convert_status = {
@@ -9,7 +11,6 @@ class GPON:
     'VAGO': 'Portas Livres',
   }
   database = {}
-  date = datetime.datetime.utcnow()
   ip_exceptions = {
     '172.30.16.49': 10,
     '172.30.20.93': 2,
@@ -29,6 +30,38 @@ class GPON:
     '172.17.18.129': 1,
     '172.24.6.135': 2,
   }
+  database_name = 'kappacidade'
+  date = datetime.datetime.now()
+  host = '0.0.0.0'
+  passwd = 'pe'
+  primary_key = 'id'
+  user = 'peduardo'
+  table_name = 'gpon_traffic'
+  table_info = {
+    'id': 'INT AUTO_INCREMENT',
+    'ANEL METRO_': 'TINYTEXT',
+    'Capacidade': 'INT',
+    'Capacidade_': 'TINYTEXT',
+    'Data': 'DATETIME',
+    'Estação': 'TINYTEXT',
+    'IP OLT': 'TINYTEXT',
+    'Localidade': 'TINYTEXT',
+    'Modelo': 'TINYTEXT',
+    'OLT': 'TINYTEXT',
+    'Portas Livres': 'INT',
+    'Portas Ocupdas': 'INT',
+    'Total Instalado': 'INT',
+    'Utilização 12/11': 'TINYTEXT',
+    'Utilização': 'DOUBLE',
+    'Utilização_': 'TINYTEXT',
+    'VLAN': 'TINYTEXT',
+    'Switch': 'TINYTEXT',
+    'Utilização passada': 'DOUBLE',
+    'Utilização gbps': 'DOUBLE',
+    'Crescimento MB / mês': 'DOUBLE',
+    'Esgotamento dias': 'DOUBLE',
+    'Esgotamento': 'DATETIME',
+  }
 
   def __init__(self, filepath):
     with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
@@ -38,8 +71,8 @@ class GPON:
       self.filepath_previous = v[2].split('=')[1].strip().split('"')[1].strip()
       self.date_difference = v[3].split('=')[1].strip().split('"')[1].strip()
 
-  def build_mongodb(self):
-    documents = []
+  def build_documents(self):
+    self.documents = []
     for i in self.database:
       self.database[i]['Utilização gbps'] = self.database[i]['Utilização'] * self.database[i]['Capacidade']
       self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / float(self.date_difference)
@@ -47,17 +80,36 @@ class GPON:
       self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
       if i in self.ip_exceptions:
         self.database[i]['Capacidade'] = self.ip_exceptions[i]
-      documents.append(self.database[i])
-    with pymongo.MongoClient() as client:
-      database = client['capacidade']
-      collection = database['gpon_traffic']
-      collection.insert(documents)
+      valid = True
+      for key in self.table_info.keys():
+        if key != 'id' and key not in self.database[i]:
+          valid = False
+      if valid == True:
+        self.documents.append(self.database[i])
 
   def get_ip(self, s):
     try:
       return re.findall(r'[0-9]+(?:\.[0-9]+){3}', s)[0]
     except Exception:
       return None
+
+  def insert_documents(self):
+    db = mysql_json.mySQL(
+      database = self.database_name,
+      host = self.host,
+      passwd = self.passwd,
+      user = self.user,
+    )
+    db.create_table(
+      primary_key = self.primary_key,
+      table_info = self.table_info,
+      table_name = self.table_name,
+    )
+    db.insert_into(
+      self.table_name,
+      self.table_info,
+      self.documents,
+    )
 
   def read_current_traffic(self):
     with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
@@ -114,6 +166,7 @@ def main():
   gpon = GPON(os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt')
   gpon.read_ports()
   gpon.read_traffic()
-  gpon.build_mongodb()
+  gpon.build_documents()
+  gpon.insert_documents()
 
 main()
