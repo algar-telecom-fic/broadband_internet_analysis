@@ -116,6 +116,8 @@ class GPON:
           self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
           self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')].strip())
           self.database[ip]['Switch'] = v[ord('E') - ord('A')]
+        else:
+          del self.database[ip]
 
   def read_previous_traffic(self):
     with open(self.filepath_previous, 'r', encoding = 'ISO-8859-1') as input_file:
@@ -124,6 +126,8 @@ class GPON:
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip in self.database:
           self.database[ip]['Utilização passada'] = float(v[ord('I') - ord('A')])
+        else:
+          del self.database[ip]
 
   def read_traffic(self):
     self.read_current_traffic()
