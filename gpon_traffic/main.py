@@ -72,7 +72,7 @@ class GPON:
       self.date_difference = v[3].split('=')[1].strip().split('"')[1].strip()
 
   def build_documents(self):
-    documents = []
+    self.documents = []
     for i in self.database:
       self.database[i]['Utilização gbps'] = self.database[i]['Utilização'] * self.database[i]['Capacidade']
       self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / float(self.date_difference)
@@ -80,7 +80,7 @@ class GPON:
       self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
       if i in self.ip_exceptions:
         self.database[i]['Capacidade'] = self.ip_exceptions[i]
-      documents.append(self.database[i])
+      self.documents.append(self.database[i])
 
   def get_ip(self, s):
     try:
