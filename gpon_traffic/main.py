@@ -80,7 +80,12 @@ class GPON:
       self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
       if i in self.ip_exceptions:
         self.database[i]['Capacidade'] = self.ip_exceptions[i]
-      self.documents.append(self.database[i])
+      valid = True
+      for key in self.table_info.keys():
+        if key not in database[i]:
+          valid = False
+      if valid == True:
+        self.documents.append(self.database[i])
 
   def get_ip(self, s):
     try:
@@ -116,8 +121,6 @@ class GPON:
           self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
           self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')].strip())
           self.database[ip]['Switch'] = v[ord('E') - ord('A')]
-        else:
-          del self.database[ip]
 
   def read_previous_traffic(self):
     with open(self.filepath_previous, 'r', encoding = 'ISO-8859-1') as input_file:
@@ -126,8 +129,6 @@ class GPON:
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip in self.database:
           self.database[ip]['Utilização passada'] = float(v[ord('I') - ord('A')])
-        else:
-          del self.database[ip]
 
   def read_traffic(self):
     self.read_current_traffic()
