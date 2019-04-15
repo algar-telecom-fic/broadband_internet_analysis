@@ -30,12 +30,12 @@ class GPON:
     '172.17.18.129': 1,
     '172.24.6.135': 2,
   }
-  database_name = 'kappacidade',
-  date = datetime.datetime.now(),
-  host = '0.0.0.0',
-  passwd = 'pe',
-  primary_key = 'id',
-  user = 'peduardo',
+  database_name = 'kappacidade'
+  date = datetime.datetime.now()
+  host = '0.0.0.0'
+  passwd = 'pe'
+  primary_key = 'id'
+  user = 'peduardo'
   table_name = 'gpon_traffic'
   table_info = {
     'id': 'INT AUTO_INCREMENT',
@@ -71,7 +71,7 @@ class GPON:
       self.filepath_previous = v[2].split('=')[1].strip().split('"')[1].strip()
       self.date_difference = v[3].split('=')[1].strip().split('"')[1].strip()
 
-  def build_mongodb(self):
+  def build_documents(self):
     documents = []
     for i in self.database:
       self.database[i]['Utilização gbps'] = self.database[i]['Utilização'] * self.database[i]['Capacidade']
@@ -81,10 +81,6 @@ class GPON:
       if i in self.ip_exceptions:
         self.database[i]['Capacidade'] = self.ip_exceptions[i]
       documents.append(self.database[i])
-    with pymongo.MongoClient() as client:
-      database = client['capacidade']
-      collection = database['gpon_traffic']
-      collection.insert(documents)
 
   def get_ip(self, s):
     try:
@@ -165,6 +161,7 @@ def main():
   gpon = GPON(os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt')
   gpon.read_ports()
   gpon.read_traffic()
+  gpon.build_documents()
   gpon.insert_documents()
 
 main()
