@@ -74,7 +74,7 @@ def build_documents(current_file, previous_file, date_difference):
   return documents
 
 def insert_documents(documents):
-  db = mysql_gardusi.mySQL(
+  db = mysql_json.mySQL(
     database = database_name,
     host = host,
     passwd = passwd,

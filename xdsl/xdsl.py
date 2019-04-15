@@ -21,7 +21,7 @@ class XDSL(abc.ABC):
     pass
 
   def insert_documents(self):
-    db = mysql_gardusi.mySQL(
+    db = mysql_json.mySQL(
       database = self.database_name[0],
       host = self.host[0],
       passwd = self.passwd[0],
