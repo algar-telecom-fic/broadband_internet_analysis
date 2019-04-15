@@ -84,7 +84,6 @@ class GPON:
       for key in self.table_info.keys():
         if key != 'id' and key not in self.database[i]:
           valid = False
-          print(key)
       if valid == True:
         self.documents.append(self.database[i])
 
@@ -95,7 +94,6 @@ class GPON:
       return None
 
   def insert_documents(self):
-    print(self.documents)
     db = mysql_json.mySQL(
       database = self.database_name,
       host = self.host,
