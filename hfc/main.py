@@ -25,7 +25,7 @@ table_info = {
   'Utilização média entre as portadoras (Mbps)': 'DOUBLE',
 }
 
-def build_excel_file(current_file, previous_file, date_difference):
+def build_documents(current_file, previous_file, date_difference):
   global database
   documents = []
   for node_name in database[current_file]:
@@ -96,7 +96,8 @@ def main():
   current_file, previous_file, date_difference = read_config_file(filepath)
   read_file(current_file)
   read_file(previous_file)
-  build_excel_file(current_file, previous_file, date_difference)
+  documents = build_documents(current_file, previous_file, date_difference)
+  insert_documents(documents)
 
 def read_config_file(filename):
   global database
