@@ -1,7 +1,7 @@
 import datetime
 import math
 sys.path.append('/home/gardusi/github/sql_library/')
-import mysql_gardusi
+import mysql_json
 
 date = datetime.datetime.now()
 database_name = 'kappacidade'

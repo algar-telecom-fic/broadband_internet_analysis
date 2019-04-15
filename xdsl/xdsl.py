@@ -2,7 +2,7 @@ import abc
 import datetime
 import sys
 sys.path.append('/home/gardusi/github/sql_library/')
-import mysql_gardusi
+import mysql_json
 
 class XDSL(abc.ABC):
   database_name = 'kappacidade',
