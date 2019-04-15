@@ -82,7 +82,7 @@ class GPON:
         self.database[i]['Capacidade'] = self.ip_exceptions[i]
       valid = True
       for key in self.table_info.keys():
-        if key != id and key not in self.database[i]:
+        if key != 'id' and key not in self.database[i]:
           valid = False
           print(key)
       if valid == True:
