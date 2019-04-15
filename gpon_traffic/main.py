@@ -89,6 +89,7 @@ class GPON:
       return None
 
   def insert_documents(self):
+    print(self.documents)
     db = mysql_json.mySQL(
       database = self.database_name,
       host = self.host,
