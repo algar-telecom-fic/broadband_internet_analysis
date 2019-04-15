@@ -1,7 +1,7 @@
 import abc
 import datetime
 import sys
-sys.path.append('/home/gardusi/github/broadband_internet_analysis/')
+sys.path.append('/home/gardusi/github/sql_library/')
 import mysql_gardusi
 
 class XDSL(abc.ABC):
