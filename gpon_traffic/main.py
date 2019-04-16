@@ -74,12 +74,12 @@ class GPON:
   def build_documents(self):
     self.documents = []
     for i in self.database:
-      self.database[i]['Utilização gbps'] = self.database[i]['Utilização'] * self.database[i]['Capacidade']
+      if i in self.ip_exceptions:
+        self.database[i]['Capacidade'] = self.ip_exceptions[i]
+      self.database[i]['Utilização gbps'] = (self.database[i]['Utilização'] * self.database[i]['Capacidade']) / 100.0
       self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / float(self.date_difference)
       self.database[i]['Esgotamento dias'] = max(0, (self.database[i]['Capacidade'] - self.database[i]['Utilização gbps']) / max(1, self.database[i]['Crescimento MB / mês']))
       self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
-      if i in self.ip_exceptions:
-        self.database[i]['Capacidade'] = self.ip_exceptions[i]
       valid = True
       for key in self.table_info.keys():
         if key != 'id' and key not in self.database[i]:
@@ -118,7 +118,7 @@ class GPON:
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip in self.database:
           self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
-          self.database[ip]['Utilização'] += float(v[ord('I') - ord('A')].strip())
+          self.database[ip]['Utilização'] = float(v[ord('I') - ord('A')].strip())
           self.database[ip]['Switch'] = v[ord('E') - ord('A')]
 
   def read_previous_traffic(self):
