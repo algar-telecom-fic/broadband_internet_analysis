@@ -22,15 +22,24 @@ with open(filename, 'r', encoding='ISO-8859-1') as input_file:
             cidade       = attributes[8]
 
             if cidade not in database:
-                database[cidade] = 0
+                database[cidade] = (0,0)
 
             diff = int(faixaFinal) - int(faixaInicial) + 1
 
-            database[cidade]+=diff
+            if prefixo == "4000" or prefixo == "4005":
+                t = (database[cidade][0] + diff, database[cidade][1])
+            else:
+                t = (database[cidade][0] + diff, database[cidade][1] + diff)
+
+            database[cidade] = t
             #print(f"{nomePrestadora}\t{ddd}\t{prefixo}\t{faixaInicial}\t{faixaFinal}")
         elif encountered_yet:
             break
 
 
-for chave, item in database.items():
-    print("" + chave + ", " + str(item))
+cidade_list = []
+for cidade in sorted(database):
+    cidade_list.append((cidade,)+ database[cidade])
+
+
+print(cidade_list)
