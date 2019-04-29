@@ -75,13 +75,13 @@ class GPON:
     for ip in self.database:
       if ip in self.ip_exceptions:
         self.database[ip]['Capacidade'] = self.ip_exceptions[ip]
+      self.database[ip]['Utilização'] = self.database[ip]['__sum__'] / self.database[ip]['__qtd__']
+      self.database[ip].pop('__sum__', None)
+      self.database[ip].pop('__qtd__', None)
       self.database[ip]['Utilização gbps'] = (self.database[ip]['Utilização'] * self.database[ip]['Capacidade']) / 100.0
       self.database[ip]['Crescimento MB / mês'] = (self.database[ip]['Utilização gbps'] - self.database[ip]['Utilização gbps']) / float(self.date_difference)
       self.database[ip]['Esgotamento dias'] = max(0, (self.database[ip]['Capacidade'] - self.database[ip]['Utilização gbps']) / max(1, self.database[ip]['Crescimento MB / mês']))
       self.database[ip]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[ip]['Esgotamento dias'])
-      self.database[ip]['Utilização'] = self.database[ip]['__sum__'] / self.database[ip]['__qtd__']
-      self.database[ip].pop('__sum__', None)
-      self.database[ip].pop('__qtd__', None)
       valid = True
       for key in self.table_info.keys():
         if key != 'id' and key not in self.database[ip]:
