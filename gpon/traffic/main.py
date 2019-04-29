@@ -25,7 +25,6 @@ class GPON:
     '172.24.158.146': 2,
     '172.17.10.3': 2,
     '172.17.22.6': 2,
-    '172.30.13.125': 2,
     '172.30.10.64': 1,
     '172.17.18.129': 1,
     '172.24.6.135': 2,
@@ -73,19 +72,22 @@ class GPON:
 
   def build_documents(self):
     self.documents = []
-    for i in self.database:
-      if i in self.ip_exceptions:
-        self.database[i]['Capacidade'] = self.ip_exceptions[i]
-      self.database[i]['Utilização gbps'] = (self.database[i]['Utilização'] * self.database[i]['Capacidade']) / 100.0
-      self.database[i]['Crescimento MB / mês'] = (self.database[i]['Utilização gbps'] - self.database[i]['Utilização gbps']) / float(self.date_difference)
-      self.database[i]['Esgotamento dias'] = max(0, (self.database[i]['Capacidade'] - self.database[i]['Utilização gbps']) / max(1, self.database[i]['Crescimento MB / mês']))
-      self.database[i]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[i]['Esgotamento dias'])
+    for ip in self.database:
+      if ip in self.ip_exceptions:
+        self.database[ip]['Capacidade'] = self.ip_exceptions[ip]
+      self.database[ip]['Utilização gbps'] = (self.database[ip]['Utilização'] * self.database[ip]['Capacidade']) / 100.0
+      self.database[ip]['Crescimento MB / mês'] = (self.database[ip]['Utilização gbps'] - self.database[ip]['Utilização gbps']) / float(self.date_difference)
+      self.database[ip]['Esgotamento dias'] = max(0, (self.database[ip]['Capacidade'] - self.database[ip]['Utilização gbps']) / max(1, self.database[ip]['Crescimento MB / mês']))
+      self.database[ip]['Esgotamento'] = self.date + datetime.timedelta(days = self.database[ip]['Esgotamento dias'])
+      self.database[ip]['Utilização'] = self.database[ip]['__sum__'] / self.database[ip]['__qtd__']
+      self.database[ip].pop('__sum__', None)
+      self.database[ip].pop('__qtd__', None)
       valid = True
       for key in self.table_info.keys():
-        if key != 'id' and key not in self.database[i]:
+        if key != 'id' and key not in self.database[ip]:
           valid = False
       if valid == True:
-        self.documents.append(self.database[i])
+        self.documents.append(self.database[ip])
 
   def get_ip(self, s):
     try:
@@ -117,9 +119,12 @@ class GPON:
         v = line.split(';')
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip in self.database:
-          self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
-          self.database[ip]['Utilização'] = float(v[ord('I') - ord('A')].strip())
           self.database[ip]['Switch'] = v[ord('E') - ord('A')]
+          self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
+          value = float(v[ord('I') - ord('A')].strip())
+          if value > 0:
+            self.database[ip]['__sum__'] += value
+            self.database[ip]['__qtd__'] += 1
 
   def read_previous_traffic(self):
     with open(self.filepath_previous, 'r', encoding = 'ISO-8859-1') as input_file:
@@ -141,9 +146,8 @@ class GPON:
         status = v[ord('N') - ord('A')].strip()
         if ip not in self.database:
           self.database[ip] = {
-            'ANEL METRO_': '?',
+            'ANEL METRO': '?',
             'Capacidade': 0,
-            'Capacidade_': '?',
             'Data': self.date,
             'Estação': v[ord('P') - ord('A')].strip(),
             'IP OLT': ip,
@@ -153,10 +157,9 @@ class GPON:
             'Portas Livres': 0,
             'Portas Ocupdas': 0,
             'Total Instalado': 0,
-            'Utilização 12/11': '?',
-            'Utilização': 0,
-            'Utilização_': '?',
             'VLAN': v[ord('Y') - ord('A')].strip(),
+            '__sum__': 0,
+            '__qtd__': 0,
           }
         self.database[ip]['Total Instalado'] += 1
         if status in self.convert_status:
