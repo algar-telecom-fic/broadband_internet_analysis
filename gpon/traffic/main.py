@@ -38,9 +38,8 @@ class GPON:
   table_name = 'gpon_traffic'
   table_info = {
     'id': 'INT AUTO_INCREMENT',
-    'ANEL METRO_': 'TINYTEXT',
+    'ANEL METRO': 'TINYTEXT',
     'Capacidade': 'INT',
-    'Capacidade_': 'TINYTEXT',
     'Data': 'DATETIME',
     'Estação': 'TINYTEXT',
     'IP OLT': 'TINYTEXT',
@@ -50,9 +49,7 @@ class GPON:
     'Portas Livres': 'INT',
     'Portas Ocupdas': 'INT',
     'Total Instalado': 'INT',
-    'Utilização 12/11': 'TINYTEXT',
     'Utilização': 'DOUBLE',
-    'Utilização_': 'TINYTEXT',
     'VLAN': 'TINYTEXT',
     'Switch': 'TINYTEXT',
     'Utilização passada': 'DOUBLE',
