@@ -2,5 +2,5 @@ import os
 
 DEBUG = True
 UPLOAD_FOLDER = '/home/pediogo/Documentos/pastaDosUploads'
-PATH_GPON_PORTAS = '/home/pediogo/Documentos/broadband_internet_analysis/gpon/portas'
+PATH_GPON_PORTAS = '/home/pediogo/Documentos/broadband_internet_analysis/gpon/ports'
 SECRET_KEY = os.urandom(16)

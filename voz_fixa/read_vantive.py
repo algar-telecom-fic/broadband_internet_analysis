@@ -1,52 +1,63 @@
-#filename = 'datasheets/area_local_minimizado.csv'
-filename = 'datasheets/Relatorio_Area_Local09042019080046.csv'
+from datetime import date
 
-database = {}
-possible_status = []
-with open(filename, 'r', encoding='ISO-8859-1') as input_file:
-    #status = input_file.readline().split(';')[:-1]
-    next(input_file)
+def read_vantive(filename=None):
 
-    for line in input_file.readlines():
-        attributes = line.strip().split(';')
+    database = {}
+    possible_status = []
+    with open(filename, 'r', encoding='ISO-8859-1') as input_file:
+        next(input_file)
 
-        quantidade = attributes[0];
-        areaLocal  = attributes[1];
-        localidade = attributes[2];
-        status     = attributes[3];
-        tecnologia = attributes[4];
+        for line in input_file.readlines():
+            attributes = line.strip().split(';')
 
-        if status not in possible_status:
-            possible_status.append(status)
+            quantidade = attributes[0];
+            areaLocal  = attributes[1];
+            localidade = attributes[2];
+            status     = attributes[3];
+            tecnologia = attributes[4];
 
-        if localidade not in database:
-            database[localidade] = {'area local' : areaLocal}
+            if status not in possible_status:
+                possible_status.append(status)
 
-        if tecnologia not in database[localidade]:
-            database[localidade][tecnologia] = {}
+            if localidade not in database:
+                database[localidade] = {'area local' : areaLocal}
 
-        if status not in database[localidade][tecnologia]:
-            database[localidade][tecnologia][status] = 0
+            if tecnologia not in database[localidade]:
+                database[localidade][tecnologia] = {}
 
-        database[localidade][tecnologia][status]+=int(quantidade)
+            if status not in database[localidade][tecnologia]:
+                database[localidade][tecnologia][status] = 0
 
-possible_status.sort()
-print(possible_status)
+            database[localidade][tecnologia][status]+=int(quantidade)
 
-lista_vantive = []
+    possible_status.sort()
+    print(possible_status)
 
-for cidade in sorted(database):
-    for tecnologia in database[cidade]:
-        if tecnologia == 'area local': continue
+    hoje = date.today()
 
-        item = [cidade, database[cidade]['area local'], tecnologia]
+    lista_vantive = []
 
-        for status in possible_status:
-            if status not in database[cidade][tecnologia]:
-                item.append(0)
-            else:
-                item.append(database[cidade][tecnologia][status])
+    for cidade in sorted(database):
+        for tecnologia in database[cidade]:
+            if tecnologia == 'area local': continue
 
-        lista_vantive.append(item)
+            item = [cidade, database[cidade]['area local'], tecnologia]
 
-print(lista_vantive)
+            for status in possible_status:
+                if status not in database[cidade][tecnologia]:
+                    item.append(0)
+                else:
+                    item.append(database[cidade][tecnologia][status])
+
+            item.append(hoje)
+
+            lista_vantive.append(tuple(item))
+
+    return lista_vantive
+
+
+if __name__ == '__main__':
+    filename = 'datasheets/Relatorio_Area_Local09042019080046.csv'
+    #filename = 'datasheets/area_local_minimizado.csv'
+    for data in read_vantive(filename):
+        print(data)
