@@ -52,11 +52,12 @@ class GPON:
     'Utilização': 'DOUBLE',
     'VLAN': 'TINYTEXT',
     'Switch': 'TINYTEXT',
-    'Utilização passada': 'DOUBLE',
     'Utilização gbps': 'DOUBLE',
     'Crescimento MB / mês': 'DOUBLE',
     'Esgotamento dias': 'DOUBLE',
     'Esgotamento': 'DATETIME',
+    'Capacidade Anel': 'TINYTEXT',
+    'Utilização Anel': 'TINYTEXT',
   }
 
   def __init__(self, filepath):
@@ -111,7 +112,7 @@ class GPON:
       self.documents,
     )
 
-  def read_current_traffic(self):
+  def read_traffic(self):
     with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
@@ -124,18 +125,6 @@ class GPON:
             self.database[ip]['__sum__'] += value
             self.database[ip]['__qtd__'] += 1
 
-  def read_previous_traffic(self):
-    with open(self.filepath_previous, 'r', encoding = 'ISO-8859-1') as input_file:
-      for line in input_file.readlines():
-        v = line.split(';')
-        ip = self.get_ip(v[ord('G') - ord('A')])
-        if ip in self.database:
-          self.database[ip]['Utilização passada'] = float(v[ord('I') - ord('A')])
-
-  def read_traffic(self):
-    self.read_current_traffic()
-    self.read_previous_traffic()
-
   def read_ports(self):
     with open(self.filepath_ports, 'r', encoding = 'ISO-8859-1') as input_file:
       for line in input_file.readlines():
@@ -145,6 +134,8 @@ class GPON:
         if ip not in self.database:
           self.database[ip] = {
             'ANEL METRO': '?',
+            'Capacidade Anel': '?',
+            'Utilização Anel': '?',
             'Capacidade': 0,
             'Data': self.date,
             'Estação': v[ord('P') - ord('A')].strip(),
