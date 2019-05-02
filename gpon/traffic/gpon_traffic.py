@@ -13,33 +13,23 @@ class GPON:
   }
   database = {}
   date = datetime.datetime.now()
-  ip_exceptions = {
-    '172.30.16.49': 10,
-    '172.30.20.93': 2,
-    '172.30.20.187': 2,
-    '172.24.6.135': 2,
-    '172.17.16.1': 2,
-    '172.24.29.50': 2,
-    '172.30.20.132': 2,
-    '172.17.18.2': 1,
-    '172.17.18.209': 1,
-    '172.17.12.1': 2,
-    '172.24.158.146': 2,
-    '172.17.10.3': 2,
-    '172.17.22.6': 2,
-    '172.30.10.64': 1,
-    '172.17.18.129': 1,
-    '172.24.6.135': 2,
-  }
+  filepath = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__))
+  )
 
   def __init__(self):
-    filepath = os.path.realpath(
-      os.path.join(os.getcwd(), os.path.dirname(__file__))
+    self.config = self.read_json(
+      self.filepath + '/' + 'capacity_exceptions.json'
     )
-    filepath += '/' + 'config.json'
-    with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
-      self.config = json.load(config_file)
-    print(self.config)
+    self.config = self.read_json(
+      self.filepath + '/' + 'config.json'
+    )
+    self.table_info = self.read_json(
+      self.filepath + '/' + 'table_info.json'
+    )
+    self.database_credentials = self.read_json(
+      self.config['database_credentials_filepath']
+    )
 
   def build_documents(self):
     self.documents = []
@@ -78,6 +68,10 @@ class GPON:
       self.table_info,
       self.documents,
     )
+
+  def read_json(self, filepath = str) -> dict:
+    with open(filepath, 'r', encoding = 'ISO-8859-1') as file:
+      return json.load(file)
 
   def read_traffic(self):
     with open(self.filepath_current, 'r', encoding = 'ISO-8859-1') as input_file:
