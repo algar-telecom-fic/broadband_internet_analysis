@@ -1,5 +1,5 @@
 from datetime import date
-
+from DatabaseConnector import DatabaseConnector
 
 def read_anatel(filename=None):
     database = {}
@@ -45,7 +45,21 @@ def read_anatel(filename=None):
 
     return cidade_list
 
+
+
+def processAnatel(filename=None):
+    data = read_anatel(filename)
+
+    query = "INSERT INTO faixa_stfc(cidade, ddd, total_recurso, total_comum, dia) VALUES (%s, %s, %s, %s, %s)"
+
+    db = DatabaseConnector()
+    db.configureDB('dbconfigs.env')
+    db.executaQuery(query, data)
+
+
+
 if __name__ == '__main__':
     #filename = 'datasheets/faixa_minimizado.csv'
     filename = 'datasheets/FAIXA_STFC_20190406_2988_GERAL.txt'
-    print(read_anatel(filename))
+    processAnatel(filename)
+    print('finished processing')
