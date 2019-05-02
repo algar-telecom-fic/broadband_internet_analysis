@@ -35,7 +35,7 @@ class GPON:
     filepath = os.path.realpath(
       os.path.join(os.getcwd(), os.path.dirname(__file__))
     )
-    filepath += '/' + 'config.txt'
+    filepath += '/' + 'config.json'
     print(filepath)
     with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
       self.config = json.load(config_file)
