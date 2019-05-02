@@ -30,6 +30,10 @@ class GPON:
     self.database_credentials = self.read_json(
       self.config['database_credentials_filepath']
     )
+    self.db = mySQL(
+      database_credentials = self.database_credentials,
+      database_name = self.config['database_name'],
+    )
 
   def build_documents(self):
     self.documents = []
@@ -55,18 +59,14 @@ class GPON:
       return None
 
   def insert_documents(self):
-    db = mySQL(
-      database_credentials = self.database_credentials,
-      database_name = self.config['database_name'],
-    )
-    db.create_table(
+    self.db.create_table(
       table_info = self.table_info,
       table_name = self.config['table_name'],
     )
-    db.insert_into(
-      self.table_name,
-      self.config['table_name'],
-      self.documents,
+    self.db.insert_into(
+      table_name = self.config['table_name'],
+      table_info = self.table_info,
+      values = self.documents,
     )
 
   def read_json(self, filepath = str) -> dict:
