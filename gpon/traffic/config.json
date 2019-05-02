@@ -3,5 +3,5 @@
   "database_credentials_filepath": "/home/gardusi/github/database_credentials.json",
   "database_name": "kappacidade",
   "ports_filepath": "/home/gardusi/github/input_gpon_portas.csv",
-  "table_name": "table_name"
+  "table_name": "gpon_traffic"
 }
