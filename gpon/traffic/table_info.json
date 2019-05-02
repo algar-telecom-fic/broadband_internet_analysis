@@ -16,5 +16,5 @@
   "Utilização Anel": "TINYTEXT",
   "Utilização gbps": "DOUBLE",
   "Utilização": "DOUBLE",
-  "VLAN": "TINYTEXT",
+  "VLAN": "TINYTEXT"
 }
