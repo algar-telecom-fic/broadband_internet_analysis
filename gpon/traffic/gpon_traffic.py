@@ -41,8 +41,12 @@ class GPON:
       if ip in self.capacity_exceptions:
         self.database[ip]['Capacidade'] = self.capacity_exceptions[ip]
       self.database[ip]['__qtd__'] = max(1, self.database[ip]['__qtd__'])
-      self.database[ip]['Utilização'] = self.database[ip]['__sum__'] / self.database[ip]['__qtd__']
-      self.database[ip]['Utilização gbps'] = (self.database[ip]['Utilização'] * self.database[ip]['Capacidade']) / 100.0
+      self.database[ip]['Utilização'] = (
+        self.database[ip]['__sum__'] / self.database[ip]['__qtd__']
+      )
+      self.database[ip]['Utilização gbps'] = (
+        self.database[ip]['Utilização'] * self.database[ip]['Capacidade']
+      ) / 100.0
       self.database[ip].pop('__sum__', None)
       self.database[ip].pop('__qtd__', None)
       valid = True
@@ -73,24 +77,30 @@ class GPON:
     )
 
   def read_json(self, filepath = str) -> dict:
-    with open(filepath, 'r') as file:
+    with open(filepath, 'r', encoding = 'ISO-8859-1') as file:
       return json.load(file)
 
   def read_traffic(self):
-    with open(self.config['current_filepath'], 'r') as input_file:
+    with open(
+      self.config['current_filepath'], 'r', encoding = 'ISO-8859-1'
+    ) as input_file:
       for line in input_file.readlines():
         v = line.split(';')
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip in self.database:
           self.database[ip]['Switch'] = v[ord('E') - ord('A')]
-          self.database[ip]['Capacidade'] += float(v[ord('H') - ord('A')].strip())
+          self.database[ip]['Capacidade'] += float(
+            v[ord('H') - ord('A')].strip()
+          )
           value = float(v[ord('I') - ord('A')].strip())
           if value > 0:
             self.database[ip]['__sum__'] += value
             self.database[ip]['__qtd__'] += 1
 
   def read_ports(self):
-    with open(self.config['ports_filepath'], 'r') as input_file:
+    with open(
+      self.config['ports_filepath'], 'r', encoding = 'ISO-8859-1'
+    ) as input_file:
       for line in input_file.readlines():
         v = line.split(';')
         ip = v[ord('X') - ord('A')].strip()
