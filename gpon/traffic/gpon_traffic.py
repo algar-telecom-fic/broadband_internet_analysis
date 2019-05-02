@@ -51,6 +51,7 @@ class GPON:
           valid = False
       if valid == True:
         self.documents.append(self.database[ip])
+      print(self.documents)
 
   def get_ip(self, s):
     try:
