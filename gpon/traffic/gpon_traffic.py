@@ -53,7 +53,6 @@ class GPON:
       for key in self.table_info.keys():
         if key != 'id' and key not in self.database[ip]:
           valid = False
-          print(key)
       if valid == True:
         self.documents.append(self.database[ip])
     print(self.table_info.keys())
