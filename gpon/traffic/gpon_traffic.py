@@ -77,12 +77,12 @@ class GPON:
     )
 
   def read_json(self, filepath = str) -> dict:
-    with open(filepath, 'r', encoding = 'utf-8') as file:
+    with open(filepath, 'r', encoding = 'latin-1') as file:
       return json.load(file)
 
   def read_traffic(self):
     with open(
-      self.config['current_filepath'], 'r', encoding = 'utf-8'
+      self.config['current_filepath'], 'r', encoding = 'latin-1'
     ) as input_file:
       for line in input_file.readlines():
         v = line.split(';')
@@ -99,7 +99,7 @@ class GPON:
 
   def read_ports(self):
     with open(
-      self.config['ports_filepath'], 'r', encoding = 'utf-8'
+      self.config['ports_filepath'], 'r', encoding = 'latin-1'
     ) as input_file:
       for line in input_file.readlines():
         v = line.split(';')
