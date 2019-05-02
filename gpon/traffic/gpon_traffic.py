@@ -52,6 +52,7 @@ class GPON:
           print(key)
       if valid == True:
         self.documents.append(self.database[ip])
+    print(self.table_info.keys())
     print(self.documents)
 
   def get_ip(self, s):
@@ -72,11 +73,11 @@ class GPON:
     )
 
   def read_json(self, filepath = str) -> dict:
-    with open(filepath, 'r', encoding = 'ISO-8859-1') as file:
+    with open(filepath, 'r') as file:
       return json.load(file)
 
   def read_traffic(self):
-    with open(self.config['current_filepath'], 'r', encoding = 'ISO-8859-1') as input_file:
+    with open(self.config['current_filepath'], 'r') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
         ip = self.get_ip(v[ord('G') - ord('A')])
@@ -89,7 +90,7 @@ class GPON:
             self.database[ip]['__qtd__'] += 1
 
   def read_ports(self):
-    with open(self.config['ports_filepath'], 'r', encoding = 'ISO-8859-1') as input_file:
+    with open(self.config['ports_filepath'], 'r') as input_file:
       for line in input_file.readlines():
         v = line.split(';')
         ip = v[ord('X') - ord('A')].strip()
