@@ -34,7 +34,7 @@ class GPON:
   def build_documents(self):
     self.documents = []
     for ip in self.database:
-      if ip in self.ip_exceptions:
+      if ip in self.capacity_exceptions:
         self.database[ip]['Capacidade'] = self.ip_exceptions[ip]
       self.database[ip]['__qtd__'] = max(1, self.database[ip]['__qtd__'])
       self.database[ip]['Utilização'] = self.database[ip]['__sum__'] / self.database[ip]['__qtd__']
