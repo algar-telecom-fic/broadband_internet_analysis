@@ -30,31 +30,16 @@ class GPON:
     '172.17.18.129': 1,
     '172.24.6.135': 2,
   }
-  table_info = {
-    'ANEL METRO': 'TINYTEXT',
-    'Capacidade Anel': 'TINYTEXT',
-    'Capacidade': 'INT',
-    'Data': 'DATETIME',
-    'Estação': 'TINYTEXT',
-    'id': 'INT AUTO_INCREMENT',
-    'IP OLT': 'TINYTEXT',
-    'Localidade': 'TINYTEXT',
-    'Modelo': 'TINYTEXT',
-    'OLT': 'TINYTEXT',
-    'Portas Livres': 'INT',
-    'Portas Ocupdas': 'INT',
-    'Switch': 'TINYTEXT',
-    'Total Instalado': 'INT',
-    'Utilização Anel': 'TINYTEXT',
-    'Utilização gbps': 'DOUBLE',
-    'Utilização': 'DOUBLE',
-    'VLAN': 'TINYTEXT',
-  }
 
   def __init__(self):
-    filepath = os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt'
+    filepath = os.path.realpath(
+      os.path.join(os.getcwd(), os.path.dirname(__file__))
+    )
+    filepath += '/' + 'config.txt'
+    print(filepath)
     with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
       self.config = json.load(config_file)
+    print(self.config)
 
   def build_documents(self):
     self.documents = []
