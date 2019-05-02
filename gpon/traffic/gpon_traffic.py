@@ -18,7 +18,7 @@ class GPON:
   )
 
   def __init__(self):
-    self.config = self.read_json(
+    self.capacity_exceptions = self.read_json(
       self.filepath + '/' + 'capacity_exceptions.json'
     )
     self.config = self.read_json(
@@ -56,16 +56,16 @@ class GPON:
 
   def insert_documents(self):
     db = mySQL(
-      filepath = self.config[database_filepath],
-      database_name = 'kappacidade',
+      database_credentials = self.database_credentials,
+      database_name = self.config['database_name'],
     )
     db.create_table(
       table_info = self.table_info,
-      table_name = 'gpon_traffic',
+      table_name = self.config['table_name'],
     )
     db.insert_into(
       self.table_name,
-      self.table_info,
+      self.config['table_name'],
       self.documents,
     )
 
