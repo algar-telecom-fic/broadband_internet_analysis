@@ -1,7 +1,7 @@
 {
-  "current_file": "/home/gardusi/github/input_gpon_trafego.csv",
+  "current_filepath": "/home/gardusi/github/input_gpon_trafego.csv",
   "database_credentials_filepath": "/home/gardusi/github/database_credentials.json",
   "database_name": "kappacidade",
-  "ports": "/home/gardusi/github/input_gpon_portas.csv",
+  "ports_filepath": "/home/gardusi/github/input_gpon_portas.csv",
   "table_name": "table_name"
 }
