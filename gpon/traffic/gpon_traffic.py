@@ -73,7 +73,7 @@ class GPON:
       values = self.documents,
     )
 
-  def read_json(self, filepath = str) -> dict:
+  def read_json(self, filepath):
     with open(filepath, 'rb') as file:
       return json.load(file, encoding = 'utf-8')
 
