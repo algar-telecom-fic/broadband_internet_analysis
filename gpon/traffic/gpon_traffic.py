@@ -87,8 +87,7 @@ class GPON:
       self.config['current_filepath'], 'r', encoding = 'latin-1'
     ) as input_file:
       for line in input_file.readlines():
-        v = line.split(';')
-        print(v)
+        v = line.split(',')
         ip = self.get_ip(v[ord('G') - ord('A')])
         if ip in self.database:
           self.database[ip]['Switch'] = v[ord('E') - ord('A')]
