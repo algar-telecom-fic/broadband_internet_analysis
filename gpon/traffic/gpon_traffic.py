@@ -24,6 +24,9 @@ class GPON:
     self.config = self.read_json(
       self.filepath + '/' + 'config.json'
     )
+    self.ring_info = self.read_json(
+      self.filepath + '/' + 'ring_info.json'
+    )
     self.table_info = self.read_json(
       self.filepath + '/' + 'table_info.json'
     )
@@ -40,6 +43,8 @@ class GPON:
     for ip in self.database:
       if ip in self.capacity_exceptions:
         self.database[ip]['Capacidade'] = self.capacity_exceptions[ip]
+      if ip in self.ring_info:
+        self.database[ip]['ANEL METRO'] = self.ring_info[ip]
       self.database[ip]['__qtd__'] = max(1, self.database[ip]['__qtd__'])
       self.database[ip]['Utilização'] = (
         self.database[ip]['__sum__'] / self.database[ip]['__qtd__']
