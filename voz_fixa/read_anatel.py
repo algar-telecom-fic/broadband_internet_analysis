@@ -1,8 +1,11 @@
 from datetime import date
 from DatabaseConnector import DatabaseConnector
+from collections import defaultdict
 
 def read_anatel(filename=None):
-    database = {}
+    recurso_total = defaultdict(int)
+    recurso_comum = defaultdict(int)
+    ddd = {}
 
     with open(filename, 'r', encoding='ISO-8859-1') as input_file:
 
@@ -15,35 +18,35 @@ def read_anatel(filename=None):
             if nomePrestadora == 'ALGAR TELECOM S/A':
                 encountered_yet = True
 
-                ddd          = attributes[2]
-                prefixo      = attributes[3]
-                faixaInicial = attributes[4]
-                faixaFinal   = attributes[5]
-                cidade       = attributes[8]
+                atual_ddd, prefixo, faixaInicial, faixaFinal, _, _, cidade = attributes[2:9]
 
-                if cidade not in database:
-                    database[cidade] = (ddd,0,0) #(total recurso, total comum)
+                ddd[cidade] = atual_ddd
 
                 diff = int(faixaFinal) - int(faixaInicial) + 1
+                recurso_total[cidade]+=diff
 
-                if prefixo == "4000" or prefixo == "4005":
-                    t = (ddd, database[cidade][1] + diff, database[cidade][2])
-                else:
-                    t = (ddd, database[cidade][1] + diff, database[cidade][2] + diff)
-
-                database[cidade] = t
+                if prefixo != "4000" and prefixo != "4005":
+                    recurso_comum[cidade]+=diff
 
             elif encountered_yet:
                 break
 
 
     hoje = date.today()
-    cidade_list = []
-    for cidade in sorted(database):
-        cidade_list.append((cidade,)+ database[cidade] + (hoje,))
+    data_list = []
+    for cidade in sorted(recurso_total):
+        data_list.append(
+            (
+                cidade,
+                ddd[cidade],
+                recurso_total[cidade],
+                recurso_comum[cidade],
+                hoje,
+            )
+        )
 
 
-    return cidade_list
+    return data_list
 
 
 
@@ -58,8 +61,15 @@ def processAnatel(filename=None):
 
 
 
+def testaAnatel(filename):
+    lista = read_anatel(filename)
+    for item in lista:
+        print(item)
+
+
 if __name__ == '__main__':
     #filename = 'datasheets/faixa_minimizado.csv'
     filename = 'datasheets/FAIXA_STFC_20190406_2988_GERAL.txt'
-    processAnatel(filename)
+    #processAnatel(filename)
+    testaAnatel(filename)
     print('finished processing')
