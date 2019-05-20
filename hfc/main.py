@@ -3,7 +3,7 @@ import math
 import os
 import sys
 sys.path.append('/home/gardusi/github/sql_library/')
-import mysql_json
+from sql_json import mySQL
 
 date = datetime.datetime.now()
 
