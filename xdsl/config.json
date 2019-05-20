@@ -4,5 +4,6 @@
   "date_difference": 13,
   "database_credentials_filepath": "/home/gardusi/github/database_credentials.json",
   "database_name": "kappacidade",
-  "table_name": "hfc"
+  "adsl_table_name": "adsl",
+  "vdsl_table_name": "vdsl"
 }

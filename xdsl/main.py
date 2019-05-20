@@ -15,13 +15,13 @@ def main():
     database_credentials = database_credentials,
     database_name = config['database_name'],
     table_info = read_json(filepath + 'adsl_table_info.json'),
-    table_name = config['table_name'],
+    table_name = config['adsl_table_name'],
   )
   current_vdsl.insert_documents(
     database_credentials = database_credentials,
     database_name = config['database_name'],
     table_info = read_json(filepath + 'vdsl_table_info.json'),
-    table_name = config['table_name'],
+    table_name = config['vdsl_table_name'],
   )
 
 def read_file(filepath):
