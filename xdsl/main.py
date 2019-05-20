@@ -9,8 +9,19 @@ def main():
   previous_adsl, previous_vdsl = read_file(config['previous_filepath'])
   current_adsl.build_documents(previous_adsl, config['date_difference'])
   current_vdsl.build_documents(previous_vdsl, config['date_difference'])
-  current_adsl.insert_documents()
-  current_vdsl.insert_documents()
+  database_credentials = read_json(config['database_credentials_filepath'])
+  current_adsl.insert_documents(
+    database_credentials = database_credentials,
+    database_name = config['database_name'],
+    table_info = read_json(filepath + 'adsl_table_info.json'),
+    table_name = config['table_name'],
+  )
+  current_vdsl.insert_documents(
+    database_credentials = database_credentials,
+    database_name = config['database_name'],
+    table_info = read_json(filepath + 'vdsl_table_info.json'),
+    table_name = config['table_name'],
+  )
 
 def read_file(filepath):
   technologies = (adsl.ADSL(), vdsl.VDSL())

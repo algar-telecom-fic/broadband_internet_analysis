@@ -15,17 +15,23 @@ class XDSL(abc.ABC):
   def build_documents(self):
     pass
 
-  def insert_documents(self):
+  def insert_documents(
+    self, 
+    database_credentials, 
+    database_name, 
+    table_info,
+    table_name,
+  ):
     db = mySQL(
-      database_credentials = self.database_credentials,
-      database_name = self.config['database_name'],
+      database_credentials = database_credentials,
+      database_name = database_name,
     )
-    self.db.create_table(
-      table_info = self.table_info,
-      table_name = self.config['table_name'],
+    db.create_table(
+      table_info = table_info,
+      table_name = table_name,
     )
     self.db.insert_into(
-      table_name = self.config['table_name'],
-      table_info = self.table_info,
+      table_name = table_name,
+      table_info = table_info,
       values = self.documents,
     )
