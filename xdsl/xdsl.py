@@ -30,7 +30,7 @@ class XDSL(abc.ABC):
       table_info = table_info,
       table_name = table_name,
     )
-    self.db.insert_into(
+    db.insert_into(
       table_name = table_name,
       table_info = table_info,
       values = self.documents,
