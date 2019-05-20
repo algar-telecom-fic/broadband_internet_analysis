@@ -1,7 +1,7 @@
 import math
 from xdsl import XDSL
 
-class ADSL(xdsl.XDSL):
+class ADSL(XDSL):
   database = {}
   available = [
     'disponivel ngn',
