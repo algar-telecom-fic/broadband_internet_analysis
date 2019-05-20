@@ -83,8 +83,8 @@ def main():
   read_file(config['current_filepath'])
   read_file(config['previous_filepath'])
   documents = build_documents(
-    current_file,
-    previous_file,
+    config['current_filepath'],
+    config['previous_filepath'],
     config['date_difference']
   )
   table_info = read_json(current_filepath + 'table_info')
