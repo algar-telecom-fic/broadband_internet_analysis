@@ -8,19 +8,6 @@ class ADSL(xdsl.XDSL):
     'disponivel ngn',
     'disponivel',
   ]
-  table_info = {
-    'available': 'INT',
-    'date': 'DATETIME',
-    'grand_station': 'TINYTEXT',
-    'id': 'INT AUTO_INCREMENT',
-    'increasing': 'DOUBLE',
-    'location': 'TINYTEXT',
-    'occupied': 'INT',
-    'prediction': 'TINYTEXT',
-    'regional': 'TINYTEXT',
-    'station': 'TINYTEXT',
-    'total': 'INT',
-  }
   occupied = [
     'auditoria',
     'ocupado',
