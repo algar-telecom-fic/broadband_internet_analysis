@@ -11,5 +11,5 @@
   'Projeto': 'TINYTEXT',
   'Quantidade de clientes': 'TINYTEXT',
   'Utilização média entre as portadoras (%)': 'DOUBLE',
-  'Utilização média entre as portadoras (Mbps)': 'DOUBLE',
+  'Utilização média entre as portadoras (Mbps)': 'DOUBLE'
 }
