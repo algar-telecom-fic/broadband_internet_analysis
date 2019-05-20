@@ -1,0 +1,8 @@
+{
+  "current_filepath": "/home/gardusi/github/input_hfc.csv",
+  "previous_filepath": "/home/gardusi/github/input_hfc.csv",
+  "date_difference": 13,
+  "database_credentials_filepath": "/home/gardusi/github/database_credentials.json",
+  "database_name": "kappacidade",
+  "table_name": "hfc"
+}

@@ -1,31 +1,11 @@
 import datetime
 import math
+import os
 import sys
 sys.path.append('/home/gardusi/github/sql_library/')
 import mysql_json
 
 date = datetime.datetime.now()
-database_name = 'kappacidade'
-host = '0.0.0.0'
-passwd = 'pe'
-primary_key = 'id'
-user = 'peduardo'
-table_name = 'hfc'
-table_info = {
-  'id': 'INT AUTO_INCREMENT',
-  'Capacidade (Mbps)': 'INT',
-  'CMTS': 'TINYTEXT',
-  'Crescimento mensal (%)': 'DOUBLE',
-  'Crescimento mensal (Mbps)': 'INT',
-  'Data': 'DATETIME',
-  'Node': 'TINYTEXT',
-  'Previsão de congestionamento (Mês)': 'DOUBLE',
-  'Previsão de congestionamento': 'TINYTEXT',
-  'Projeto': 'TINYTEXT',
-  'Quantidade de clientes': 'TINYTEXT',
-  'Utilização média entre as portadoras (%)': 'DOUBLE',
-  'Utilização média entre as portadoras (Mbps)': 'DOUBLE',
-}
 
 def build_documents(current_file, previous_file, date_difference):
   global database
@@ -57,7 +37,6 @@ def build_documents(current_file, previous_file, date_difference):
       print(e)
       for j in range(7, 11):
         sheet.cell(row = current_row, column = j).value = 'Sem histórico'
-
     documents.append({
       'Capacidade (Mbps)': database[current_file][node_name]['capacity'],
       'CMTS': '?',
@@ -74,32 +53,46 @@ def build_documents(current_file, previous_file, date_difference):
     })
   return documents
 
-def insert_documents(documents):
-  db = mysql_json.mySQL(
-    database = database_name,
-    host = host,
-    passwd = passwd,
-    user = user,
+def insert_documents(
+  database_credentials, 
+  database_name, 
+  table_name,
+  table_info, 
+  documents
+):
+  db = mySQL(
+    database_credentials = database_credentials,
+    database_name = database_name,
   )
   db.create_table(
-    primary_key = primary_key,
     table_info = table_info,
     table_name = table_name,
   )
   db.insert_into(
-    table_name,
-    table_info,
-    documents,
+    table_name = table_name,
+    table_info = table_info,
+    values = documents,
   )
 
 def main():
-  import os
-  filepath = os.path.dirname(os.path.abspath(__file__)) + '/' + 'config.txt'
-  current_file, previous_file, date_difference = read_config_file(filepath)
-  read_file(current_file)
-  read_file(previous_file)
-  documents = build_documents(current_file, previous_file, date_difference)
-  insert_documents(documents)
+  current_filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
+  config = read_json(current_filepath + 'config.txt')
+  read_file(config['current_filepath'])
+  read_file(config['previous_filepath'])
+  documents = build_documents(
+    current_file,
+    previous_file,
+    config['date_difference']
+  )
+  table_info = read_json(current_filepath + 'table_info')
+  database_credentials = read_json(config['database_credentials_filepath'])
+  insert_documents(
+    database_credentials,
+    config['database_name'],
+    config['table_name'],
+    table_info,
+    documents,
+  )
 
 def read_config_file(filename):
   global database
@@ -149,5 +142,9 @@ def read_file(filename):
   except Exception as e:
     print(e)
     print('Failed to read file: ' + filename)
+
+def read_json(self, filepath):
+  with open(filepath, 'rb') as file:
+    return json.load(file, encoding = 'utf-8')
 
 main()
