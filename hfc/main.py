@@ -87,7 +87,7 @@ def main():
     config['previous_filepath'],
     config['date_difference']
   )
-  table_info = read_json(current_filepath + 'table_info')
+  table_info = read_json(current_filepath + 'table_info.json')
   database_credentials = read_json(config['database_credentials_filepath'])
   insert_documents(
     database_credentials,
