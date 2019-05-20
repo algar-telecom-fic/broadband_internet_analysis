@@ -76,6 +76,8 @@ def insert_documents(
   )
 
 def main():
+  global database
+  database = {}
   current_filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
   config = read_json(current_filepath + 'config.json')
   read_file(config['current_filepath'])
@@ -94,20 +96,6 @@ def main():
     table_info,
     documents,
   )
-
-def read_config_file(filename):
-  global database
-  database = {}
-  try:
-    with open(filename, 'r') as config_file:
-      v = config_file.readlines()
-      current_file = v[0].split('=')[1].strip().split('"')[1].strip()
-      previous_file = v[1].split('=')[1].strip().split('"')[1].strip()
-      date_difference = int(v[2].split('=')[1].strip().split('"')[1].strip())
-      return (current_file, previous_file, date_difference)
-  except Exception as e:
-    print(e)
-    print('Failed to read file: ' + filename)
 
 def read_file(filename):
   global database
