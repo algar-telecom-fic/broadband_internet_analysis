@@ -79,7 +79,7 @@ class VDSL(XDSL):
             self.documents.append({
               'available': available,
               'cabinet': cabinet,
-              'date': self.date[0],
+              'date': self.date,
               'grand_station': station,
               'increasing': increasing,
               'location': locale,
