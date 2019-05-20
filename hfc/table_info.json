@@ -1,15 +1,15 @@
 {
-  'id': 'INT AUTO_INCREMENT',
-  'Capacidade (Mbps)': 'INT',
-  'CMTS': 'TINYTEXT',
-  'Crescimento mensal (%)': 'DOUBLE',
-  'Crescimento mensal (Mbps)': 'INT',
-  'Data': 'DATETIME',
-  'Node': 'TINYTEXT',
-  'Previsão de congestionamento (Mês)': 'DOUBLE',
-  'Previsão de congestionamento': 'TINYTEXT',
-  'Projeto': 'TINYTEXT',
-  'Quantidade de clientes': 'TINYTEXT',
-  'Utilização média entre as portadoras (%)': 'DOUBLE',
-  'Utilização média entre as portadoras (Mbps)': 'DOUBLE'
+  "id": "INT AUTO_INCREMENT",
+  "Capacidade (Mbps)": "INT",
+  "CMTS": "TINYTEXT",
+  "Crescimento mensal (%)": "DOUBLE",
+  "Crescimento mensal (Mbps)": "INT",
+  "Data": "DATETIME",
+  "Node": "TINYTEXT",
+  "Previsão de congestionamento (Mês)": "DOUBLE",
+  "Previsão de congestionamento": "TINYTEXT",
+  "Projeto": "TINYTEXT",
+  "Quantidade de clientes": "TINYTEXT",
+  "Utilização média entre as portadoras (%)": "DOUBLE",
+  "Utilização média entre as portadoras (Mbps)": "DOUBLE"
 }
