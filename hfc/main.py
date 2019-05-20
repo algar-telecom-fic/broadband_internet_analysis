@@ -76,7 +76,7 @@ def insert_documents(
 
 def main():
   current_filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
-  config = read_json(current_filepath + 'config.txt')
+  config = read_json(current_filepath + 'config.json')
   read_file(config['current_filepath'])
   read_file(config['previous_filepath'])
   documents = build_documents(
