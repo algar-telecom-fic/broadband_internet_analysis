@@ -4,7 +4,7 @@ import vdsl
 
 def main():
   filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
-  config = read_json(filepath + 'config.txt')
+  config = read_json(filepath + 'config.json')
   current_adsl, current_vdsl = read_file(config['current_filepath'])
   previous_adsl, previous_vdsl = read_file(config['previous_filepath'])
   current_adsl.build_documents(previous_adsl, config['date_difference'])
@@ -32,7 +32,7 @@ def read_file(filepath):
         technology.add_port(v)
   return technologies
 
-def read_json(self, filepath):
+def read_json(filepath):
   with open(filepath, 'rb') as file:
     return json.load(file, encoding = 'utf-8')
 
