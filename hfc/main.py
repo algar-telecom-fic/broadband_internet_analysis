@@ -143,7 +143,7 @@ def read_file(filename):
     print(e)
     print('Failed to read file: ' + filename)
 
-def read_json(self, filepath):
+def read_json(filepath):
   with open(filepath, 'rb') as file:
     return json.load(file, encoding = 'utf-8')
 
