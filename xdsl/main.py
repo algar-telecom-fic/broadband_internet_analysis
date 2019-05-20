@@ -3,22 +3,14 @@ import os
 import vdsl
 
 def main():
-  filepath = os.path.dirname(os.path.abspath(__file__))
-  current_filepath, previous_filepath, date_difference = read_config_file(filepath + '/config.txt')
-  current_adsl, current_vdsl = read_file(current_filepath)
-  previous_adsl, previous_vdsl = read_file(previous_filepath)
-  current_adsl.build_documents(previous_adsl, date_difference)
-  current_vdsl.build_documents(previous_vdsl, date_difference)
+  filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
+  config = read_json(filepath + 'config.txt')
+  current_adsl, current_vdsl = read_file(config['current_filepath'])
+  previous_adsl, previous_vdsl = read_file(config['previous_filepath'])
+  current_adsl.build_documents(previous_adsl, config['date_difference'])
+  current_vdsl.build_documents(previous_vdsl, config['date_difference'])
   current_adsl.insert_documents()
   current_vdsl.insert_documents()
-
-def read_config_file(filepath):
-  with open(filepath, 'r', encoding = 'ISO-8859-1') as config_file:
-    v = config_file.readlines()
-    current_file = v[0].split('=')[1].strip().split('"')[1].strip()
-    previous_file = v[1].split('=')[1].strip().split('"')[1].strip()
-    date_difference = int(v[2].split('=')[1].strip().split('"')[1].strip())
-    return (current_file, previous_file, date_difference)
 
 def read_file(filepath):
   technologies = (adsl.ADSL(), vdsl.VDSL())
@@ -28,5 +20,9 @@ def read_file(filepath):
       for technology in technologies:
         technology.add_port(v)
   return technologies
+
+def read_json(self, filepath):
+  with open(filepath, 'rb') as file:
+    return json.load(file, encoding = 'utf-8')
 
 main()

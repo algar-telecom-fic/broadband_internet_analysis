@@ -8,19 +8,6 @@ class VDSL(xdsl.XDSL):
     'disponivel ngn',
     'disponivel',
   ]
-  table_info = {
-    'available': 'INT',
-    'cabinet': 'TINYTEXT',
-    'date': 'DATETIME',
-    'grand_station': 'TINYTEXT',
-    'id': 'INT AUTO_INCREMENT',
-    'increasing': 'DOUBLE',
-    'location': 'TINYTEXT',
-    'occupied': 'INT',
-    'prediction': 'TINYTEXT',
-    'regional': 'TINYTEXT',
-    'total': 'INT',
-  }
   occupied = [
     'auditoria',
     'ocupado',

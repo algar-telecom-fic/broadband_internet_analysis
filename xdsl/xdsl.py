@@ -2,15 +2,10 @@ import abc
 import datetime
 import sys
 sys.path.append('/home/gardusi/github/sql_library/')
-import mysql_json
+from sql_json import mySQL
 
 class XDSL(abc.ABC):
-  database_name = 'kappacidade',
-  date = datetime.datetime.now(),
-  host = '0.0.0.0',
-  passwd = 'pe',
-  primary_key = 'id',
-  user = 'peduardo',
+  date = datetime.datetime.now()
 
   @abc.abstractmethod
   def add_port(self):
@@ -21,19 +16,16 @@ class XDSL(abc.ABC):
     pass
 
   def insert_documents(self):
-    db = mysql_json.mySQL(
-      database = self.database_name[0],
-      host = self.host[0],
-      passwd = self.passwd[0],
-      user = self.user[0],
+    db = mySQL(
+      database_credentials = self.database_credentials,
+      database_name = self.config['database_name'],
     )
-    db.create_table(
-      primary_key = self.primary_key[0],
+    self.db.create_table(
       table_info = self.table_info,
-      table_name = self.table_name,
+      table_name = self.config['table_name'],
     )
-    db.insert_into(
-      self.table_name,
-      self.table_info,
-      self.documents,
+    self.db.insert_into(
+      table_name = self.config['table_name'],
+      table_info = self.table_info,
+      values = self.documents,
     )
