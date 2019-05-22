@@ -47,8 +47,8 @@ class Main:
 
 
     def insereDados(self):
-        #hoje = datetime.utcnow()
-        hoje = datetime(2019, 1, 25)
+        hoje = datetime.utcnow()
+        #hoje = datetime(2019, 1, 25)
 
         argsCn = []
         for nome, cto in self.concessao.items():

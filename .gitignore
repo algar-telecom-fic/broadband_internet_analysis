@@ -132,5 +132,10 @@ dmypy.json
 # old folders
 gpon/portas/
 voz_fixa/datasheets/
+voz_fixa/metabase/
+
+# security information
+agilecapacity.pem
+
 
 # End of https://www.gitignore.io/api/python

@@ -1,9 +1,11 @@
 import configparser
 import mysql.connector
+import os
 
 class Database:
     def __init__(self):
-        self.configureDB('/home/pediogo/Documentos/broadband_internet_analysis/gpon/portas/dbconfigs.env')
+        folder = "/".join( os.path.realpath(__file__).split('/')[:-1] )
+        self.configureDB( folder + '/dbconfigs.env' )
 
 
     def configureDB(self, configFilename):
