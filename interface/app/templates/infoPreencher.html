@@ -1,0 +1,27 @@
+{% extends 'doubleForm.html' %}
+
+{% block info %}
+<h1 class="display-3">Nome do seu relatório</h1>
+<p>Por favor selecione os arquivos desejados.</p>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Apelido Do Primeiro Arquivo </h2>
+    <p>
+      Aqui você coloca uma pequena descrição que ajude o profissional a lembrar qual é o arquivo que ele deve enviar.
+      Diga resumidamente quais informações o arquivo solicitado contém e em quais ocasiões a pessoa precisa fazer o upload dele.
+      Esse arquivo deve estar em formato .[preencher]
+    </p>
+
+  </div>
+  <div class="col-md-6">
+    <h2>Apelido Do Segundo Arquivo</h2>
+    <p>
+      Aqui você coloca uma pequena descrição que ajude o profissional a lembrar qual é o arquivo que ele deve enviar.
+      Diga resumidamente quais informações o arquivo solicitado contém e em quais ocasiões a pessoa precisa fazer o upload dele.
+      Esse arquivo deve estar em formato .[preencher]
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block action %}{{ url_for('tstdouble') }}{% endblock %}
