@@ -4,6 +4,9 @@ from mydict import InfiniteDict
 
 
 def read_vantive(filename=None):
+    if filename == None or filename == '':
+        return
+
     database = InfiniteDict()
     possible_status = set()
 
@@ -33,9 +36,12 @@ def read_vantive(filename=None):
                 lista_vantive.append(tuple(data))
 
     return (possible_status, lista_vantive)
-    
 
-def processVantive(filename=None, dbcofigfile=None):
+
+def processVantive(filename=None, dbcofigfile='dbconfigs.env'):
+    if filename == None:
+        return
+
     possible_status, data = read_vantive(filename);
 
     query = (
@@ -50,6 +56,9 @@ def processVantive(filename=None, dbcofigfile=None):
     db.executaQuery(query, data)
 
 def testaVantive(filename):
+    print('testouVantive')
+    if filename == '' or filename == None:
+        return
     status, data = read_vantive(filename)
     print(status)
     for d in data:
