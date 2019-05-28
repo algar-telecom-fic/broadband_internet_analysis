@@ -5,6 +5,7 @@ import os
 from werkzeug.utils import secure_filename
 from app.controllers.gpon_portas_api import gpon_portas
 from app.controllers.trafego_api import teste
+from app.controllers.voz_fixa_api import voz_fixa
 
 @app.route("/index")
 @app.route("/")

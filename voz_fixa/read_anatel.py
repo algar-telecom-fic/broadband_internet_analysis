@@ -50,18 +50,25 @@ def read_anatel(filename=None):
 
 
 
-def processAnatel(filename=None):
+def processAnatel(filename=None, dbcofigfile='dbconfigs.env'):
+    if filename == None:
+        return
+
+
     data = read_anatel(filename)
 
     query = "INSERT INTO faixa_stfc(cidade, ddd, total_recurso, total_comum, dia) VALUES (%s, %s, %s, %s, %s)"
 
     db = DatabaseConnector()
-    db.configureDB('dbconfigs.env')
+    db.configureDB(dbconfigfile)
     db.executaQuery(query, data)
 
 
 
 def testaAnatel(filename):
+    print('testouAnatel')
+    if filename == '' or filename == None:
+        return
     lista = read_anatel(filename)
     for item in lista:
         print(item)
@@ -70,6 +77,6 @@ def testaAnatel(filename):
 if __name__ == '__main__':
     #filename = 'datasheets/faixa_minimizado.csv'
     filename = 'datasheets/FAIXA_STFC_20190406_2988_GERAL.txt'
-    #processAnatel(filename)
-    testaAnatel(filename)
+    processAnatel(filename)
+    #testaAnatel(filename)
     print('finished processing')
