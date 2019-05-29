@@ -56,6 +56,9 @@ def tstdouble():
             file2.save(fullpath)
 
 
+    return render_template('exemplo.html')
+
+
 
 #addres to download something you already uploaded
 @app.route('/uploads/<filename>')
