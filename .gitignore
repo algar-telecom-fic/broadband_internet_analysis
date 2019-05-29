@@ -136,6 +136,8 @@ voz_fixa/metabase/
 
 # security information
 agilecapacity.pem
+dbconfigs.env
+config.py
 
 
 # End of https://www.gitignore.io/api/python
