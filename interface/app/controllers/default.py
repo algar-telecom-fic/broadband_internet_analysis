@@ -18,7 +18,7 @@ def gpon():
     return render_template('gpon/gpon.html')
 
 
-@app.route("/tstdouble", methods=['GET', 'POST'])
+@app.route("/exemplo", methods=['GET', 'POST'])
 def tstdouble():
     if request.method == 'POST':
         print(request.files)
@@ -57,7 +57,7 @@ def tstdouble():
             file2.save(fullpath)
 
 
-    return render_template('infoPreencher.html')
+    return render_template('exemplo.html')
 
 
 
