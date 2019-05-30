@@ -10,7 +10,7 @@ import sys
 def voz_fixa():
     if request.method == 'POST':
         file1, file2 = make_two_uploads(request)
-        sys.path.insert(0, '/home/pediogo/Documentos/broadband_internet_analysis/voz_fixa/')
+        sys.path.insert(0, app.config['PATH_VOZ_FIXA'])
         from read_vantive import processVantive
         #from read_vantive import testaVantive
         from read_anatel import processAnatel
