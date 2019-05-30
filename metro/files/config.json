@@ -1,0 +1,6 @@
+{
+	"csv_filepath": "/home/otsuka/doing/metro/files/metro.csv",
+	"database_credentials": "/home/gardusi/github/database_credentials.json",
+	"database_name": "kappacidade",
+	"table_name": "rede_metro"
+}
