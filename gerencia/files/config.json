@@ -1,0 +1,7 @@
+{
+	"filepath": "/home/otsuka/doing/gerencia/files/List.txt",
+	"database_credentials": "/home/gardusi/github/database_credentials.json",
+	"database_name": "kappacidade",
+	"table_info": "/home/otsuka/doing/gerencia/files/table_info.json",
+	"table_name": "gerencia"
+}
