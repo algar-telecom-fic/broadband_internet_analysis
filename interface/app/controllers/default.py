@@ -5,6 +5,9 @@ import os
 from werkzeug.utils import secure_filename
 from app.controllers.gpon_portas_api import gpon_portas
 from app.controllers.voz_fixa_api import voz_fixa
+from app.controllers.metro_api import metro
+from app.controllers.gerencia_api import gerencia
+from app.controllers.outro_api import outro
 
 @app.route("/index")
 @app.route("/")

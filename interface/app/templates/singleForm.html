@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+      <div class="container">
+        <!-- Example row of columns -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <div class="alert alert-warning">
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+        {% endwith %}
+
+        {% block info %}
+        {% endblock %}
+
+        <form method=post enctype=multipart/form-data action={% block action %}{% endblock %}>
+          <div class="row">
+            <div class="col-md-6 col-lg-6">
+              <input type=file name=file1>
+            </div>
+          </div>
+
+          <div class="row" style="padding-top: 20px">
+            <div class="col-md-12 text-center">
+              <input class="btn btn-secondary" type=submit value="Atualizar »">
+            </div>
+          </div>
+        </form>
+
+
+
+      </div> <!-- /container -->
+  </div>
+</main>
+
+{% endblock %}
