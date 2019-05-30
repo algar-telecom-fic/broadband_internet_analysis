@@ -125,9 +125,19 @@ venv.bak/
 dmypy.json
 
 
-# old files
-gpon/portas/
+
 # Pyre type checker
 .pyre/
+
+# old folders
+gpon/portas/
+voz_fixa/datasheets/
+voz_fixa/metabase/
+
+# security information
+agilecapacity.pem
+dbconfigs.env
+interface/config.py
+
 
 # End of https://www.gitignore.io/api/python

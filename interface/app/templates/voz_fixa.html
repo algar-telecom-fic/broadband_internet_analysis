@@ -1,0 +1,26 @@
+{% extends 'doubleForm.html' %}
+
+{% block info %}
+<h1 class="display-3">Voz Fixa</h1>
+<p>Por favor selecione os arquivos desejados.</p>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Faixa STFC</h2>
+    <p>
+      Aqui vai o arquivo gerado pela Anatel com as faixas de número que pertencem a cada operadora.
+      Os números com prefixo diferente de 4000 e 4005 são considerados parte do recurso comum.
+      Esse arquivo deve estar em formato .txt ou .csv
+    </p>
+  </div>
+  <div class="col-md-6">
+    <h2>Área Local</h2>
+    <p>
+      Aqui vai o arquivo gerado pelo Vantive com os status dos equipamentos e a tecnologia utilizada.
+      Esse relatório contém também a localidade e a área local dos equipamentos.
+      Esse arquivo deve estar em formato .txt ou .csv
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block action %}{{ url_for('voz_fixa') }}{% endblock %}
