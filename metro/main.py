@@ -6,6 +6,7 @@ from sql_json import mySQL
 
 
 def build_result(file):
+	global db_i
 	csv_reader = csv.reader(file, delimiter=',')
 	line_count = 0
 	result = []
@@ -36,6 +37,7 @@ def build_result(file):
 
 
 def db_inserction(filepath, db_name, tb_name, docs):
+	global db_i
 	credentials = read_json(filepath)
 	db = mySQL(credentials, db_name)
 	print(db_i)
@@ -44,6 +46,11 @@ def db_inserction(filepath, db_name, tb_name, docs):
 
 
 def main():
+	print('i gonna take my horse')
+	print("2 D old town road")
+	return
+	global db_i
+	db_i = read_json("/home/otsuka/doing/metro/files/table_info.json")
 	files = read_json("/home/otsuka/doing/metro/files/config.json")
 	items = open_file(files["csv_filepath"], build_result)
 	db_inserction(
@@ -64,5 +71,5 @@ def read_json(filepath):
 		return json.load(file, encoding = 'utf-8')
 
 
-db_i = read_json("/home/otsuka/doing/metro/files/table_info.json")
-main()
+if __name__ == '__main__':
+	main()

@@ -2,6 +2,11 @@ from flask import flash
 from app import app
 from werkzeug.utils import secure_filename
 import os
+import json
+
+def read_json(filepath):
+	with open(filepath, 'r') as file:
+		return json.loads(file.read(), encoding = 'utf-8')
 
 
 def allowed_file(filename):
@@ -9,7 +14,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 
-def make_one_upload(request):
+def make_one_upload(request, desiredName = ""):
     file1 = None
     if 'file1' not in request.files:
         flash('No file1')
@@ -21,7 +26,11 @@ def make_one_upload(request):
         flash('No file1 selected')
         return None
 
-    if file1 and allowed_file(file1.filename):
+    if desiredName != "":
+        fullpath1 = desiredName
+        file1.save(fullpath1)
+
+    elif file1 and allowed_file(file1.filename):
         filename = secure_filename(file1.filename)
         fullpath1 = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file1.save(fullpath1)

@@ -35,6 +35,7 @@ def db_inserction(filepath, db_name, tb_name, db_info, docs):
 
 
 def main():
+
 	files = read_json("/home/otsuka/doing/gerencia/files/config.json")
 	items = open_file(files["filepath"], build_result)
 	db_inserction(
@@ -56,4 +57,5 @@ def read_json(filepath):
 		return json.loads(file.read(), encoding = 'utf-8')
 
 
-main()
+if __name__ == "__main__":
+	main()
