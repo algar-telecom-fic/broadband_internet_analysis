@@ -1,10 +1,10 @@
 {
-	"actual_filepath": "/home/otsuka/doing/voz_fixa/files/Relatorio.csv",
-	"base_filepath": "/home/otsuka/doing/voz_fixa/files/Vantive.csv",
+	"actual_filepath": "/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/files/Relatorio.csv",
+	"base_filepath": "/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/files/Vantive.csv",
 	"database_credentials": "/home/gardusi/github/database_credentials.json",
 	"database_name": "voz_fixa",
-	"dates_filepath": "/home/otsuka/doing/voz_fixa/files/dates",
-	"regional_filepath": "/home/otsuka/doing/voz_fixa/files/Regional.csv",
-	"table_info": "/home/otsuka/doing/voz_fixa/files/table_info.json",
+	"dates_filepath": "/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/files/dates",
+	"regional_filepath": "/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/files/Regional.csv",
+	"table_info": "/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/files/table_info.json",
 	"table_name": "acesso"
 }

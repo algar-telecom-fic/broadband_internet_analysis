@@ -6,8 +6,8 @@ import os
 import sys
 
 
-@app.route("/voz_fixa", methods=['GET', 'POST'])
-def voz_fixa():
+@app.route("/vox_fixa/area_local/", methods=['GET', 'POST'])
+def area_local():
     if request.method == 'POST':
         file1, file2 = make_two_uploads(request)
         sys.path.insert(0, app.config['PATH_VOZ_FIXA'])
@@ -19,4 +19,4 @@ def voz_fixa():
         processAnatel(file1)
         processVantive(file2)
 
-    return render_template('voz_fixa.html')
+    return render_template('voz_fixa/area_local.html')

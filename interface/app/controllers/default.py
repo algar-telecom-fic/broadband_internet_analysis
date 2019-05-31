@@ -4,10 +4,10 @@ from app import app
 import os
 from werkzeug.utils import secure_filename
 from app.controllers.gpon_portas_api import gpon_portas
-from app.controllers.voz_fixa_api import voz_fixa
+from app.controllers.area_local_api import area_local
 from app.controllers.metro_api import metro
 from app.controllers.gerencia_api import gerencia
-from app.controllers.outro_api import outro
+from app.controllers.acesso_api import acesso
 
 @app.route("/index")
 @app.route("/")
@@ -18,6 +18,11 @@ def index():
 @app.route("/gpon")
 def gpon():
     return render_template('gpon/gpon.html')
+
+
+@app.route("/voz_fixa/")
+def voz_fixa():
+    return render_template('voz_fixa/voz_fixa.html')
 
 
 @app.route("/exemplo", methods=['GET', 'POST'])

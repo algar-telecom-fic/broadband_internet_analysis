@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+      <div class="container">
+        <!-- Example row of columns -->
+
+        <h1 class="display-3">Relatórios Vox Fixa</h1>
+        <p>Escolha um dos relatórios para atualizar.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Área Local</h2>
+            <p><a class="btn btn-secondary" href="{{ url_for('area_local') }}" role="button">Atualizar »</a></p>
+          </div>
+          <div class="col-md-6">
+            <h2>Acesso</h2>
+            <p><a class="btn btn-secondary" href="{{ url_for('acesso') }}" role="button">Atualizar »</a></p>
+          </div>
+        </div>
+      </div> <!-- /container -->
+  </div>
+</main>
+
+{% endblock %}

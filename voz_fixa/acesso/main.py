@@ -2,10 +2,10 @@ import csv
 import json
 import math
 import sys
-sys.path.append("/home/otsuka/doing/voz_fixa/sql_library")
 from datetime import date
+sys.path.append("/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/sql_library")
 from sql_json import mySQL
-	
+
 
 def build_dict(station, base, actual, days):
 	total = actual[station]["TOTAL"]
@@ -14,11 +14,11 @@ def build_dict(station, base, actual, days):
 	if station not in base:
 		cr = "Sem Historico"
 		pre_pm = 0
-	else: 
+	else:
 		cr = ((actual[station]["T OCUPADO"]-base[station]["T OCUPADO"])/days)*30
 		if cr != 0:
 			pre_pm = disp/cr
-		else: 
+		else:
 			pre_pm = 0
 	if pre_pm < 0:
 		pre = "Decrescimento"
@@ -58,7 +58,7 @@ def build_reg(filepath):
 
 
 def create(file):
-	files = read_json("/home/otsuka/doing/voz_fixa/files/config.json")
+	files = read_json("/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/files/config.json")
 	reg_dict = open_file(files["regional_filepath"], build_reg)
 	csv_reader = csv.reader(file, delimiter=';')
 	line_count = 0
@@ -117,7 +117,7 @@ def create(file):
 	return ports
 
 
-def date_dif(file):
+def date_dif_file(file):
 	dates = []
 	date_format = "%d/%m/%Y"
 	for d in file.readlines():
@@ -135,6 +135,19 @@ def date_dif(file):
 	d2 = date(datez[2],datez[1],datez[0])
 	r = abs(d2-d1).days
 	return r
+
+
+
+def date_dif_arg(d1,d2):
+	dates = []
+	datez = []
+	for i in d1.split("/"):
+		dates.append(int(i))
+	for i in d2.split("/"):
+		datez.append(int(i))
+	d1 = date(dates[2],dates[1],dates[0])
+	d2 = date(datez[2],datez[1],datez[0])
+	return abs(d2-d1).days
 
 
 def db_insertion(filepath, db_name, tb_name, db_info, docs):
@@ -155,15 +168,18 @@ def read_json(filepath):
 		return json.load(file, encoding = 'utf-8')
 
 
-def main():
+def main(d1 = None, d2 = None):
 	base_dict = {}
 	actual_dict = {}
 	reg_dict = {}
-	result = {} 
-	files = read_json("/home/otsuka/doing/voz_fixa/files/config.json")
+	result = {}
+	files = read_json("/home/usrCapacity/broadband_internet_analysis/voz_fixa/acesso/files/config.json")
 	base_dict = open_file(files["base_filepath"], create)
 	actual_dict = open_file(files["actual_filepath"], create)
-	days = open_file(files["dates_filepath"], date_dif)
+	if d1 == None or d2 == None:
+		days = open_file(files["dates_filepath"], date_dif_file)
+	else:
+		days = date_dif_arg(d1, d2)
 	for key in actual_dict:
 		result[key] = build_dict(key, base_dict, actual_dict, days)
 	items = []
@@ -178,4 +194,5 @@ def main():
 	)
 
 
-main()
+if __name__ == "__main__":
+	main()
