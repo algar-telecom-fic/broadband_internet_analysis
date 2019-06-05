@@ -3,9 +3,11 @@ import os
 import json
 import vdsl
 
-def main():
+def main(date_difference=0):
   filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
   config = read_json(filepath + 'config.json')
+  if date_difference!=0:
+      config['date_difference'] = date_difference
   current_adsl, current_vdsl = read_file(config['current_filepath'])
   previous_adsl, previous_vdsl = read_file(config['previous_filepath'])
   current_adsl.build_documents(previous_adsl, config['date_difference'])
@@ -37,4 +39,5 @@ def read_json(filepath):
   with open(filepath, 'rb') as file:
     return json.load(file, encoding = 'utf-8')
 
-main()
+if __name__ == "__main__":
+    main()

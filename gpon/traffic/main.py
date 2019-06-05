@@ -7,4 +7,6 @@ def main():
   gpon.build_documents()
   gpon.insert_documents()
 
-main()
+
+if __name__ == "__main__":
+    main()

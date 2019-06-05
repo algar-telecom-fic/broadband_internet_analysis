@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+      <div class="container">
+        <!-- Example row of columns -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <div class="alert alert-warning">
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+        {% endwith %}
+
+        <h1 class="display-3">Tráfego</h1>
+        <p>Por favor selecione os arquivos desejados.</p>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+            </p>
+
+          </div>
+        </div>
+
+        <form method=post enctype=multipart/form-data action={{ url_for('gpon_trafego') }}>
+          <div class="row">
+            <label class="col-md-6 col-lg-6">
+              Tráfego atual
+              <div>
+                <input type=file name=file1>
+              </div>
+            </label>
+            <label class="col-md-6 col-lg-6">
+              Portas Atual
+              <div>
+                <input type=file name=file2>
+              </div>
+            </label>
+          </div>
+          <div class="row">
+            <label class="col-md-6 col-lg-6">
+              Aneis
+              <div>
+                <input type=file name=file3>
+              </div>
+            </label>
+            <label class="col-md-6 col-lg-6">
+              Exceções
+              <div>
+                <input type=file name=file4>
+              </div>
+            </label>
+          </div>
+
+
+
+          <div class="row" style="padding-top: 20px">
+            <div class="col-md-12 text-center">
+              <input class="btn btn-secondary" type=submit value="Atualizar »">
+            </div>
+          </div>
+        </form>
+
+
+
+      </div> <!-- /container -->
+  </div>
+</main>
+
+{% endblock %}

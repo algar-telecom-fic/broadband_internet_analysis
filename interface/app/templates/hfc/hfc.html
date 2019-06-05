@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+      <div class="container">
+        <!-- Example row of columns -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <div class="alert alert-warning">
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+        {% endwith %}
+
+        <h1 class="display-3">HFC</h1>
+        <p>Por favor selecione os arquivos desejados.</p>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              Esse relatório deve receber 2 arquivos obrigatoriamente e 1 opcional, todos no formato
+              ".csv". O primeiro arquivo contém os dados atuais das estações, os
+              quais serão comparados com os dados do arquivo base. O segundo
+              arquivo é justamente o arquivo das informações usadas como base, as informações
+              anteriores das estações.  Esses dois são obrigatórios.
+              O terceiro arquivo, opcional, contém apenas duas
+              colunas, que relacionam a Localidade com suas respectivas Regionais, e o anexo só precisa ser feito caso haja alguma localidade nova. Fora os três arquivos, a data do arquivo atual e do arquivo base devem ser especificados separadamente no campo data do
+              formulário.
+            </p>
+
+          </div>
+        </div>
+
+        <form method=post enctype=multipart/form-data action={{ url_for('hfc') }}>
+          <div class="row">
+            <label class="col-md-6 col-lg-6">
+              Atual
+              <div>
+                <input type=file name=file1>
+              </div>
+            </label>
+            <label class="col-md-6 col-lg-6">
+              Antigo
+              <div>
+                <input type=file name=file2>
+              </div>
+            </label>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <label for="DateAtual">Data atual</label>
+              <input type="text" class="form-control" name="DateAtual" id="DateAtual" placeholder="dd/mm/aaaa" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="DateAntiga">Data antiga</label>
+              <input type="text" class="form-control" name="DateAntiga" id="DateAntiga" placeholder="dd/mm/aaaa" required>
+            </div>
+          </div>
+
+          <div class="row" style="padding-top: 20px">
+            <div class="col-md-12 text-center">
+              <input class="btn btn-secondary" type=submit value="Atualizar »">
+            </div>
+          </div>
+        </form>
+
+
+
+      </div> <!-- /container -->
+  </div>
+</main>
+
+{% endblock %}

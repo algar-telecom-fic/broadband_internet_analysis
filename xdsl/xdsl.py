@@ -16,9 +16,9 @@ class XDSL(abc.ABC):
     pass
 
   def insert_documents(
-    self, 
-    database_credentials, 
-    database_name, 
+    self,
+    database_credentials,
+    database_name,
     table_info,
     table_name,
   ):

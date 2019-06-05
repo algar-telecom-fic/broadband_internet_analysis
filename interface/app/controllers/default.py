@@ -4,10 +4,13 @@ from app import app
 import os
 from werkzeug.utils import secure_filename
 from app.controllers.gpon_portas_api import gpon_portas
+from app.controllers.gpon_trafego_api import gpon_trafego
 from app.controllers.area_local_api import area_local
 from app.controllers.metro_api import metro
 from app.controllers.gerencia_api import gerencia
 from app.controllers.acesso_api import acesso
+from app.controllers.hfc_api import hfc
+from app.controllers.xdsl_api import xdsl
 
 @app.route("/index")
 @app.route("/")

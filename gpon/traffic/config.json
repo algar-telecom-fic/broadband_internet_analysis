@@ -1,5 +1,7 @@
 {
   "current_filepath": "/home/gardusi/github/input_gpon_trafego.csv",
+  "ring_filepath" : "/home/gardusi/github/broadband_internet_analysis/gpon/traffic/ring_info.json",
+  "exceptions_filepath" : "/home/gardusi/github/broadband_internet_analysis/gpon/traffic/capacity_exceptions.json",
   "database_credentials_filepath": "/home/gardusi/github/database_credentials.json",
   "database_name": "kappacidade",
   "ports_filepath": "/home/gardusi/github/input_gpon_portas.csv",

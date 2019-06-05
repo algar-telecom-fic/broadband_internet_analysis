@@ -55,10 +55,10 @@ def build_documents(current_file, previous_file, date_difference):
   return documents
 
 def insert_documents(
-  database_credentials, 
-  database_name, 
+  database_credentials,
+  database_name,
   table_name,
-  table_info, 
+  table_info,
   documents
 ):
   db = mySQL(
@@ -75,11 +75,13 @@ def insert_documents(
     values = documents,
   )
 
-def main():
+def main(date_difference=0):
   global database
   database = {}
   current_filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
   config = read_json(current_filepath + 'config.json')
+  if date_difference!=0:
+      config['date_difference'] = date_difference
   read_file(config['current_filepath'])
   read_file(config['previous_filepath'])
   documents = build_documents(
@@ -136,4 +138,5 @@ def read_json(filepath):
   with open(filepath, 'rb') as file:
     return json.load(file, encoding = 'utf-8')
 
-main()
+if __name__ == "__main__":
+    main()
