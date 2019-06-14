@@ -10,8 +10,8 @@ import datetime
 def xdsl():
     if request.method == 'POST':
         configs = read_json(os.path.abspath('../xdsl/config.json'))
-        file1 = make_one_upload(request, configs["current_filepath"])
-        file2 = make_one_upload(request, configs["previous_filepath"])
+        file1 = make_one_upload(request, configs["current_filepath"], 'file1')
+        file2 = make_one_upload(request, configs["previous_filepath"], 'file2')
 
         diaAtual  = request.form.get('DateAtual')
         diaAtual  = datetime.datetime.strptime(diaAtual, '%d/%m/%Y')

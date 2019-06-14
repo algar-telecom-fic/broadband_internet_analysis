@@ -15,14 +15,10 @@ def gpon_trafego():
         file3 = make_one_upload(request, configs["ring_filepath"], 'file3')
         file4 = make_one_upload(request, configs["exceptions_filepath"], 'file4')
 
-        print(configs["ports_filepath"])
-
-        """
         sys.path.append(os.path.abspath('../gpon/traffic/'))
         import main
         main.main()
         sys.path.remove(os.path.abspath('../gpon/traffic/'))
-        """
 
 
     return render_template('gpon/trafego.html')
