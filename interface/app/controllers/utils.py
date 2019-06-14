@@ -14,16 +14,16 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 
-def make_one_upload(request, desiredName = ""):
+def make_one_upload(request, desiredName = "", current_file = 'file1'):
     file1 = None
-    if 'file1' not in request.files:
-        flash('No file1')
+    if current_file not in request.files:
+        flash('No '+ current_file)
         return None
     else:
-        file1 = request.files['file1']
+        file1 = request.files[current_file]
 
     if file1.filename == '':
-        flash('No file1 selected')
+        flash('No file selected')
         return None
 
     if desiredName != "":
