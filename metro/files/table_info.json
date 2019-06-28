@@ -3,10 +3,10 @@
 	"Estado": "TINYTEXT",
 	"Cidade": "TINYTEXT",
 	"Anel": "TINYTEXT",
-	"Speed": "INT",
+	"Speed": "DOUBLE",
 	"Informacao": "TINYTEXT",
-	"Traffic_100%": "TINYTEXT",
-	"Traffic_95%": "TINYTEXT",
+	"Traffic_100%": "INT",
+	"Traffic_95%": "INT",
 	"Traffic_Gbps": "DOUBLE",
-	"TX": "TINYTEXT"
+	"TX": "INT"
 }
