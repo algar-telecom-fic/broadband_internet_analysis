@@ -49,4 +49,14 @@ Inside the Interface folder in this project there is a *requirements.txt* file. 
 
 
 -------------------
+## Run the interface
 
+In your local enviroment you can run the app easily, just run the file *run.py*
+
+    python3 run.py
+
+In production enviroment, though, you're going to need something more reliable. We'are using gunicorn, install it and run with   
+
+    python3 -m gunicorn.app.wsgiapp -w 4 -b 0.0.0.0:5000 app:app
+
+This is going to run in the port 5000. Be aware that your firewall must have this port open for you to access this address from another machine
