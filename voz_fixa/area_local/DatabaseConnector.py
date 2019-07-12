@@ -6,6 +6,8 @@ class DatabaseConnector:
     def configureDB(self, configFilename):
         self.config = configparser.ConfigParser()
         self.config.read(configFilename)
+        print("meu config object: ")
+        print(self.config)
         self.config = self.config['DB']
         
     def conectaBancodeDados(self):

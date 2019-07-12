@@ -38,7 +38,7 @@ def read_vantive(filename=None):
     return (possible_status, lista_vantive)
 
 
-def processVantive(filename=None, dbcofigfile='dbconfigs.env'):
+def processVantive(filename=None, dbconfigfile='/home/pediogo/broadband_internet_analysis/voz_fixa/area_local/dbconfigs.env'):
     if filename == None:
         return
 
