@@ -1,0 +1,17 @@
+{
+	"mgw cas.log": ["CAMPINAS", "CAS-JBD", "MGW-CAS-A"],
+	"mgw fac.log": ["FRANCA", "FAC-CENTRO", "MGW-FAC-B"],
+	"mgw fla.log": ["FORTALEZA", "FLA-ALOO", "MGW-FLAC"],
+	"mgw ura.log": ["UBERABA", "URA-CENTRO", "MGW-URA-B"],
+	"mgw soo.log": ["SAO JOSE", "SOO-CENTRO", "MGW-SOO-A"],
+	"mgw iub.log": ["ITUMBIARA", "IUB-CENTRO", "MGW-IUB-A"],
+	"mgw prs.log": ["UBERLANDIA", "PRS-CENTRO", "MGW-PRS-A"],
+	"mgw rjo.log": ["RIO DE JANEIRO", "RJO-RB1", "MGW-RJO-A"],
+	"mgw bhe.log": ["BEL HORIZONTE", "BHE-ASTECA", "MGW-BHE-A"],
+	"mgw pms.log": ["PATOS DE MINAS", "PMS-CENTRO", "MGW-PMS-A"],
+	"mgw cta - no config.log": ["CURITIBA", "CTA-JATOBA", "MGW-CTA-A"],
+	"mgw spo-cenesp.log": ["SAO PAULO", "SPO-CENESP", "MGW-SPO-A"],
+	"mgw ula b.log": ["UBERLANDIA", "ULA-CENTRO (236)", "MGW-ULA-B"],
+	"mgw ula c.log": ["UBERLANDIA", "ULA-BRASIL (232)", "MGW-ULA-C"],
+	"mgw spo-piaf - no config.log": ["SAO PAULO", "SPO-PIAF", "MGW-SPO-C"]
+}

@@ -1,0 +1,6 @@
+{
+	"database_credentials": "/home/otsuka/Documents/Projects/doing/gerencia/files/credentials.json",
+	"database_name": "teste",
+	"table_info": "/home/otsuka/Documents/Projects/doing/gerencia/files/base_info.json",
+	"table_name": "base"
+}

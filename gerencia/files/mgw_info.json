@@ -1,0 +1,9 @@
+{
+	"id": "INT AUTO_INCREMENT",
+	"Localidade": "TINYTEXT",
+	"Estacao": "TINYTEXT",
+    	"Elemento": "TINYTEXT",
+    	"Capacidade": "INT",
+    	"Ocupado": "INT",
+	"Disponivel": "INT"
+}
