@@ -1,6 +1,0 @@
-{
-	"id": "INT AUTO_INCREMENT",
-	"Fault":"INT",
-	"Ocupado":"INT",
-	"Disponivel":"INT"
-}
