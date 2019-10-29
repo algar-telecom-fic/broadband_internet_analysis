@@ -1,0 +1,5 @@
+configparser==3.7.4
+et-xmlfile==1.0.1
+jdcal==1.4
+mysql-connector==2.2.9
+openpyxl==2.6.1

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+      <div class="container">
+        <!-- Example row of columns -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <div class="alert alert-warning">
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          <li>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+        {% endwith %}
+
+        <h1 class="display-3">GPON - PORTAS PILOTO</h1>
+        <p>Para fazer o download, clique no arquivo desejado</p>
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <a href="{{ url_for('downloadFile', filename=filename1) }}">Portas CTO</a>
+          </div>
+          <div class="col-md-6 text-center">
+            <a href="{{ url_for('downloadFile', filename=filename2) }}">Taxas de Crescimento</a>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+
+
+  </div>
+</main>
+
+{% endblock %}
