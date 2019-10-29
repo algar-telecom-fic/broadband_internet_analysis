@@ -50,7 +50,7 @@ def read_anatel(filename=None):
 
 
 
-def processAnatel(filename=None, dbcofigfile='dbconfigs.env'):
+def processAnatel(filename=None, dbconfigfile='/home/pediogo/broadband_internet_analysis/voz_fixa/area_local/dbconfigs.env'):
     if filename == None:
         return
 

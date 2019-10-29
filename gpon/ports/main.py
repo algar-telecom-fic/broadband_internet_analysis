@@ -1,5 +1,5 @@
 from CTO import CTO
-from UI import UIManager
+#from UI import UIManager
 from Cidades import Cidades
 from Database import Database
 from datetime import datetime

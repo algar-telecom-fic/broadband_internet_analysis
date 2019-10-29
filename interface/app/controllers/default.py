@@ -3,7 +3,7 @@ from app.controllers.utils import allowed_file
 from app import app
 import os
 from werkzeug.utils import secure_filename
-from app.controllers.gpon_portas_api import gpon_portas
+from app.controllers.gpon_portas_api import gpon_portas, download_gpon_portas, downloadFile
 from app.controllers.gpon_trafego_api import gpon_trafego
 from app.controllers.area_local_api import area_local
 from app.controllers.metro_api import metro
