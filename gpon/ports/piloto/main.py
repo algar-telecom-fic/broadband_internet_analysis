@@ -9,12 +9,12 @@ import os
 
 def gera_relatorio(cto_data, city_data, hoje):
     with open(os.path.abspath("../gpon/ports/piloto/data/Portas_CTO_") + hoje.strftime("%d-%m-%Y") + ".csv", "w") as f:
-        f.write("Localidade;Estação;CTO;Possibilidade de vendas;Portas CTO - Ocupada;Portas CTO - Disponível;Portas CTO - Instalada\n")
+        f.write("Localidade;Estacao;CTO;Possibilidade de vendas;Portas CTO - Ocupada;Portas CTO - Disponivel;Portas CTO - Instalada\n")
         for cto in sorted(cto_data.items(), key= lambda kv:(kv[1], kv[0])):#ordenar dicionario pelos items e nao pelas chaves
             f.write(str(cto[1]) + '\n')
 
     with open(os.path.abspath("../gpon/ports/piloto/data/Taxa_crescimento_") + hoje.strftime("%d-%m-%Y") + ".csv", "w") as f:
-        f.write("Localidade;Ocupação Atual;Ocupação Anterior;Tx Crescimento Mensal;Capacidade Atual;Expectativa de Esgotamento em Meses;Visão de Capacidade\n")
+        f.write("Localidade;Ocupacao Atual;Ocupacao Anterior;Tx Crescimento Mensal;Capacidade Atual;Expectativa de Esgotamento em Meses;Visao de Capacidade\n")
         for city in sorted(city_data.items()):
             f.write(str(city[1]))
             if city[1].expectativa_esgotamento_meses < 0:
@@ -26,19 +26,26 @@ def gera_relatorio(cto_data, city_data, hoje):
             elif city[1].expectativa_esgotamento_meses >= 10:
                 f.write("Esgota em mais de 10 meses")
             else:
-                f.write(f"Esgota em até {int(ceil(city[1].expectativa_esgotamento_meses))} meses")
+                f.write(f"Esgota em ate {int(ceil(city[1].expectativa_esgotamento_meses))} meses")
             f.write('\n')
 
 
 def calcula_crescimento(city_data, hoje):
 
-    query = """select localidade, ocupacao_atual, dia from Localidades where dia = (select MAX(dia) from Localidades);"""
-
     db = Database()
-    old_cities = db.executaQuery(query)
+    aux_month = hoje.month - 3
 
+    query1 = "select distinct dia from Localidades"
+    dates = db.executaQuery(query1)
+    for d in reversed(dates):
+        if (d[0].month <= aux_month):
+            query_date = str(d[0]).split()[0]
+            break
+
+    query2 = f"select localidade, ocupacao_atual, dia from Localidades where dia = '{query_date}';"
+    old_cities = db.executaQuery(query2)
+    
     _, _, data_anterior = old_cities[0]
-
 
     old_ocupacao = {}
     for register in old_cities:
@@ -50,10 +57,10 @@ def calcula_crescimento(city_data, hoje):
     for city in city_data:
         ocp_atual = city_data[city].ocupacao
         city_data[city].ocupacao_anterior = old_ocupacao.get(city, 0)
-        city_data[city].tx_crescimento_mensal = ( 30.0 * (ocp_atual - old_ocupacao.get(city, 0) ) / date_difference)
+        city_data[city].tx_crescimento_mensal = ( round( 30.0 * (ocp_atual - old_ocupacao.get(city, 0) ) / date_difference) )
         print(f"{city} deu tx_crescimento_mensal = {city_data[city].tx_crescimento_mensal}")
         try:
-            city_data[city].expectativa_esgotamento_meses = city_data[city].capacidade / city_data[city].tx_crescimento_mensal
+            city_data[city].expectativa_esgotamento_meses = round (city_data[city].capacidade / city_data[city].tx_crescimento_mensal )
         except:
             print(f"erro no calc {city}")
             city_data[city].expectativa_esgotamento_meses = 999999999

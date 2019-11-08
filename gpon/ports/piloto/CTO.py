@@ -24,7 +24,7 @@ class CTO:
 
     def __repr__(self):
         if self.quant["VAGO"] == 0:
-            possibilidade_vendas = "Não - Indisponibilidade de Portas na CTOE"
+            possibilidade_vendas = "Nao - Indisponibilidade de Portas na CTOE"
         else:
             possibilidade_vendas = "Sim - " + str(self.quant["VAGO"])
 
