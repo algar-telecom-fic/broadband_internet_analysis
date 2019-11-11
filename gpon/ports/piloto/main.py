@@ -1,10 +1,10 @@
 from process import ProcessFile
-from datetime import datetime
 from insert_cto import insert_cto
 from insert_city import insert_city
 from Database import Database
 from math import ceil
 import os
+import datetime
 
 
 def gera_relatorio(cto_data, city_data, hoje):
@@ -80,4 +80,4 @@ def main(filename, hoje = datetime.now()):
     insert_cto(cto_data, hoje)
 
 if __name__ == "__main__":
-    main("/home/pediogo/broadband_internet_analysis/gpon/ports/piloto/data/Circuitos CTO-10-11.csv", datetime(2019, 10, 11))
+    main("/home/pediogo/broadband_internet_analysis/gpon/ports/piloto/data/Circuitos CTO-10-11.csv", datetime.date(2019, 10, 11))
