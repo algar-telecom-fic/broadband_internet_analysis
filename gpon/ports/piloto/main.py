@@ -70,7 +70,7 @@ def calcula_crescimento(city_data, hoje):
             city_data[city].expectativa_esgotamento_meses = 999999999
 
 
-def main(filename, hoje = datetime.now()):
+def main(filename, hoje = datetime.datetime.now()):
     p = ProcessFile(filename)
     cto_data, city_data = p.run()
 
