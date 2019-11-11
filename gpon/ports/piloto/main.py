@@ -33,12 +33,16 @@ def gera_relatorio(cto_data, city_data, hoje):
 def calcula_crescimento(city_data, hoje):
 
     db = Database()
-    aux_month = hoje.month - 3
+    
+    DD = datetime.timedelta(days=90)
+    aux_day = tod - DD
+    aux_time = datetime.datetime.min.time()
+    aux_day = datetime.datetime.combine(aux_day, aux_time)
 
     query1 = "select distinct dia from Localidades"
     dates = db.executaQuery(query1)
     for d in reversed(dates):
-        if (d[0].month <= aux_month):
+        if (d[0] <= aux_day):
             query_date = str(d[0]).split()[0]
             break
 
