@@ -22,6 +22,20 @@ class mySQL:
 		)
 		self.cursor.execute(command)
 
+	def executaQuery(self, query, args=[]):
+		if args == []:
+			self.cursor.execute(query)
+		else:
+			self.cursor.executemany(query, args)
+
+		try:
+			results = self.cursor.fetchall()
+			return results
+		except:
+			pass
+
+		self.conn.commit()
+
 	# INSERT INTO 'table_name' ("keys") VALUES ("values_0"), ("values_1"), ... ;
 	def insert_into(self, table_name: str, table_info: dict, values: list) -> None:
 		columns = table_info
@@ -48,7 +62,6 @@ class mySQL:
 			+ ' FROM '
 			+ table_name
 		)
-		print(command)
 		self.cursor.execute(command)
 		return self.cursor.fetchall()
 
