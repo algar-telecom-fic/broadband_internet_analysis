@@ -1,3 +1,4 @@
+# Trata arquivos com "no_config"... 
 def build_result_final(filepath):
 	with open(filepath, 'r') as file:
 		ftr = ''
@@ -27,7 +28,7 @@ def build_result_final(filepath):
 		ans["Disponivel"] = U  + no_config
 		return ans
 
-
+# Trata arquivos comuns...
 def build_result_commom(filepath):
 	with open(filepath,'r') as file:
 		ftr = ''
