@@ -33,7 +33,6 @@ def gera_relatorio(cto_data, city_data, hoje):
 def calcula_crescimento(city_data, hoje):
 
     db = Database()
-       
     DD = datetime.timedelta(days=90)
     aux_day = tod - DD
     aux_time = datetime.datetime.min.time()

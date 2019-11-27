@@ -1,9 +1,14 @@
 {
-	"id": "INT AUTO_INCREMENT",
-	"Localidade": "TINYTEXT",
-	"Estacao": "TINYTEXT",
-    	"Elemento": "TINYTEXT",
-    	"Capacidade": "INT",
-    	"Ocupado": "INT",
-	"Disponivel": "INT"
+	"id": "INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+	"Localidade": "VARCHAR(50) NOT NULL",
+	"Estacao": "VARCHAR(50)",
+	"Elemento": "VARCHAR(15)",
+	"Capacidade": "INT DEFAULT 0",
+	"Ocupado": "INT DEFAULT 0",
+	"Disponivel": "INT DEFAULT 0",
+	"Crescimento": "INT DEFAULT 0",
+	"Esgotamento_M": "VARCHAR(25)",
+	"Esgotamento": "INT DEFAULT 0",
+	"Taxa_Ocupacao": "INT DEFAULT 0",
+	"Dia": "TIMESTAMP"
 }

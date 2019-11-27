@@ -1,0 +1,8 @@
+{
+	"id":"INT not null primary key auto_increment",
+	"Table_name":"VARCHAR(50) not null",
+	"Table_id":"INT",
+	"Maximum_Tuple_Number":"INT",
+	"Used_number":"INT",
+	"Dia":"TIMESTAMP"
+}

@@ -1,0 +1,6 @@
+{
+	"database_credentials": "/home/otsuka/doing/spo/files/credentials.json",
+	"database_name": "kappacidade",
+	"table_info": "/home/otsuka/doing/spo/files/spo_info.json",
+	"table_name": "spo"
+}
