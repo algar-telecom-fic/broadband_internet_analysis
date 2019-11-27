@@ -1,10 +1,10 @@
 from process import ProcessFile
-from datetime import datetime
 from insert_cto import insert_cto
 from insert_city import insert_city
 from Database import Database
 from math import ceil
 import os
+import datetime
 
 
 def gera_relatorio(cto_data, city_data, hoje):
@@ -33,18 +33,22 @@ def gera_relatorio(cto_data, city_data, hoje):
 def calcula_crescimento(city_data, hoje):
 
     db = Database()
-    aux_month = hoje.month - 3
+       
+    DD = datetime.timedelta(days=90)
+    aux_day = tod - DD
+    aux_time = datetime.datetime.min.time()
+    aux_day = datetime.datetime.combine(aux_day, aux_time)
 
     query1 = "select distinct dia from Localidades"
     dates = db.executaQuery(query1)
     for d in reversed(dates):
-        if (d[0].month <= aux_month):
+        if (d[0] <= aux_day):
             query_date = str(d[0]).split()[0]
             break
 
     query2 = f"select localidade, ocupacao_atual, dia from Localidades where dia = '{query_date}';"
     old_cities = db.executaQuery(query2)
-    
+  
     _, _, data_anterior = old_cities[0]
 
     old_ocupacao = {}
@@ -66,7 +70,7 @@ def calcula_crescimento(city_data, hoje):
             city_data[city].expectativa_esgotamento_meses = 999999999
 
 
-def main(filename, hoje = datetime.now()):
+def main(filename, hoje = datetime.datetime.now()):
     p = ProcessFile(filename)
     cto_data, city_data = p.run()
 
@@ -76,4 +80,4 @@ def main(filename, hoje = datetime.now()):
     insert_cto(cto_data, hoje)
 
 if __name__ == "__main__":
-    main("/home/pediogo/broadband_internet_analysis/gpon/ports/piloto/data/Circuitos CTO-10-11.csv", datetime(2019, 10, 11))
+    main("/home/pediogo/broadband_internet_analysis/gpon/ports/piloto/data/Circuitos CTO-10-11.csv", datetime.date(2019, 10, 11))
