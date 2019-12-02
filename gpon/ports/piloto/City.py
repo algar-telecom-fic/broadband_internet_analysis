@@ -14,7 +14,15 @@ class City:
             self.ocupacao += 1
 
     def __repr__(self):
-        return f"{self.localidade};{self.ocupacao};{self.ocupacao_anterior};{self.tx_crescimento_mensal};{self.capacidade};{self.expectativa_esgotamento_meses};"
+        s = f"{self.localidade};{self.ocupacao};{self.ocupacao_anterior};{self.tx_crescimento_mensal};{self.capacidade};"
+        if self.expectativa_esgotamento_meses != 999999999:
+            s += str(self.expectativa_esgotamento_meses)
+        else:
+            s += "Estavel"
+
+        s+=";"
+
+        return s
 
     def as_a_tuple(self):
         return (

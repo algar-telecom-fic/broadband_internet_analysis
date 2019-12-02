@@ -32,12 +32,12 @@ def gpon_portas():
         return redirect(url_for('download_gpon_portas', filename1=filename1, filename2=filename2))
     return render_template('gpon/portas.html')
 
-@app.route("/gpon/portas/download_files", methods=['GET', 'POST'])
-def download_gpon_portas(filename1="Portas_CTO_11-10-2019.csv", filename2="Taxa_crescimento_11-10-2019.csv"):
+@app.route("/gpon/portas/download_files/<filename1>&<filename2>", methods=['GET', 'POST'])
+def download_gpon_portas(filename1, filename2):
+    print(f"chegeui aqui pelo menos\npath: {os.path.abspath('../gpon/ports/piloto/data/') }\nfilename:{filename1}")
     return render_template('gpon/portas_download.html', filename1=filename1, filename2=filename2)
 
 
 @app.route('/download/<filename>', methods=['GET', 'POST'])
 def downloadFile(filename):
-    print(f"chegeui aqui pelo menos\npath: {os.path.abspath('../gpon/ports/piloto/data/') }\nfilename:{filename}")
     return send_from_directory(os.path.abspath("../gpon/ports/piloto/data/"), filename)

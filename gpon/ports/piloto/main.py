@@ -33,25 +33,31 @@ def gera_relatorio(cto_data, city_data, hoje):
 def calcula_crescimento(city_data, hoje):
 
     db = Database()
+
+
+    # --- select only registers at least 3 months old ---
     DD = datetime.timedelta(days=90)
-    aux_day = tod - DD
+    aux_day = hoje - DD
     aux_time = datetime.datetime.min.time()
     aux_day = datetime.datetime.combine(aux_day, aux_time)
 
     query1 = "select distinct dia from Localidades"
     dates = db.executaQuery(query1)
     for d in reversed(dates):
+        query_date = str(d[0]).split()[0]
         if (d[0] <= aux_day):
-            query_date = str(d[0]).split()[0]
             break
 
+    # ---------------------------------------------------
     query2 = f"select localidade, ocupacao_atual, dia from Localidades where dia = '{query_date}';"
     old_cities = db.executaQuery(query2)
-  
+
     _, _, data_anterior = old_cities[0]
 
     old_ocupacao = {}
+    print(f"these are the registers of the day {query_date}")
     for register in old_cities:
+        print(register)
         localidade, ocupacao_anterior, _ = register
         old_ocupacao[localidade] = ocupacao_anterior
 
