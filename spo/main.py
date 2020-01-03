@@ -1,18 +1,12 @@
-# Considerações importantes sobre a maneira de tratar cada tabela especificado no arquivo "tables.json"
-# 1 - TABELA ÚNICA
-# 2 - TABELA DUPLICADA QUE NÃO POSSUI MÓDULO, CONSIDERAR OS VALORES DE UMA LINHA, E EXCLUIR AS OUTRAS
-# 3 - TABELA DUPLICADA COM MÓDULO, CONSIDERAR DO MÓDULO 1000 AO 1006. SOMAR OS VALORES DE MAXIMUM TUPLE E USED NUMBER 
-# 4 - TABELA DUPLICADA COM MÓDULO, CONSIDERAR DO MÓDULO 1500 AO 1506. SOMAR OS VALORES DE MAXIMUM TUPLE E USED NUMBER
-# 5 - TABELA DUPLICADA COM MÓDULO, CONSIDERAR DO MÓDULO 1700 AO 1701. SOMAR OS VALORES DE MAXIMUM TUPLE E USED NUMBER
-
 import json
 import os
 import datetime
 import sys
-sys.path.append("/home/otsuka/doing/spo")
+import operator
+from openpyxl import Workbook
+sys.path.append("/home/marcos/spo")
 from my_sql import mySQL
 
-# faz o mesmo tratamento, mas só altera a faixa de módulos, especificada nas linhas 34, 36 e 38.
 def aux_treat(table, interval, tod):
 	ans = {}
 	ans['Table_name'] = table[0][0]
@@ -28,7 +22,7 @@ def aux_treat(table, interval, tod):
 			ans['Used_number'] += int(i[4])
 	return ans
 
-# pega cada tabela e trata do jeito que estiver especificado no json "tables"
+
 def treat_table(table, tod):
 	ans = {}
 	spec = info[str(table[0][1])]
@@ -48,20 +42,17 @@ def treat_table(table, tod):
 
 
 def main(filename, tod):
+	flag_fst = True
 	dirt = os.getcwd()
 	aux = []
 	table = []
 
-	with open(dirt + "/files/" + filename, "r") as file:
+	with open(dirt + "/files/data/" + filename, "r") as file:
 		for line in file:
-			# Insere numa lista todas as linhas que não são lixo... TOMAR CUIDADO, CONFERIR COM ANDRIO
-			if line[:4] == ' tbl' or line[:4] == ' TBL': # realmente todas as linhas uteis começam com tbl ou TBL??
+			if line[:4] == ' tbl' or line[:4] == ' TBL':
 				aux.append(line.split())
-		# Ordena pra agrupar as tabelas que possuem mesmo id
 		aux.sort()
 
-	# Insere numa lista auxiliar todas as linhas que representam a mesma tabela e trata essa lista quando
-	# encontra alguma linha da próxima tabela
 	table.append(aux[0])
 	for teste in aux[1:]:
 		if teste[1] != table[0][1]:
@@ -70,8 +61,6 @@ def main(filename, tod):
 		table.append(teste)
 	# Ao final, a última tabela também deve ser tratada, já q nunca entrará no if.
 	treat_table([teste], tod)
-
-	# info do banco de dados e das tabelas
 	spo_files = read_json(dirt + "/files/spo_config.json")
 	filepath = spo_files ["database_credentials"]
 	credentials = read_json(filepath)
@@ -81,7 +70,6 @@ def main(filename, tod):
 	table_info = spo_files ["table_info"]
 	spo_info = read_json(table_info)
 	db = mySQL(credentials, db_name)
-	# insere no banco a resposta final
 	db.insert_into(table_name, spo_info, fans)
 
 
@@ -89,9 +77,25 @@ def read_json(filepath):
 	with open(filepath, 'r') as file:
 		return json.loads(file.read(), encoding = 'utf-8')
 
+def fill_sheet():
+	wb = Workbook()
+	ws = wb.active
+	header = ['Table_name', 'Table_id', 'Maximum_Tuple_Number', 'Used_number']
+	ws.append(header)
+	for row in fans:
+		aux_row = []
+		for key in header:
+			aux_row.append(row[key])
+		ws.append(aux_row)
+	for col in ws.columns:
+		for cell in col:
+			alignment_obj = cell.alignment.copy(horizontal='center', vertical='center')
+			cell.alignment = alignment_obj
+	wb.save("Planilha Final - SPO.xlsx")
 
 fans = []
-# pega um json que relaciona cada tipo de tabela com o jeito de tratar cada uma...
 info = read_json(os.getcwd() + "/files/tables.json")
 if __name__ == "__main__":
 	main("TABELAS SPO - 21-10-2019.txt", datetime.date(2019, 10, 11))
+	fans.sort(key=operator.itemgetter('Table_id'))
+	fill_sheet()
