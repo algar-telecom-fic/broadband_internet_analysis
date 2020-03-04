@@ -35,7 +35,8 @@ class CTO:
             self.quant[status] += 1
             self.quant["INSTALADAS"] += 1
         except KeyError:
-            print(f"status \"{status}\" not find")
+            pass
+            # print(f"status \"{status}\" not find")
 
     def as_a_tuple(self):
         return (

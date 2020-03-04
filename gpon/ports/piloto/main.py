@@ -41,13 +41,17 @@ def calcula_crescimento(city_data, hoje):
     aux_time = datetime.datetime.min.time()
     aux_day = datetime.datetime.combine(aux_day, aux_time)
 
-    query1 = "select distinct dia from Localidades"
+    query1 = "select distinct dia from Localidades order by dia"
     dates = db.executaQuery(query1)
+    # print("tchurururuuuuuuuuuu")
+    # for d in dates:
+    #     print(d)
     for d in reversed(dates):
         query_date = str(d[0]).split()[0]
         if (d[0] <= aux_day):
             break
 
+    # print(f"query_date: {query_date}")
     # ---------------------------------------------------
     query2 = f"select localidade, ocupacao_atual, dia from Localidades where dia = '{query_date}';"
     old_cities = db.executaQuery(query2)
@@ -55,9 +59,9 @@ def calcula_crescimento(city_data, hoje):
     _, _, data_anterior = old_cities[0]
 
     old_ocupacao = {}
-    print(f"these are the registers of the day {query_date}")
+    # print(f"these are the registers of the day {query_date}")
     for register in old_cities:
-        print(register)
+        # print(register)
         localidade, ocupacao_anterior, _ = register
         old_ocupacao[localidade] = ocupacao_anterior
 
@@ -67,11 +71,11 @@ def calcula_crescimento(city_data, hoje):
         ocp_atual = city_data[city].ocupacao
         city_data[city].ocupacao_anterior = old_ocupacao.get(city, 0)
         city_data[city].tx_crescimento_mensal = ( round( 30.0 * (ocp_atual - old_ocupacao.get(city, 0) ) / date_difference) )
-        print(f"{city} deu tx_crescimento_mensal = {city_data[city].tx_crescimento_mensal}")
+        # print(f"{city} deu tx_crescimento_mensal = {city_data[city].tx_crescimento_mensal}")
         try:
             city_data[city].expectativa_esgotamento_meses = round (city_data[city].capacidade / city_data[city].tx_crescimento_mensal )
         except:
-            print(f"erro no calc {city}")
+            # print(f"erro no calc {city}")
             city_data[city].expectativa_esgotamento_meses = 999999999
 
 

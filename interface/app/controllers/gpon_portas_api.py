@@ -34,7 +34,7 @@ def gpon_portas():
 
 @app.route("/gpon/portas/download_files/<filename1>&<filename2>", methods=['GET', 'POST'])
 def download_gpon_portas(filename1, filename2):
-    print(f"chegeui aqui pelo menos\npath: {os.path.abspath('../gpon/ports/piloto/data/') }\nfilename:{filename1}")
+    #print(f"chegeui aqui pelo menos\npath: {os.path.abspath('../gpon/ports/piloto/data/') }\nfilename:{filename1}")
     return render_template('gpon/portas_download.html', filename1=filename1, filename2=filename2)
 
 
