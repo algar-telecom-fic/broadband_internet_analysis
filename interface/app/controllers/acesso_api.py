@@ -15,10 +15,9 @@ def acesso():
         file3 = make_one_upload(request, configs["regional_filepath"], 'file3')
 
         sys.path.append(os.path.abspath('../voz_fixa/acesso'))
-        import main
-        main.main(request.form.get('DateAtual'), request.form.get('DateAntiga'))
+        from main import main
+        main(request.form.get('DateAtual'), request.form.get('DateAntiga'))
         sys.path.remove(os.path.abspath('../voz_fixa/acesso'))
-
 
 
     return render_template('voz_fixa/acesso.html')
